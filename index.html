@@ -14,112 +14,78 @@
             margin: 0;
             padding: 0;
         }
-        /* 居中核心阅读区 */
         .container {
             max-width: 840px;
             margin: 0 auto;
             padding: 50px 20px;
         }
         a { color: #1772d0; text-decoration: none; }
-        a:hover { color: #f09228; }
+        a:hover { color: #f09228; text-decoration: underline; }
         
-        h1 {
-            font-size: 34px;
-            color: #222222;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
+        h1 { font-size: 34px; color: #222222; font-weight: 500; margin-bottom: 15px; }
         h2 {
-            font-size: 24px;
-            color: #222222;
-            border-bottom: 1px solid #eeeeee;
-            padding-bottom: 10px;
-            margin-top: 50px;
-            margin-bottom: 25px;
-            font-weight: 500;
+            font-size: 24px; color: #222222; border-bottom: 1px solid #eeeeee;
+            padding-bottom: 10px; margin-top: 50px; margin-bottom: 25px; font-weight: 500;
         }
         
         /* 顶部：左边文字，右边头像 */
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 50px;
-        }
-        .header-text {
-            flex: 1;
-            padding-right: 50px;
-            font-size: 16px;
-        }
+        .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 50px; }
+        .header-text { flex: 1; padding-right: 50px; font-size: 16px; }
         .header-text p { margin-bottom: 15px; }
         .profile-img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
+            width: 220px; height: 220px; border-radius: 50%; object-fit: cover;
             box-shadow: 0 4px 14px rgba(0,0,0,0.08);
         }
         
         /* 导航链接 */
         .nav-links { margin-top: 25px; }
-        .nav-links a {
-            margin-right: 18px;
-            font-size: 15px;
-            font-weight: 500;
-        }
+        .nav-links a { margin-right: 18px; font-size: 15px; font-weight: 500; }
         
         /* 动态列表 */
         .news-list { list-style-type: none; padding-left: 0; }
         .news-list li { margin-bottom: 10px; font-size: 15px; }
         
-        /* 论文/项目排版 */
-        .paper {
-            display: flex;
-            margin-bottom: 35px;
-            align-items: flex-start;
-        }
+        /* 论文排版 */
+        .paper { display: flex; margin-bottom: 40px; align-items: flex-start; }
         .paper-img {
-            width: 25%;
-            margin-right: 25px;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            overflow: hidden;
-            flex-shrink: 0;
-            border: 1px solid #eee;
+            width: 25%; margin-right: 25px; border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden; flex-shrink: 0; border: 1px solid #eee;
         }
-        .paper-img img {
-            width: 100%;
-            display: block;
-        }
+        .paper-img img { width: 100%; display: block; }
         .paper-info { width: 75%; }
-        .paper-title {
-            font-weight: 600;
-            font-size: 16px;
-            color: #222;
-            margin-bottom: 5px;
-        }
-        .paper-authors { color: #555; font-size: 14px; margin-bottom: 3px; }
-        .paper-venue {
-            font-style: italic;
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-        .paper-links a {
-            margin-right: 10px;
-            font-size: 12px;
-            font-weight: 500;
-            border: 1px solid #1772d0;
-            padding: 2px 8px;
+        .paper-title { font-weight: 600; font-size: 16.5px; color: #222; margin-bottom: 5px; }
+        .paper-authors { color: #555; font-size: 14.5px; margin-bottom: 4px; }
+        
+        /* 年份标签样式 */
+        .paper-venue { color: #666; font-size: 14px; margin-bottom: 8px; }
+        .year-badge {
+            display: inline-block;
+            background-color: #f1f3f5;
+            color: #495057;
+            padding: 1px 7px;
             border-radius: 4px;
-            transition: all 0.2s;
-        }
-        .paper-links a:hover {
-            background-color: #1772d0;
-            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 6px;
+            vertical-align: middle;
         }
         
-        /* 手机端自动排版成上下结构 */
+        /* 摘要样式 */
+        .paper-desc { 
+            font-size: 14px; 
+            color: #555; 
+            margin-bottom: 12px; 
+            background-color: #fdfdfd;
+            border-left: 3px solid #1772d0;
+            padding: 5px 10px;
+        }
+
+        .paper-links a {
+            margin-right: 10px; font-size: 12px; font-weight: 500; border: 1px solid #1772d0;
+            padding: 2px 8px; border-radius: 4px; transition: all 0.2s; text-decoration: none;
+        }
+        .paper-links a:hover { background-color: #1772d0; color: white; }
+        
         @media (max-width: 768px) {
             .header { flex-direction: column-reverse; text-align: center; }
             .header-text { padding-right: 0; }
@@ -138,8 +104,7 @@
         <div class="header-text">
             <h1>丁齐鸣 (Qi-Ming Ding)</h1>
             <p>你好！欢迎来到我的个人主页。我主要专注于<strong>量子计算、量子化学以及量子信息的交叉领域</strong>研究。</p>
-            <p>除了学术研究，我也偶尔在知乎等平台分享我对前沿技术和研究的思考。你可以在下面的链接找到我的学术档案和社交主页。</p>
-            
+            <p>除了学术研究，我也偶尔在知乎等平台分享我对前沿技术和研究的思考。</p>
             <div class="nav-links">
                 <a href="mailto:你的邮箱@example.com">Email</a>
                 <a href="https://scholar.google.com.hk/citations?user=Pl5r_UgAAAAJ" target="_blank">Google Scholar</a>
@@ -153,41 +118,47 @@
     <h2>News</h2>
     <ul class="news-list">
         <li><strong>[2026.04]</strong> 正在紧锣密鼓地修改稿件，积极推进回复审稿人意见的工作！</li>
-        <li><strong>[2026.03]</strong> 很高兴我们在量子导引 (Quantum Steering) 领域的合作工作被 <em>Physical Review Letters</em> 接收。</li>
+        <li><strong>[2026.03]</strong> 很高兴我们在量子导引领域的合作工作被 <em>Physical Review Letters</em> 接收。</li>
         <li><strong>[2026.02]</strong> 关于用于分子对接的 RRAM 概率计算机的研究成果在 <em>Nature Nanotechnology</em> 发表。</li>
     </ul>
 
-    <h2>Preprints (预印本)</h2>
+    <h2>Preprints</h2>
     
     <div class="paper">
-        <div class="paper-img"><img src="https://via.placeholder.com/400x250/e0efff/1772d0?text=arXiv+2025" alt="Paper Image"></div>
+        <div class="paper-img"><img src="https://via.placeholder.com/400x250/e0efff/1772d0?text=arXiv" alt="Paper Image"></div>
         <div class="paper-info">
             <div class="paper-title">Obtaining Accurate Ground-State Properties on Near-term Quantum Devices</div>
             <div class="paper-authors"><strong>QM Ding</strong>, J Peng, J Huang, Y Zhang, H Wang, X Xu, J Ren, Y Ma, X Yuan</div>
-            <div class="paper-venue">arXiv preprint arXiv:2510.21255, 2025</div>
+            <div class="paper-venue"><em>arXiv preprint arXiv:2510.21255</em> <span class="year-badge">2025</span></div>
+            <div class="paper-desc">
+                【摘要】本文提出了一种在近期量子设备上获取精确基态性质的新方法。我们在研究中参考了 <a href="https://arxiv.org/" target="_blank">arXiv 平台</a> 上的多项前沿工作。（这是一个超链接演示）
+            </div>
             <div class="paper-links"><a href="https://arxiv.org/abs/2510.21255" target="_blank">arXiv</a></div>
         </div>
     </div>
 
     <div class="paper">
-        <div class="paper-img"><img src="https://via.placeholder.com/400x250/e0efff/1772d0?text=arXiv+2023" alt="Paper Image"></div>
+        <div class="paper-img"><img src="https://via.placeholder.com/400x250/e0efff/1772d0?text=arXiv" alt="Paper Image"></div>
         <div class="paper-info">
             <div class="paper-title">Molecular docking via quantum approximate optimization algorithm</div>
             <div class="paper-authors"><strong>Qi-Ming Ding</strong>, Yi-Ming Huang, Xiao Yuan</div>
-            <div class="paper-venue">arXiv preprint arXiv:2308.04098, 2023</div>
+            <div class="paper-venue"><em>arXiv preprint arXiv:2308.04098</em> <span class="year-badge">2023</span></div>
+            <div class="paper-desc">
+                【摘要】这里预留文字。探讨了如何利用量子近似优化算法（QAOA）来解决分子对接问题，展示了量子算法在药物发现中的潜力。
+            </div>
             <div class="paper-links"><a href="https://arxiv.org/abs/2308.04098" target="_blank">arXiv</a></div>
         </div>
     </div>
 
-
-    <h2>Journal Publications (已发表)</h2>
+    <h2>Journal Publications</h2>
 
     <div class="paper">
         <div class="paper-img"><img src="https://via.placeholder.com/400x250/f9f2f4/c7254e?text=PRL" alt="Paper Image"></div>
         <div class="paper-info">
             <div class="paper-title">Reliable Quantum Steering Detection under Imperfect Measurement</div>
             <div class="paper-authors">T Zhang, W Zhang, JT Qiu, L Huang, X Yuan, <strong>QM Ding</strong></div>
-            <div class="paper-venue">Physical Review Letters 136 (9), 090201, 2026</div>
+            <div class="paper-venue"><em>Physical Review Letters</em> 136 (9), 090201 <span class="year-badge">2026</span></div>
+            <div class="paper-desc">【摘要】这里预留文字。填入文章的一句话简介。</div>
         </div>
     </div>
 
@@ -196,7 +167,8 @@
         <div class="paper-info">
             <div class="paper-title">A hardware demonstration of a universal programmable RRAM-based probabilistic computer for molecular docking</div>
             <div class="paper-authors">... <strong>QM Ding</strong> ... (Co-authors)</div>
-            <div class="paper-venue">Nature Nanotechnology, 1-7, 2026</div>
+            <div class="paper-venue"><em>Nature Nanotechnology</em>, 1-7 <span class="year-badge">2026</span></div>
+            <div class="paper-desc">【摘要】这里预留文字。填入文章的一句话简介。</div>
         </div>
     </div>
 
@@ -205,7 +177,8 @@
         <div class="paper-info">
             <div class="paper-title">Large-Scale Efficient Molecule Geometry Optimization with Hybrid Quantum–Classical Computing</div>
             <div class="paper-authors">Y Hao, <strong>Q Ding</strong>, X Wang, X Yuan</div>
-            <div class="paper-venue">Journal of Chemical Theory and Computation 22 (2), 859-868, 2026</div>
+            <div class="paper-venue"><em>Journal of Chemical Theory and Computation</em> 22 (2), 859-868 <span class="year-badge">2026</span></div>
+            <div class="paper-desc">【摘要】这里预留文字。填入文章的一句话简介。</div>
         </div>
     </div>
 
@@ -214,7 +187,8 @@
         <div class="paper-info">
             <div class="paper-title">Efficient quantum simulation of non-adiabatic molecular dynamics with precise electronic structure</div>
             <div class="paper-authors">T Li, Y Zeng, <strong>Q Ding</strong>, Z Huo, X Xu, J Ren, D Tang, X Cai, X Yuan</div>
-            <div class="paper-venue">Digital Discovery, 2026</div>
+            <div class="paper-venue"><em>Digital Discovery</em> <span class="year-badge">2026</span></div>
+            <div class="paper-desc">【摘要】这里预留文字。填入文章的一句话简介。</div>
         </div>
     </div>
 
@@ -223,7 +197,8 @@
         <div class="paper-info">
             <div class="paper-title">No-go theorems for deterministic purification and probabilistic enhancement of coherence</div>
             <div class="paper-authors"><strong>Q Ding</strong>, Q Liu</div>
-            <div class="paper-venue">Journal of Physics A: Mathematical and Theoretical 55 (10), 105301, 2022</div>
+            <div class="paper-venue"><em>Journal of Physics A: Mathematical and Theoretical</em> 55 (10), 105301 <span class="year-badge">2022</span></div>
+            <div class="paper-desc">【摘要】这里预留文字。填入文章的一句话简介。</div>
         </div>
     </div>
 
@@ -232,7 +207,8 @@
         <div class="paper-info">
             <div class="paper-title">The tightness of multipartite coherence from spectrum estimation</div>
             <div class="paper-authors"><strong>QM Ding</strong>, XX Fang, H Lu</div>
-            <div class="paper-venue">Entropy 23 (11), 1519, 2021</div>
+            <div class="paper-venue"><em>Entropy</em> 23 (11), 1519 <span class="year-badge">2021</span></div>
+            <div class="paper-desc">【摘要】这里预留文字。填入文章的一句话简介。</div>
         </div>
     </div>
 
@@ -241,7 +217,8 @@
         <div class="paper-info">
             <div class="paper-title">Efficient estimation of multipartite quantum coherence</div>
             <div class="paper-authors"><strong>QM Ding</strong>, XX Fang, X Yuan, T Zhang, H Lu</div>
-            <div class="paper-venue">Physical Review Research 3 (2), 023228, 2021</div>
+            <div class="paper-venue"><em>Physical Review Research</em> 3 (2), 023228 <span class="year-badge">2021</span></div>
+            <div class="paper-desc">【摘要】这里预留文字。填入文章的一句话简介。</div>
         </div>
     </div>
 
