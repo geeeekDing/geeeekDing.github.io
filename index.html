@@ -70,6 +70,27 @@
             vertical-align: middle;
         }
         
+        /* 年份分割线样式 */
+        .year-divider {
+            font-size: 22px;
+            color: #222;
+            font-weight: 600;
+            margin-top: 45px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eef0f2;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .year-divider::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 18px;
+            background-color: #1772d0;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
         /* 摘要样式 */
         .paper-desc { 
             font-size: 14px; 
@@ -148,6 +169,10 @@
 
     <h3 style="color: #1772d0; margin-top: 30px;">Selected First & Corresponding Author Papers</h3>
     <div>
+
+        <div class="year-divider">2026</div>
+
+        
         <div class="paper">
             <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
                 [F8]
@@ -197,6 +222,8 @@
                 <div class="paper-desc">【摘要】预留文字：混合量子-经典计算在分子几何优化中的应用。</div>
             </div>
         </div>
+
+        <div class="year-divider">2024</div>
         
         <div class="paper">
             <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
@@ -209,6 +236,8 @@
                 <div class="paper-desc">Molecular docking plays a pivotal role in drug discovery and precision medicine, furnishing insights into protein functionalities and fostering the development of therapeutics. Here, we introduce a potential alternative solution to this problem using a quantum approximate optimization algorithm (QAOA) based algorithm. Our method was applied to analyze diverse biological systems, including the SARS-CoV-2 Mpro complex with PM-2-020B, the DPP-4 complex with piperidine fused imidazopyridine 34, and the HIV-1 gp120 complex with JP-III-048. We found that the digitized-counterdiabatic QAOA (DCQAOA), which integrates the concept of counterdiabatic driving, surpasses the conventional QAOA in terms of quantum circuit depth and optimization efficiency. This is particularly evident in complex molecular-docking challenges, where DCQAOA delivers more accurate and biologically relevant results. Our research highlights the promising role of quantum computing in drug discovery and contributes significant insights towards the optimization of protein-ligand docking methodologies.</div>
             </div>
         </div>
+
+        <div class="year-divider">2022</div>
         
         <div class="paper">
             <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">[F3]</div>
@@ -219,6 +248,8 @@
                 <div class="paper-desc">【摘要】预留文字：混合量子-经典计算在分子几何优化中的应用。</div>
             </div>
         </div>
+
+        <div class="year-divider">2021</div>
 
         <div class="paper">
             <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">[F2]</div>
