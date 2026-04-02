@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>丁齐鸣 (Qiming Ding)</title>
+    <title>丁齐鸣 (Qi-Ming Ding)</title>
     <style>
         /* 全局高级感字体与配色 */
         body {
@@ -72,45 +72,45 @@
         .news-list { list-style-type: none; padding-left: 0; }
         .news-list li { margin-bottom: 10px; font-size: 15px; }
         
-        /* 论文/项目：左图右文 */
+        /* 论文/项目排版 */
         .paper {
             display: flex;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             align-items: flex-start;
         }
         .paper-img {
-            width: 28%;
-            margin-right: 30px;
-            border-radius: 8px;
+            width: 25%;
+            margin-right: 25px;
+            border-radius: 6px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             overflow: hidden;
             flex-shrink: 0;
+            border: 1px solid #eee;
         }
         .paper-img img {
             width: 100%;
             display: block;
         }
-        .paper-info { width: 72%; }
+        .paper-info { width: 75%; }
         .paper-title {
             font-weight: 600;
-            font-size: 17px;
+            font-size: 16px;
             color: #222;
             margin-bottom: 5px;
         }
-        .paper-authors { color: #555; font-size: 15px; margin-bottom: 5px; }
+        .paper-authors { color: #555; font-size: 14px; margin-bottom: 3px; }
         .paper-venue {
             font-style: italic;
             color: #666;
             font-size: 14px;
             margin-bottom: 8px;
         }
-        .paper-desc { font-size: 14px; margin-bottom: 12px; }
         .paper-links a {
-            margin-right: 12px;
-            font-size: 13px;
+            margin-right: 10px;
+            font-size: 12px;
             font-weight: 500;
             border: 1px solid #1772d0;
-            padding: 3px 10px;
+            padding: 2px 8px;
             border-radius: 4px;
             transition: all 0.2s;
         }
@@ -125,7 +125,7 @@
             .header-text { padding-right: 0; }
             .profile-img { margin-bottom: 25px; }
             .paper { flex-direction: column; }
-            .paper-img { width: 100%; margin-right: 0; margin-bottom: 15px; }
+            .paper-img { width: 100%; max-width: 200px; margin: 0 auto 15px auto; }
             .paper-info { width: 100%; }
         }
     </style>
@@ -136,14 +136,14 @@
     
     <div class="header">
         <div class="header-text">
-            <h1>丁齐鸣</h1>
-            <p>你好！欢迎来到我的个人主页。我是一名独立研究者与内容创作者。我的主要研究兴趣集中在<strong>量子人工智能 (Quantum AI)</strong>及其前沿交叉领域。</p>
-            <p>我过去常常在个人博客上记录思考，现在主要活跃在知乎，与大家分享我的最新研究心得和技术观点。</p>
+            <h1>丁齐鸣 (Qi-Ming Ding)</h1>
+            <p>你好！欢迎来到我的个人主页。我主要专注于<strong>量子计算、量子化学以及量子信息的交叉领域</strong>研究。</p>
+            <p>除了学术研究，我也偶尔在知乎等平台分享我对前沿技术和研究的思考。你可以在下面的链接找到我的学术档案和社交主页。</p>
             
             <div class="nav-links">
                 <a href="mailto:你的邮箱@example.com">Email</a>
+                <a href="https://scholar.google.com.hk/citations?user=Pl5r_UgAAAAJ" target="_blank">Google Scholar</a>
                 <a href="https://www.zhihu.com/people/AJLoveChina" target="_blank">Zhihu</a>
-                <a href="http://hejie.nigeerhuo.com" target="_blank">Blog</a>
                 <a href="https://github.com/geeeekDing" target="_blank">GitHub</a>
             </div>
         </div>
@@ -152,44 +152,96 @@
 
     <h2>News</h2>
     <ul class="news-list">
-        <li><strong>[2026.04]</strong> 正在紧锣密鼓地修改并回复审稿人意见！期待新文章早日被接收。</li>
-        <li><strong>[2024.01]</strong> 在知乎发表了一篇关于技术发展的新文章。</li>
+        <li><strong>[2026.04]</strong> 正在紧锣密鼓地修改稿件，积极推进回复审稿人意见的工作！</li>
+        <li><strong>[2026.03]</strong> 很高兴我们在量子导引 (Quantum Steering) 领域的合作工作被 <em>Physical Review Letters</em> 接收。</li>
+        <li><strong>[2026.02]</strong> 关于用于分子对接的 RRAM 概率计算机的研究成果在 <em>Nature Nanotechnology</em> 发表。</li>
     </ul>
 
-    <h2>Publications & Selected Articles</h2>
+    <h2>Preprints (预印本)</h2>
     
     <div class="paper">
-        <div class="paper-img">
-            <img src="https://via.placeholder.com/400x250/e0efff/1772d0?text=Paper+Thumbnail" alt="Paper Image">
-        </div>
+        <div class="paper-img"><img src="https://via.placeholder.com/400x250/e0efff/1772d0?text=arXiv+2025" alt="Paper Image"></div>
         <div class="paper-info">
-            <div class="paper-title">Explorations in Quantum Artificial Intelligence: A Novel Framework</div>
-            <div class="paper-authors"><strong>Qiming Ding</strong>, et al.</div>
-            <div class="paper-venue">Under Review, 2026</div>
-            <div class="paper-desc">
-                本文提出了一种结合量子计算与机器学习的新框架。目前已完成初稿，正在根据审稿人意见进行最后阶段的完善和修改。
-            </div>
-            <div class="paper-links">
-                <a href="#">PDF</a>
-                <a href="#">Code</a>
-            </div>
+            <div class="paper-title">Obtaining Accurate Ground-State Properties on Near-term Quantum Devices</div>
+            <div class="paper-authors"><strong>QM Ding</strong>, J Peng, J Huang, Y Zhang, H Wang, X Xu, J Ren, Y Ma, X Yuan</div>
+            <div class="paper-venue">arXiv preprint arXiv:2510.21255, 2025</div>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2510.21255" target="_blank">arXiv</a></div>
         </div>
     </div>
 
     <div class="paper">
-        <div class="paper-img">
-            <img src="https://via.placeholder.com/400x250/fff3e0/f09228?text=Zhihu+Post" alt="Zhihu Image">
-        </div>
+        <div class="paper-img"><img src="https://via.placeholder.com/400x250/e0efff/1772d0?text=arXiv+2023" alt="Paper Image"></div>
         <div class="paper-info">
-            <div class="paper-title">知乎高赞：关于技术与研究的最新思考</div>
-            <div class="paper-authors"><strong>丁齐鸣</strong></div>
-            <div class="paper-venue">Zhihu Platform, 2024</div>
-            <div class="paper-desc">
-                在这篇文章中，我详细讨论了相关技术的发展趋势，以及作为创作者和研究者如何应对这些变化，分享了大量实用的见解。
-            </div>
-            <div class="paper-links">
-                <a href="https://www.zhihu.com/people/AJLoveChina" target="_blank">阅读全文</a>
-            </div>
+            <div class="paper-title">Molecular docking via quantum approximate optimization algorithm</div>
+            <div class="paper-authors"><strong>Qi-Ming Ding</strong>, Yi-Ming Huang, Xiao Yuan</div>
+            <div class="paper-venue">arXiv preprint arXiv:2308.04098, 2023</div>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2308.04098" target="_blank">arXiv</a></div>
+        </div>
+    </div>
+
+
+    <h2>Journal Publications (已发表)</h2>
+
+    <div class="paper">
+        <div class="paper-img"><img src="https://via.placeholder.com/400x250/f9f2f4/c7254e?text=PRL" alt="Paper Image"></div>
+        <div class="paper-info">
+            <div class="paper-title">Reliable Quantum Steering Detection under Imperfect Measurement</div>
+            <div class="paper-authors">T Zhang, W Zhang, JT Qiu, L Huang, X Yuan, <strong>QM Ding</strong></div>
+            <div class="paper-venue">Physical Review Letters 136 (9), 090201, 2026</div>
+        </div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-img"><img src="https://via.placeholder.com/400x250/fdf5e6/ff8c00?text=Nature+Nano" alt="Paper Image"></div>
+        <div class="paper-info">
+            <div class="paper-title">A hardware demonstration of a universal programmable RRAM-based probabilistic computer for molecular docking</div>
+            <div class="paper-authors">... <strong>QM Ding</strong> ... (Co-authors)</div>
+            <div class="paper-venue">Nature Nanotechnology, 1-7, 2026</div>
+        </div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-img"><img src="https://via.placeholder.com/400x250/f0fff0/2e8b57?text=JCTC" alt="Paper Image"></div>
+        <div class="paper-info">
+            <div class="paper-title">Large-Scale Efficient Molecule Geometry Optimization with Hybrid Quantum–Classical Computing</div>
+            <div class="paper-authors">Y Hao, <strong>Q Ding</strong>, X Wang, X Yuan</div>
+            <div class="paper-venue">Journal of Chemical Theory and Computation 22 (2), 859-868, 2026</div>
+        </div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-img"><img src="https://via.placeholder.com/400x250/f0f8ff/4682b4?text=Digital+Disc" alt="Paper Image"></div>
+        <div class="paper-info">
+            <div class="paper-title">Efficient quantum simulation of non-adiabatic molecular dynamics with precise electronic structure</div>
+            <div class="paper-authors">T Li, Y Zeng, <strong>Q Ding</strong>, Z Huo, X Xu, J Ren, D Tang, X Cai, X Yuan</div>
+            <div class="paper-venue">Digital Discovery, 2026</div>
+        </div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-img"><img src="https://via.placeholder.com/400x250/fff0f5/db7093?text=JPhysA" alt="Paper Image"></div>
+        <div class="paper-info">
+            <div class="paper-title">No-go theorems for deterministic purification and probabilistic enhancement of coherence</div>
+            <div class="paper-authors"><strong>Q Ding</strong>, Q Liu</div>
+            <div class="paper-venue">Journal of Physics A: Mathematical and Theoretical 55 (10), 105301, 2022</div>
+        </div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-img"><img src="https://via.placeholder.com/400x250/f5f5dc/8b4513?text=Entropy" alt="Paper Image"></div>
+        <div class="paper-info">
+            <div class="paper-title">The tightness of multipartite coherence from spectrum estimation</div>
+            <div class="paper-authors"><strong>QM Ding</strong>, XX Fang, H Lu</div>
+            <div class="paper-venue">Entropy 23 (11), 1519, 2021</div>
+        </div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-img"><img src="https://via.placeholder.com/400x250/e6e6fa/483d8b?text=PRResearch" alt="Paper Image"></div>
+        <div class="paper-info">
+            <div class="paper-title">Efficient estimation of multipartite quantum coherence</div>
+            <div class="paper-authors"><strong>QM Ding</strong>, XX Fang, X Yuan, T Zhang, H Lu</div>
+            <div class="paper-venue">Physical Review Research 3 (2), 023228, 2021</div>
         </div>
     </div>
 
