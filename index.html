@@ -3,92 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>丁齐鸣的个人网站</title>
+    <title>丁齐鸣 (Qiming Ding)</title>
     <style>
-        /* 这里是 CSS 装修部分 */
+        /* 全局高级感字体与配色 */
         body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #444444;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px; /* 限制页面宽度，制造居中阅读的学术感 */
-            margin: 0 auto;
-            padding: 40px 20px;
+            margin: 0;
+            padding: 0;
         }
-        h1, h2, h3 { color: #222; }
-        a { color: #0056b3; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        /* 居中核心阅读区 */
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        a { color: #1772d0; text-decoration: none; }
+        a:hover { color: #f09228; }
         
-        /* 头部排版：头像在左，信息在右 */
+        h1 {
+            font-size: 34px;
+            color: #222222;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        h2 {
+            font-size: 24px;
+            color: #222222;
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+        
+        /* 顶部：左边文字，右边头像 */
         .header {
             display: flex;
             align-items: center;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
+            justify-content: space-between;
+            margin-bottom: 50px;
         }
-        .profile-pic {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%; /* 圆形头像 */
+        .header-text {
+            flex: 1;
+            padding-right: 50px;
+            font-size: 16px;
+        }
+        .header-text p { margin-bottom: 15px; }
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
             object-fit: cover;
-            margin-right: 40px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
         }
-        .bio-info h1 { margin: 0 0 10px 0; font-size: 2.5em; }
-        .links { margin-top: 15px; font-weight: bold; }
         
-        /* 列表与文章排版 */
-        .section { margin-bottom: 40px; }
-        .item { margin-bottom: 20px; }
-        .item-title { font-weight: bold; font-size: 1.1em; }
-        .item-desc { color: #555; font-size: 0.95em; }
+        /* 导航链接 */
+        .nav-links { margin-top: 25px; }
+        .nav-links a {
+            margin-right: 18px;
+            font-size: 15px;
+            font-weight: 500;
+        }
         
-        /* 手机端适配：如果是手机屏幕，头像放到上面 */
-        @media (max-width: 600px) {
-            .header { flex-direction: column; text-align: center; }
-            .profile-pic { margin-right: 0; margin-bottom: 20px; }
+        /* 动态列表 */
+        .news-list { list-style-type: none; padding-left: 0; }
+        .news-list li { margin-bottom: 10px; font-size: 15px; }
+        
+        /* 论文/项目：左图右文 */
+        .paper {
+            display: flex;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+        .paper-img {
+            width: 28%;
+            margin-right: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .paper-img img {
+            width: 100%;
+            display: block;
+        }
+        .paper-info { width: 72%; }
+        .paper-title {
+            font-weight: 600;
+            font-size: 17px;
+            color: #222;
+            margin-bottom: 5px;
+        }
+        .paper-authors { color: #555; font-size: 15px; margin-bottom: 5px; }
+        .paper-venue {
+            font-style: italic;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .paper-desc { font-size: 14px; margin-bottom: 12px; }
+        .paper-links a {
+            margin-right: 12px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid #1772d0;
+            padding: 3px 10px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .paper-links a:hover {
+            background-color: #1772d0;
+            color: white;
+        }
+        
+        /* 手机端自动排版成上下结构 */
+        @media (max-width: 768px) {
+            .header { flex-direction: column-reverse; text-align: center; }
+            .header-text { padding-right: 0; }
+            .profile-img { margin-bottom: 25px; }
+            .paper { flex-direction: column; }
+            .paper-img { width: 100%; margin-right: 0; margin-bottom: 15px; }
+            .paper-info { width: 100%; }
         }
     </style>
 </head>
 <body>
 
+<div class="container">
+    
     <div class="header">
-        <img src="qiming2024.jpg" alt="丁齐鸣的照片" class="profile-pic">
-        <div class="bio-info">
+        <div class="header-text">
             <h1>丁齐鸣</h1>
-            <p><strong>独立研究者 / 内容创作者</strong></p> <p>Hello 大家好，很高兴你来到这里。我主要专注于 [这里填入你的核心领域] 的研究与写作。过去我曾在博客记录思考，现在我主要在知乎分享我的观点和最新文章。</p>
-            <div class="links">
-                <a href="mailto:你的邮箱@example.com">Email</a> &nbsp;/&nbsp;
-                <a href="https://www.zhihu.com/people/AJLoveChina" target="_blank">知乎</a> &nbsp;/&nbsp;
-                <a href="http://hejie.nigeerhuo.com" target="_blank">旧博客</a>
+            <p>你好！欢迎来到我的个人主页。我是一名独立研究者与内容创作者。我的主要研究兴趣集中在<strong>量子人工智能 (Quantum AI)</strong>及其前沿交叉领域。</p>
+            <p>我过去常常在个人博客上记录思考，现在主要活跃在知乎，与大家分享我的最新研究心得和技术观点。</p>
+            
+            <div class="nav-links">
+                <a href="mailto:你的邮箱@example.com">Email</a>
+                <a href="https://www.zhihu.com/people/AJLoveChina" target="_blank">Zhihu</a>
+                <a href="http://hejie.nigeerhuo.com" target="_blank">Blog</a>
+                <a href="https://github.com/geeeekDing" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <img src="profile.jpg" alt="丁齐鸣" class="profile-img">
+    </div>
+
+    <h2>News</h2>
+    <ul class="news-list">
+        <li><strong>[2026.04]</strong> 正在紧锣密鼓地修改并回复审稿人意见！期待新文章早日被接收。</li>
+        <li><strong>[2024.01]</strong> 在知乎发表了一篇关于技术发展的新文章。</li>
+    </ul>
+
+    <h2>Publications & Selected Articles</h2>
+    
+    <div class="paper">
+        <div class="paper-img">
+            <img src="https://via.placeholder.com/400x250/e0efff/1772d0?text=Paper+Thumbnail" alt="Paper Image">
+        </div>
+        <div class="paper-info">
+            <div class="paper-title">Explorations in Quantum Artificial Intelligence: A Novel Framework</div>
+            <div class="paper-authors"><strong>Qiming Ding</strong>, et al.</div>
+            <div class="paper-venue">Under Review, 2026</div>
+            <div class="paper-desc">
+                本文提出了一种结合量子计算与机器学习的新框架。目前已完成初稿，正在根据审稿人意见进行最后阶段的完善和修改。
+            </div>
+            <div class="paper-links">
+                <a href="#">PDF</a>
+                <a href="#">Code</a>
             </div>
         </div>
     </div>
 
-    <div class="section">
-        <h2>🔬 研究兴趣</h2>
-        <ul>
-            <li><strong>兴趣方向一：</strong> 这里写一行简单的解释或者具体的细分领域。</li>
-            <li><strong>兴趣方向二：</strong> 这里写一行简单的解释或者具体的细分领域。</li>
-            <li><strong>兴趣方向三：</strong> 这里写一行简单的解释或者具体的细分领域。</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>📝 代表文章与项目</h2>
-        
-        <div class="item">
-            <div class="item-title"><a href="你的知乎文章链接" target="_blank">这是你的第一篇文章标题</a></div>
-            <div class="item-desc">这里用一两句话摘要一下这篇文章探讨了什么核心问题，或者解决了什么痛点。</div>
-            <div><small>📍 发表于 知乎 · 2024年</small></div>
+    <div class="paper">
+        <div class="paper-img">
+            <img src="https://via.placeholder.com/400x250/fff3e0/f09228?text=Zhihu+Post" alt="Zhihu Image">
         </div>
-
-        <div class="item">
-            <div class="item-title"><a href="你的旧博客文章链接" target="_blank">这是你的第二篇文章标题</a></div>
-            <div class="item-desc">简要说明文章内容...</div>
-            <div><small>📍 发表于 个人博客 · 2023年</small></div>
+        <div class="paper-info">
+            <div class="paper-title">知乎高赞：关于技术与研究的最新思考</div>
+            <div class="paper-authors"><strong>丁齐鸣</strong></div>
+            <div class="paper-venue">Zhihu Platform, 2024</div>
+            <div class="paper-desc">
+                在这篇文章中，我详细讨论了相关技术的发展趋势，以及作为创作者和研究者如何应对这些变化，分享了大量实用的见解。
+            </div>
+            <div class="paper-links">
+                <a href="https://www.zhihu.com/people/AJLoveChina" target="_blank">阅读全文</a>
+            </div>
         </div>
     </div>
+
+</div>
 
 </body>
 </html>
