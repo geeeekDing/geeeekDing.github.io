@@ -1,8 +1,94 @@
-<p>Hello 大家好</p>
-<p>我是丁齐鸣，这是我的个人网站。 </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>丁齐鸣的个人网站</title>
+    <style>
+        /* 这里是 CSS 装修部分 */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px; /* 限制页面宽度，制造居中阅读的学术感 */
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1, h2, h3 { color: #222; }
+        a { color: #0056b3; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        /* 头部排版：头像在左，信息在右 */
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%; /* 圆形头像 */
+            object-fit: cover;
+            margin-right: 40px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .bio-info h1 { margin: 0 0 10px 0; font-size: 2.5em; }
+        .links { margin-top: 15px; font-weight: bold; }
+        
+        /* 列表与文章排版 */
+        .section { margin-bottom: 40px; }
+        .item { margin-bottom: 20px; }
+        .item-title { font-weight: bold; font-size: 1.1em; }
+        .item-desc { color: #555; font-size: 0.95em; }
+        
+        /* 手机端适配：如果是手机屏幕，头像放到上面 */
+        @media (max-width: 600px) {
+            .header { flex-direction: column; text-align: center; }
+            .profile-pic { margin-right: 0; margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
 
-<ul>
-  <li> <a href="https://www.zhihu.com/people/AJLoveChina">知乎</a> </li>
-  <li> <a href="http://hejie.nigeerhuo.com">我的博客(已经不更细了,现在在知乎写文章)</a> </li>
-</ul>
+    <div class="header">
+        <img src="profile.jpg" alt="丁齐鸣的照片" class="profile-pic">
+        <div class="bio-info">
+            <h1>丁齐鸣</h1>
+            <p><strong>独立研究者 / 内容创作者</strong></p> <p>Hello 大家好，很高兴你来到这里。我主要专注于 [这里填入你的核心领域] 的研究与写作。过去我曾在博客记录思考，现在我主要在知乎分享我的观点和最新文章。</p>
+            <div class="links">
+                <a href="mailto:你的邮箱@example.com">Email</a> &nbsp;/&nbsp;
+                <a href="https://www.zhihu.com/people/AJLoveChina" target="_blank">知乎</a> &nbsp;/&nbsp;
+                <a href="http://hejie.nigeerhuo.com" target="_blank">旧博客</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔬 研究兴趣</h2>
+        <ul>
+            <li><strong>兴趣方向一：</strong> 这里写一行简单的解释或者具体的细分领域。</li>
+            <li><strong>兴趣方向二：</strong> 这里写一行简单的解释或者具体的细分领域。</li>
+            <li><strong>兴趣方向三：</strong> 这里写一行简单的解释或者具体的细分领域。</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📝 代表文章与项目</h2>
+        
+        <div class="item">
+            <div class="item-title"><a href="你的知乎文章链接" target="_blank">这是你的第一篇文章标题</a></div>
+            <div class="item-desc">这里用一两句话摘要一下这篇文章探讨了什么核心问题，或者解决了什么痛点。</div>
+            <div><small>📍 发表于 知乎 · 2024年</small></div>
+        </div>
+
+        <div class="item">
+            <div class="item-title"><a href="你的旧博客文章链接" target="_blank">这是你的第二篇文章标题</a></div>
+            <div class="item-desc">简要说明文章内容...</div>
+            <div><small>📍 发表于 个人博客 · 2023年</small></div>
+        </div>
+    </div>
+
+</body>
+</html>
