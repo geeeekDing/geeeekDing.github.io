@@ -57,7 +57,12 @@
         .paper-authors { color: #555; font-size: 14.5px; margin-bottom: 4px; }
         
         /* 年份标签样式 */
-        .paper-venue { color: #666; font-size: 14px; margin-bottom: 8px; }
+        /* 将期刊名称（em标签）改为加粗，并取消斜体 */
+        .paper-venue em {
+            font-style: normal; /* 取消默认的斜体 */
+            font-weight: 600;   /* 设置为半粗体，看起来更有质感 */
+            color: #222;        /* （可选）稍微加深一点颜色，让加粗效果更突出 */
+        }
         .year-badge {
             display: inline-block;
             background-color: #f1f3f5;
@@ -124,7 +129,7 @@
     <div class="header">
         <div class="header-text">
             <h1>Qi-Ming Ding</h1>
-            <p style="font-size: 15px; color: #666; font-style: italic;">
+            <p style="font-size: 15px; color: #666;">
             I am currently an Associate Researcher at the School of Computer Science, Peking University. Prior to this, I was a Postdoctoral Fellow at the Center on Frontiers of Computing Studies (CFCS), Peking University, from April 2022 to April 2025, advised by Prof. <a href="http://qtheorist.site/research/" target="_blank">Xiao Yuan</a>. I obtained my Ph.D. in Physics from the School of Physics, Shandong University in December 2021, under the supervision of Prof. <a href="https://www.researchgate.net/profile/Dianmin-Tong" target="_blank">Dian-Min Tong</a>. My research interests include <strong>quantum resource theory, quantum information theory, near-term quantum algorithms, and Quantum+AI</strong>.
             </p>
             <div class="nav-links">
