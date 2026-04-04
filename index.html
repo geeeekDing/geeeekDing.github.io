@@ -57,11 +57,10 @@
         .paper-authors { color: #555; font-size: 14.5px; margin-bottom: 4px; }
         
         /* 年份标签样式 */
-        /* 将期刊名称（em标签）改为加粗，并取消斜体 */
         .paper-venue em {
-            font-style: normal; /* 取消默认的斜体 */
-            font-weight: 600;   /* 设置为半粗体，看起来更有质感 */
-            color: #222;        /* （可选）稍微加深一点颜色，让加粗效果更突出 */
+            font-style: normal; 
+            font-weight: 600;   
+            color: #222;        
         }
         .year-badge {
             display: inline-block;
@@ -75,7 +74,7 @@
             vertical-align: middle;
         }
         
-        /* 年份分割线样式 */
+        /* 年份分割线样式 (已被移除以适应分页，但保留样式类备用) */
         .year-divider {
             font-size: 22px;
             color: #222;
@@ -96,6 +95,7 @@
             margin-right: 10px;
             border-radius: 2px;
         }
+        
         /* 摘要样式 */
         .paper-desc { 
             font-size: 14px; 
@@ -112,6 +112,35 @@
         }
         .paper-links a:hover { background-color: #1772d0; color: white; }
         
+        /* ===== 新增：分页控件样式 ===== */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 50px;
+            gap: 8px;
+        }
+        .pagination button {
+            padding: 6px 14px;
+            border: 1px solid #1772d0;
+            background-color: #ffffff;
+            color: #1772d0;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14.5px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .pagination button.active {
+            background-color: #1772d0;
+            color: #ffffff;
+            border-color: #1772d0;
+        }
+        .pagination button:hover:not(.active) {
+            background-color: #f0f8ff;
+        }
+
         @media (max-width: 768px) {
             .header { flex-direction: column-reverse; text-align: center; }
             .header-text { padding-right: 0; }
@@ -130,7 +159,11 @@
         <div class="header-text">
             <h1>Qi-Ming Ding</h1>
             <p style="font-size: 15px; color: #666;">
-            I am currently an Associate Researcher at the School of Computer Science, Peking University. Prior to this, I was a Postdoctoral Fellow at the Center on Frontiers of Computing Studies (CFCS), Peking University, from April 2022 to April 2025, advised by Prof. <a href="http://qtheorist.site/research/" target="_blank">Xiao Yuan</a>. I obtained my Ph.D. in Physics from the School of Physics, Shandong University in December 2021, under the supervision of Prof. <a href="https://www.researchgate.net/profile/Dianmin-Tong" target="_blank">Dian-Min Tong</a>. My research interests include <strong>quantum resource theory, quantum information theory, near-term quantum algorithms, and Quantum+AI</strong>.
+            I am currently an Associate Researcher at the School of Computer Science, Peking University. 
+            Prior to this, I was a Postdoctoral Fellow at the Center on Frontiers of Computing Studies (CFCS), Peking University, from April 2022 to April 2025, advised by Prof. <a href="http://qtheorist.site/research/" target="_blank">Xiao Yuan</a>. 
+            I obtained my Ph.D. in Physics from the School of Physics, Shandong University in December 2021, under the supervision of Prof. <a href="https://www.researchgate.net/profile/Dianmin-Tong" target="_blank">Dian-Min Tong</a>. 
+            My research interests include <strong>quantum resource theory, quantum information theory, near-term quantum algorithms, and Quantum+AI</strong>.
+                
             </p>
             <div class="nav-links">
                 <a href="mailto:dqiming94@pku.edu.cn">Email</a>
@@ -142,10 +175,10 @@
         <img src="qiming2024.jpg" alt="丁齐鸣" class="profile-img">
     </div>
 
-<h2>News</h2>
+    <h2>News</h2>
     <ul class="news-list">
-        <li><strong>[2026.04.03]</strong> 很高兴我们的在量子错误缓解的研究被中科院二区杂志<em>Physical Review Applied<em>接收！</li>
-        <li><strong>[2026.04.02]</strong> 很高兴我们在线性约束下的QAOA算法的研究在中科院一区Top杂志<em>Sci. China-Phys. Mech. Astron.<em>正式发表！</li>
+        <li><strong>[2026.04.03]</strong> 很高兴我们的在量子错误缓解的研究被中科院二区杂志<em>Physical Review Applied</em>接收！</li>
+        <li><strong>[2026.04.02]</strong> 很高兴我们在线性约束下的QAOA算法的研究在中科院一区Top杂志<em>Sci. China-Phys. Mech. Astron.</em>正式发表！</li>
         <li><strong>[2026.03.26]</strong> 很高兴我们在量子相干性探测的工作在中科院二区杂志 <em>Physical Review A</em> 正式发表！</li>
         <li><strong>[2026.03.02]</strong> 很高兴我们在量子导引探测的工作在中科院一区Top杂志 <em>Physical Review Letters</em> 正式发表！</li>
         <li><strong>[2026.01.13]</strong> 很高兴我们在量子计算应用于大尺度分子几何优化的工作在中科院一区Top杂志 <em>Journal of Chemical Theory and Computation</em> 发表！</li>
@@ -158,7 +191,7 @@
             <div class="paper-title">Boolean Convex-Roof Measure: An Operationally Meaningful Quantifier of Quantum Resources</div>
             <div class="paper-authors">Chaohui Zhou*, <strong>Qi-Ming Ding*</strong>, Xiaodan Cui, Baoqing Sun, and C. L. Liu<sup>†</sup> </div>
             <div class="paper-venue"><em></em> <span class="year-badge">2026</span></div>
-            <div class="paper-desc">Quantifying quantum resources is fundamental to characterizing nonclassical advantages in quantum information processing. Although convex-roof constructions provide a mathematically natural way to define resource measures, they are often computationally demanding and typically lack a direct operational interpretation. In this work, we introduce a Boolean convex-roof measure for general convex quantum resource theories, which adopts the simplest possible assignment: resourceful pure states are assigned a value of one, while free states are assigned zero. Remarkably, we rigorously prove that this measure exactly coincides with the resource weight. By virtue of this equivalence, the Boolean convex-roof measure naturally inherits both efficient computability via semidefinite programming and a direct operational interpretation—it quantifies the maximal advantage achievable in subchannel exclusion tasks. Furthermore, we show that this measure imposes fundamental transformational constraints, strictly prohibiting the conversion of full-rank mixed states into pure resource states under free operations. Applying this framework, we identify classes of bound entangled states that achieve maximal operational advantage and provide an explicit counterexample that resolves a previously claimed superadditivity of the logarithmic coherence number. Collectively, our results bridge abstract convex-roof constructions with concrete operational tasks, offering a universal and physically meaningful tool for general convex quantum resource theories.</div>
+            <div class="paper-desc">Quantifying quantum resources is fundamental to characterizing nonclassical advantages in quantum information processing. Although convex-roof constructions provide a mathematically natural way to define resource measures, they are often computationally demanding and typically lack a direct operational interpretation. In this work, we introduce a Boolean convex-roof measure for general convex quantum resource theories...</div>
         </div>
     </div>
     
@@ -167,7 +200,7 @@
             <div class="paper-title">Gap-closing Experimental Estimation of Quantum Fisher Information</div>
             <div class="paper-authors">Qian-Xi Zhang*, <strong>Qi-Ming Ding*</strong>, Hu Chen, Shan Ling, Ya-Li Mao, Da-Jian Zhang<sup>†</sup>, Xiao Yuan<sup>†</sup>, Zheng-Da Li<sup>†</sup> </div>
             <div class="paper-venue"><em></em> <span class="year-badge">2026</span></div>
-            <div class="paper-desc">Estimating the quantum Fisher information (QFI) is a central task in quantum science and technology, underpinning the benchmarking of measurement devices and the certification of metrological advantages. However, due to the nonlinearity of QFI, standard estimation methods struggle to close the gap to the true value, causing inefficient convergence. Here, this challenge is addressed experimentally by implementing the recently proposed Krylov shadow tomography (KST) protocol on a versatile photonic platform capable of generating Greenberger-Horne-Zeilinger states of up to six qubits with controllable noise. By comparing results against conventional methods with matched resources, we show that KST produces lower mean squared errors and demonstrates the required gap closing behavior. Furthermore, the estimates derived from KST accurately predict the precision limits in a phase estimation experiment, consistent with the quantum Cram'{e}r-Rao bound. These results validate KST as a scalable and practical method for characterizing quantum resources in metrology.</div>
+            <div class="paper-desc">Estimating the quantum Fisher information (QFI) is a central task in quantum science and technology, underpinning the benchmarking of measurement devices and the certification of metrological advantages. However, due to the nonlinearity of QFI, standard estimation methods struggle to close the gap to the true value, causing inefficient convergence...</div>
         </div>
     </div>
     
@@ -176,17 +209,16 @@
             <div class="paper-title">Dynamics Simulation of Arbitrary Non-Hermitian Systems Based on Quantum Monte Carlo</div>
             <div class="paper-authors">Xiaogang Li, Kecheng Liu, <strong>Qi-Ming Ding<sup>†</sup></strong></div>
             <div class="paper-venue"><em>arXiv preprint arXiv:2507.11675</em> <span class="year-badge">2025</span></div>
-            <div class="paper-desc">Simulating the dynamics of non-Hermitian quantum systems is essential for probing the frontiers of modern physics. However, existing quantum algorithms are fundamentally constrained by the probability loss inherent to probabilistic post-selection, extensive quantum circuit depths and the substantial overhead of ancillary qubits. Herein, we introduce a hybrid quantum-classical algorithm grounded in Quantum Monte Carlo (QMC) to concurrently address both limitations. By reformulating non-unitary evolution as statistical sampling of Hamiltonian dynamics, our framework alleviates the probability loss issue induced by post-selection, achieves a reduction in quantum circuit depth, and requires at most one additional ancillary qubit. This general and flexible approach is capable of simulating arbitrary, time-dependent, and even non-diagonalizable Hamiltonians, providing a unified solution for diverse problems including parity-time ($\mathcal{PT}$)-symmetric systems, open quantum systems usually governed by completely positive trace-preserving (CPTP) maps, as well as non-CPTP maps. We demonstrate our method on a many-body open system, achieving excellent agreement with exact solutions. This work provides a resource-efficient pathway for exploring novel phenomena in complex non-Hermitian systems on near-term quantum devices.</div>
+            <div class="paper-desc">Simulating the dynamics of non-Hermitian quantum systems is essential for probing the frontiers of modern physics. However, existing quantum algorithms are fundamentally constrained by the probability loss inherent to probabilistic post-selection...</div>
             <div class="paper-links"><a href="https://arxiv.org/abs/2507.11675" target="_blank">arXiv</a></div>
         </div>
     </div>
     
-<h2>Publications</h2>
+    <h2>Publications</h2>
 
     <h3 style="color: #1772d0; margin-top: 30px;">First & Corresponding Author Papers</h3>
-    <div>
-
-        <div class="year-divider">2026</div>
+    
+    <div id="publications-list">
         
         <div class="paper">
             <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
@@ -196,7 +228,7 @@
                 <div class="paper-title">Obtaining Accurate Ground-State Properties on Near-term Quantum Devices</div>
                 <div class="paper-authors"><strong>Qi-Ming Ding</strong>, J Peng, J Huang, Y Zhang, H Wang, X Xu, J Ren, Y Ma<sup>†</sup>, X Yuan<sup>†</sup></div>
                 <div class="paper-venue"><em>Physical Review Applied</em> <span class="year-badge">2026-04-04</span></div>
-                <div class="paper-desc">Accurate ground-state calculations on noisy quantum computers are significantly constrained by restricted ansatznexpressivity and unavoidable hardware errors. We introduce a hybrid quantum–classical framework that simultaneously addresses these challenges. Our method systematically purifies noisy two-electron reduced density matrices from quantum devices by enforcing 𝑁-representability conditions through efficient semidefinite programming, guided by a norm-based distance constraint to the experimental data. To implement this constraint, we develop a hardware-efficient calibration protocol based on Clifford circuits. We demonstrate near full configuration-interaction accuracy for ground-state energies of H2, LiH, and H4, and compute precise scattering intensities for C6H8 on noisy hardware. This approach surpasses conventional methods by simultaneously overcoming both ansatz limitations and hardware noise, providing a framework to quantum advantage and offering an alternative for reliable simulations of complex molecular systems on noisy devices.</div>
+                <div class="paper-desc">Accurate ground-state calculations on noisy quantum computers are significantly constrained by restricted ansatznexpressivity and unavoidable hardware errors...</div>
                 <div class="paper-links">
                     <a href="https://arxiv.org/abs/2510.21255" target="_blank">arXiv</a>
                     <a href="https://doi.org/10.1103/lx3w-w6jx" target="_blank">Link</a>
@@ -212,7 +244,7 @@
                 <div class="paper-title">Constraint-aware quantum optimization via Hamming weight operators</div>
                 <div class="paper-authors">Y Hao, <strong>Qi-Ming Ding<sup>†</sup></strong>, X Yuan<sup>†</sup>, X Wang<sup>†</sup></div>
                 <div class="paper-venue"><em>Sci. China-Phys. Mech. Astron.</em> 69 (5), 250314 <span class="year-badge">2026-04-02</span></div>
-                <div class="paper-desc">Constrained combinatorial optimization with strict linear constraints underpins applications in drug discovery, power grids, logistics, and finance, yet remains computationally demanding for classical algorithms, especially at large scales. The Quantum Approximate Optimization Algorithm (QAOA) offers a promising quantum framework, but conventional penalty-based formulations distort optimization landscapes and demand deep circuits, undermining scalability on near-term hardware. In this work, we introduce Hamming Weight Operators, a new class of constraint-aware operators that confine quantum evolution strictly within the feasible subspace. Building on this idea, we develop Adaptive Hamming Weight Operator QAOA, which dynamically selects the most effective operators to construct shallow, problem-tailored circuits. We validate our approach on benchmark tasks from both finance and high-energy physics, specifically portfolio optimization and two-jet clustering with energy balance. Across these problems, our method inherently satisfies all constraints by construction, converges faster, and achieves higher Approximation Ratios than penalty-based QAOA, while requiring roughly half as many gates. By embedding constraint-aware operators into an adaptive variational framework, our approach establishes a scalable and hardware-efficient pathway for solving practical constrained optimization problems on near-term quantum devices.</div>
+                <div class="paper-desc">Constrained combinatorial optimization with strict linear constraints underpins applications in drug discovery, power grids, logistics, and finance...</div>
                 <div class="paper-links">
                     <a href="https://arxiv.org/abs/2601.01516" target="_blank">arXiv</a>
                     <a href="https://doi.org/10.1007/s11433-025-2895-4" target="_blank">Link</a>
@@ -228,12 +260,11 @@
                 <div class="paper-title">Scalable protocol for coherence estimation from scarce data: Theory and experiment</div>
                 <div class="paper-authors"><strong>Qi-Ming Ding*</strong>, Ting Zhang*, Hui Li, Da-Jian Zhang<sup>†</sup></div>
                 <div class="paper-venue"><em>Physical Review A</em> 113 (3), 032444 <span class="year-badge">2026-03-26</span></div>
-                <div class="paper-desc">Key quantum features like coherence are the fundamental resources enabling quantum advantages and ascertaining their presence in quantum systems is crucial for developing quantum technologies. This task, however, faces severe challenges in the noisy intermediate-scale quantum era. On one hand, experimental data are typically scarce, rendering full state reconstruction infeasible. On the other hand, these features are usually quantified by highly nonlinear functionals that elude efficient estimations via existing methods. In this work, we propose a scalable protocol for estimating coherence from scarce data and further experimentally demonstrate its practical utility. The key innovation here is to relax the potentially NP-hard coherence estimation problem into a computationally efficient optimization. This renders the computational cost in our protocol insensitive to the system size, in sharp contrast to the exponential growth in traditional methods. This work opens a route toward estimating coherence of large-scale quantum systems under data-scarce conditions.</div>
+                <div class="paper-desc">Key quantum features like coherence are the fundamental resources enabling quantum advantages and ascertaining their presence in quantum systems is crucial for developing quantum technologies...</div>
                 <div class="paper-links">
                     <a href="https://arxiv.org/abs/2510.21138" target="_blank">arXiv</a>
                     <a href="https://doi.org/10.1103/g8sh-hts2" target="_blank">Link</a>
                 </div>
-            
             </div>
         </div>
         
@@ -245,15 +276,13 @@
                 <div class="paper-title">Reliable Quantum Steering Detection under Imperfect Measurement</div>
                 <div class="paper-authors">T Zhang*, W Zhang*, JT Qiu, L Huang, X Yuan<sup>†</sup>, <strong>Qi-Ming Ding<sup>†</sup></strong></div>
                 <div class="paper-venue"><em>Physical Review Letters</em> 136 (9), 090201 <span class="year-badge">2026-03-02</span></div>
-                <div class="paper-desc">Quantum steering, a fundamental manifestation of nonlocal quantum correlations, plays a vital role in quantum key distribution, quantum randomness generation, and quantum metrology. Reliable experimental detection of quantum steering is therefore a key task in quantum information science, but it is often hindered by measurement imperfections. Here, we introduce a randomized measurement protocol designed to mitigate the effects of imperfect measurements and enhance detection reliability. We theoretically prove that this approach effectively suppresses measurement errors by requiring only local operations on the trusted party; moreover, its dimension-independent nature ensures ready adaptability to quantum systems of arbitrary finite size. We experimentally validate the method using polarization-entangled photons, demonstrating consistent performance under controlled misalignments for both 2- and 3-setting configurations. Our results provide a practical and reliable framework for steering detection in realistic experimental conditions, paving the way for its integration into quantum certification and communication protocols.</div>
+                <div class="paper-desc">Quantum steering, a fundamental manifestation of nonlocal quantum correlations, plays a vital role in quantum key distribution, quantum randomness generation, and quantum metrology...</div>
                 <div class="paper-links">
                     <a href="https://doi.org/10.1103/wgqg-hfw8" target="_blank">Link</a>
                 </div>
             </div>
         </div>
 
-
-        
         <div class="paper">
             <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
                 [F5]
@@ -262,7 +291,7 @@
                 <div class="paper-title">Large-Scale Efficient Molecule Geometry Optimization with Hybrid Quantum–Classical Computing</div>
                 <div class="paper-authors">Y Hao, <strong>Qi-Ming Ding<sup>†</sup></strong>, X Wang<sup>†</sup>, X Yuan<sup>†</sup></div>
                 <div class="paper-venue"><em>Journal of Chemical Theory and Computation</em> 22 (2), 859-868 <span class="year-badge">2026-01-13</span></div>
-                <div class="paper-desc">Accurately and efficiently predicting the equilibrium geometries of large molecules remains a central challenge in quantum computational chemistry, even with hybrid quantum–classical algorithms. Two major obstacles hinder progress: the large number of qubits required and the prohibitive cost of conventional nested optimization. In this work, we introduce a co-optimization framework that combines Density Matrix Embedding Theory (DMET) with Variational Quantum Eigensolver (VQE) to address these limitations. This approach substantially reduces the required quantum resources, enabling the treatment of molecular systems significantly larger than previously feasible. We first validate our framework on benchmark systems, such as H4 and H2O2, before demonstrating its efficacy in determining the equilibrium geometry of glycolic acid (C2H4O3)─a molecule of a size previously considered intractable for quantum geometry optimization. Our results show the method achieves high accuracy while drastically lowering computational cost. This work thus represents a significant step toward practical, scalable quantum simulations, moving beyond the small, proof-of-concept molecules that have historically dominated the field. More broadly, our framework establishes a tangible path toward leveraging quantum advantage for the in silico design of complex catalysts and pharmaceuticals.</div>
+                <div class="paper-desc">Accurately and efficiently predicting the equilibrium geometries of large molecules remains a central challenge in quantum computational chemistry, even with hybrid quantum–classical algorithms...</div>
                 <div class="paper-links">
                     <a href="https://arxiv.org/abs/2509.07460" target="_blank">arXiv</a>
                     <a href="https://doi.org/10.1021/acs.jctc.5c01435" target="_blank">Link</a>
@@ -270,8 +299,6 @@
             </div>
         </div>
 
-        <div class="year-divider">2024</div>
-        
         <div class="paper">
             <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
                 [F4]
@@ -280,7 +307,7 @@
                 <div class="paper-title">Molecular docking via quantum approximate optimization algorithm</div>
                 <div class="paper-authors"><strong>Qi-Ming Ding*<sup>†</sup></strong>, Yi-Ming Huang*<sup>†</sup>, Xiao Yuan<sup>†</sup></div>
                 <div class="paper-venue"><em>Physical Review Applied</em> 21 (3), 034036 <span class="year-badge">2024-03-19</span></div>
-                <div class="paper-desc">Molecular docking plays a pivotal role in drug discovery and precision medicine, furnishing insights into protein functionalities and fostering the development of therapeutics. Here, we introduce a potential alternative solution to this problem using a quantum approximate optimization algorithm (QAOA) based algorithm. Our method was applied to analyze diverse biological systems, including the SARS-CoV-2 Mpro complex with PM-2-020B, the DPP-4 complex with piperidine fused imidazopyridine 34, and the HIV-1 gp120 complex with JP-III-048. We found that the digitized-counterdiabatic QAOA (DCQAOA), which integrates the concept of counterdiabatic driving, surpasses the conventional QAOA in terms of quantum circuit depth and optimization efficiency. This is particularly evident in complex molecular-docking challenges, where DCQAOA delivers more accurate and biologically relevant results. Our research highlights the promising role of quantum computing in drug discovery and contributes significant insights towards the optimization of protein-ligand docking methodologies.</div>
+                <div class="paper-desc">Molecular docking plays a pivotal role in drug discovery and precision medicine, furnishing insights into protein functionalities and fostering the development of therapeutics...</div>
                 <div class="paper-links">
                     <a href="https://arxiv.org/abs/2308.04098" target="_blank">arXiv</a>
                     <a href="https://doi.org/10.1103/PhysRevApplied.21.034036" target="_blank">Link</a>
@@ -288,15 +315,13 @@
             </div>
         </div>
 
-        <div class="year-divider">2022</div>
-        
         <div class="paper">
             <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">[F3]</div>
             <div class="paper-info">
                 <div class="paper-title">No-go theorems for deterministic purification and probabilistic enhancement of coherence</div>
                 <div class="paper-authors"><strong>Qi-Ming Ding*<sup>†</sup></strong>, Quancheng Liu*<sup>†</sup></div>
                 <div class="paper-venue"><em>Journal of Physics A: Mathematical and Theoretical</em> 55 (10), 105301 <span class="year-badge">2022</span></div>
-                <div class="paper-desc">The manipulation of quantum coherence is one of the principal issues in the resource theory of coherence, with two critical topics being the purification and enhancement of coherence. Here, we present two no-go theorems for the deterministic purification of coherence and the probabilistic enhancement of coherence, respectively. Specifically, we prove that a quantum state cannot be deterministically purified if it can be expressed as a convex combination of an incoherent state and a coherent state. Besides, we give an easy-to-verified sufficient and necessary condition to determine whether a state can be probabilistically enhanced via a stochastic strictly incoherent operation (sSIO). Our findings provide two feasibility criteria for the deterministic purification and the probabilistic enhancement of coherence, respectively. These results have repercussions on the understanding of quantum coherence in real quantum systems.</div>
+                <div class="paper-desc">The manipulation of quantum coherence is one of the principal issues in the resource theory of coherence, with two critical topics being the purification and enhancement of coherence...</div>
                 <div class="paper-links">
                     <a href="https://arxiv.org/abs/2203.15238" target="_blank">arXiv</a>
                     <a href="https://doi.org/10.1088/1751-8121/ac4ecd" target="_blank">Link</a>
@@ -304,15 +329,13 @@
             </div>
         </div>
 
-        <div class="year-divider">2021</div>
-
         <div class="paper">
             <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">[F2]</div>
             <div class="paper-info">
                 <div class="paper-title">The tightness of multipartite coherence from spectrum estimation</div>
                 <div class="paper-authors"><strong>Qi-Ming Ding</strong>, Xiao-Xu Fang, He Lu<sup>†</sup></div>
                 <div class="paper-venue"><em>Entropy</em> 23 (11), 1519 <span class="year-badge">2021</span></div>
-                <div class="paper-desc">Detecting multipartite quantum coherence usually requires quantum state reconstruction, which is quite inefficient for large-scale quantum systems. Along this line of research, several efficient procedures have been proposed to detect multipartite quantum coherence without quantum state reconstruction, among which the spectrum-estimation-based method is suitable for various coherence measures. Here, we first generalize the spectrum-estimation-based method for the geometric measure of coherence. Then, we investigate the tightness of the estimated lower bound of various coherence measures, including the geometric measure of coherence, l1-norm of coherence, the robustness of coherence, and some convex roof quantifiers of coherence multiqubit GHZ states and linear cluster states. Finally, we demonstrate the spectrum-estimation-based method as well as the other two efficient methods by using the same experimental data [Ding et al. Phys. Rev. Research 3, 023228 (2021)]. We observe that the spectrum-estimation-based method outperforms other methods in various coherence measures, which significantly enhances the accuracy of estimation.</div>
+                <div class="paper-desc">Detecting multipartite quantum coherence usually requires quantum state reconstruction, which is quite inefficient for large-scale quantum systems...</div>
                 <div class="paper-links">
                     <a href="https://arxiv.org/abs/2104.12094" target="_blank">arXiv</a>
                     <a href="https://doi.org/10.3390/e23111519" target="_blank">Link</a>
@@ -326,16 +349,17 @@
                 <div class="paper-title">Efficient estimation of multipartite quantum coherence</div>
                 <div class="paper-authors"><strong>Qi-Ming Ding*</strong>, Xiao-Xu Fang*, Xiao Yuan, Ting Zhang, and He Lu<sup>†</sup></div>
                 <div class="paper-venue"><em>Physical Review Research</em> 3 (2), 023228 <span class="year-badge">2021</span></div>
-                <div class="paper-desc">Quantification of coherence lies at the heart of quantum information processing and fundamental physics. Exact evaluation of coherence measures generally needs a full reconstruction of the density matrix, which becomes intractable for large-scale multipartite systems. Here, we propose a systematic theoretical approach to efficiently estimating lower and upper bounds of coherence in multipartite states. Under the stabilizer formalism, the lower bound is determined by the spectrum estimation method with a small number of measurements, and the upper bound is determined by a single measurement. We verify our theory with a four-qubit optical quantum system. We experimentally implement various multiqubit entangled states, including the Greenberger-Horne-Zeilinger state, the cluster state, and the W state, and show how their coherences are efficiently inferred from measuring a few observables.</div>
+                <div class="paper-desc">Quantification of coherence lies at the heart of quantum information processing and fundamental physics. Exact evaluation of coherence measures generally needs a full reconstruction of the density matrix...</div>
                 <div class="paper-links">
                     <a href="https://arxiv.org/abs/2010.02612" target="_blank">arXiv</a>
                     <a href="https://doi.org/10.1103/PhysRevResearch.3.023228" target="_blank">Link</a>
                 </div>
             </div>
         </div>
-
         
     </div>
+    
+    <div class="pagination" id="pagination-controls"></div>
 
     <h3 style="color: #666; margin-top: 50px;">Co-authored Papers</h3>
     <div>
@@ -348,7 +372,7 @@
                     Chunhui Zhang*, Feng Xu*, ..., <strong>Qi-Ming Ding</strong>, ..., Dapeng Yu<sup>†</sup>
                 </div>
                 <div class="paper-venue"><em>Nature Nanotechnology</em>, 1-7 <span class="year-badge">2026</span></div>
-                <div class="paper-desc">Quantum errors induced by environmental noise are unavoidable and preclude the direct implementation of practical quantum computation. Fault-tolerant quantum computation offers one of the viable paths, necessitating the encoding and processing of information within logical qubits to curb such errors. Although substantial progress has been achieved recently in building silicon quantum computers, logical operations still haven’t been realized in silicon. Here we demonstrate a logical quantum processor using a phosphorus donor cluster in silicon. By implementing the [[4, 2, 2]] code, we realize the essential components for logical operations, which include fault-tolerant preparation of logical states and the characterization of a universal gate set comprising logical single-qubit and two-qubit gates. In particular, the logical T gate is achieved using the gate-by-measurement method, and magic states based on this gate are prepared. Furthermore, we execute the variational quantum eigensolver algorithm using two logical qubits and simulate the ground state of the electronic structure of the water molecule H2O. This work represents a key step towards scalable, fault-tolerant quantum computation in silicon spin qubits.</div>
+                <div class="paper-desc">Quantum errors induced by environmental noise are unavoidable and preclude the direct implementation of practical quantum computation. Fault-tolerant quantum computation offers one of the viable paths...</div>
                 <div class="paper-links">
                     <a href="https://www.nature.com/articles/s41565-026-02140-1" target="_blank">Link</a>
                 </div>
@@ -361,7 +385,7 @@
                 <div class="paper-title">Efficient quantum simulation of non-adiabatic molecular dynamics with precise electronic structure</div>
                 <div class="paper-authors">Tianyi Li, Yumeng Zeng, <strong>Qi-Ming Ding</strong>, Z Huo, X Xu, J Ren, D Tang<sup>†</sup>, X Cai<sup>†</sup>, X Yuan<sup>†</sup></div>
                 <div class="paper-venue"><em>Digital Discovery</em> 5, 548-570 <span class="year-badge">2026</span></div>
-                <div class="paper-desc">In the study of non-adiabatic chemical processes such as photocatalysis and photosynthesis, non-adiabatic molecular dynamics (NAMD) is an indispensable theoretical tool, which requires precise potential energy surfaces (PESs) of ground and excited states. Quantum computing offers promising potential for calculating PESs that are intractable for classical computers. However, its realistic application poses significant challenges to the development of quantum algorithms that are sufficiently general to enable efficient and precise PES calculations across chemical systems with diverse properties and to seamlessly adapt existing NAMD theories to quantum computing. In this work, we introduce a quantum-adapted extension to the Landau–Zener-Surface-Hopping (LZSH) NAMD. This extension incorporates curvature-driven hopping corrections that protect the population evolution while maintaining the efficiency gained from avoiding the computation of non-adiabatic couplings (NACs) and preserving the trajectory independence that enables parallelization. Furthermore, to ensure the high-precision PESs required for surface hopping dynamics, we develop a sub-microhartree-accurate PES calculation protocol. This protocol supports active space selection, enables parallel acceleration either on quantum or classical clusters, and demonstrates adaptability to diverse chemical systems—including the charged H3+ ion and the C2H4 molecule, a prototypical multi-reference benchmark. This work paves the way for practical application of quantum computing in NAMD, showcasing the potential of parallel simulation on quantum-classical heterogeneous clusters for ab initio computational chemistry.</div>
+                <div class="paper-desc">In the study of non-adiabatic chemical processes such as photocatalysis and photosynthesis, non-adiabatic molecular dynamics (NAMD) is an indispensable theoretical tool...</div>
                 <div class="paper-links">
                     <a href="https://arxiv.org/abs/2512.02376" target="_blank">arXiv</a>
                     <a href="10.1039/D5DD00433K" target="_blank">Link</a>
@@ -375,7 +399,7 @@
                 <div class="paper-title">A hardware demonstration of a universal programmable RRAM-based probabilistic computer for molecular docking</div>
                 <div class="paper-authors">Yihan He*, Ming-Chun Hong*, <strong>Qiming Ding</strong>, Chih-Sheng Lin, Chih-Ming Lai, Chao Fang, Xiao Gong, Tuo-Hung Hou<sup>†</sup>, Gengchiau Liang<sup>†</sup></div>
                 <div class="paper-venue"><em>Nature Communications</em> 17, 702  <span class="year-badge">2026</span></div>
-                <div class="paper-desc">Molecular docking is a critical computational strategy in drug discovery, but the diversity of biomolecular structures and flexible binding conformations create an enormous search space that challenges conventional computing. Quantum computing holds promise but remains constrained by scalability, hardware limitations, and precision issues. Here, we report a probabilistic computer (p-computer) prototype that solves complex molecular docking. The system is built upon artificial probabilistic bits (p-bits), fabricated in 180 nm CMOS with BEOL HfO₂ RRAM and compatible with compute-in-memory (CIM) schemes. A key innovation is the integration of Gaussian Random Number Generator-based p-bits with CIM, where the sigmoidal response arises from the Gaussian cumulative distribution function with coupling and bias coefficients directly encoded in the RRAM crossbar. This co-design alleviates the memory-to-compute bottleneck of prior CMOS-only and CMOS + X (emerging nanodevices) p-computers. Using this architecture, we experimentally solved a 42-node docking problem of lipoprotein with the LolA–LolCDE complex—a key target in developing antibiotics against Gram-negative bacteria, with results consistent with the Protein-Ligand Interaction Profiler tool. This work represents an early hardware application of p-computing in computational biology and demonstrates its potential to overcome the success rate and efficiency limitations of current technologies for complex bioinformatics problems.</div>
+                <div class="paper-desc">Molecular docking is a critical computational strategy in drug discovery, but the diversity of biomolecular structures and flexible binding conformations create an enormous search space that challenges conventional computing...</div>
                 <div class="paper-links">
                     <a href="https://arxiv.org/abs/2503.20254" target="_blank">arXiv</a>
                     <a href="https://doi.org/10.1038/s41467-025-67309-z" target="_blank">Link</a>
@@ -389,7 +413,7 @@
                 <div class="paper-title">Superadditivity of convex roof coherence measures</div>
                 <div class="paper-authors">CL Liu, <strong>Qi-Ming Ding</strong>, DM Tong<sup>†</sup></div>
                 <div class="paper-venue"><em>Journal of Physics A: Mathematical and Theoretical</em> 51 (41), 414012 <span class="year-badge">2018</span></div>
-                <div class="paper-desc">In this paper, we examine the superadditivity of convex roof coherence measures. We put forward a theorem on the superadditivity of convex roof coherence measures, which provides a sufficient condition to identify the convex roof coherence measures fulfilling the superadditivity. By applying the theorem to each of the known convex roof coherence measures, we prove that the coherence of formation and the coherence concurrence are superadditive, while the geometric measure of coherence, the convex roof coherence measure based on linear entropy, the convex roof coherence measure based on fidelity, and convex roof coherence measure based on 12-entropy are non-superadditive.</div>
+                <div class="paper-desc">In this paper, we examine the superadditivity of convex roof coherence measures. We put forward a theorem on the superadditivity of convex roof coherence measures...</div>
             </div>
         </div>
 
@@ -399,7 +423,7 @@
                 <div class="paper-title">A new coherence measure based on fidelity</div>
                 <div class="paper-authors">CL Liu, Da-Jian Zhang, Xiao-Dong Yu, <strong>Qi-Ming Ding</strong>, Longjiang Liu<sup>†</sup></div>
                 <div class="paper-venue"><em>Quantum Information Processing</em> 16 (8), 198 <span class="year-badge">2017</span></div>
-                <div class="paper-desc">Quantifying coherence is an essential endeavor for both quantum foundations and quantum technologies. In this paper, we put forward a quantitative measure of coherence by following the axiomatic definition of coherence measures introduced in [T. Baumgratz, M. Cramer, and M. B. Plenio, Phys. Rev. Lett. 113, 140401 (2014)]. Our measure is based on fidelity and analytically computable for arbitrary states of a qubit. As one of its applications, we show that our measure can be used to examine whether a pure qubit state can be transformed into another pure or mixed qubit state only by incoherent operations.</div>
+                <div class="paper-desc">Quantifying coherence is an essential endeavor for both quantum foundations and quantum technologies. In this paper, we put forward a quantitative measure of coherence by following the axiomatic definition...</div>
             </div>
         </div>
 
@@ -409,17 +433,80 @@
                 <div class="paper-title">Single-shot realization of nonadiabatic holonomic quantum gates in decoherence-free subspaces</div>
                 <div class="paper-authors">PZ Zhao, GF Xu, <strong>QM Ding</strong>, Erik Sjöqvist, DM Tong<sup>†</sup></div>
                 <div class="paper-venue"><em>Physical Review A</em> 95 (6), 062310 <span class="year-badge">2017</span></div>
-                <div class="paper-desc">Nonadiabatic holonomic quantum computation in decoherence-free subspaces has attracted increasing attention recently, as it allows for high-speed implementation and combines both the robustness of holonomic gates and the coherence stabilization of decoherence-free subspaces. Since the first protocol of nonadiabatic holonomic quantum computation in decoherence-free subspaces, a number of schemes for its physical implementation have been put forward. However, all previous schemes require two noncommuting gates to realize an arbitrary one-qubit gate, which doubles the exposure time of gates to error sources as well as the resource expenditure. In this paper, we propose an alternative protocol for nonadiabatic holonomic quantum computation in decoherence-free subspaces, in which an arbitrary one-qubit gate in decoherence-free subspaces is realized by a single-shot implementation. The present protocol not only maintains the merits of the original protocol but also avoids the extra work of combining two gates to implement an arbitrary one-qubit gate and thereby reduces the exposure time to various error sources.</div>
+                <div class="paper-desc">Nonadiabatic holonomic quantum computation in decoherence-free subspaces has attracted increasing attention recently, as it allows for high-speed implementation and combines both the robustness of holonomic gates...</div>
             </div>
         </div>
 
     </div>
 
-</div> </body>
+</div> 
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 设置每页显示的文章数量（设为 5，你可以随时修改）
+    const itemsPerPage = 5; 
+    
+    const listContainer = document.getElementById('publications-list');
+    if (!listContainer) return; 
+    
+    // 获取所有的 paper 元素
+    const papers = listContainer.querySelectorAll('.paper');
+    const paginationControls = document.getElementById('pagination-controls');
+    let currentPage = 1;
+
+    function displayPage(page) {
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+
+        papers.forEach((paper, index) => {
+            if (index >= startIndex && index < endIndex) {
+                // 匹配你 CSS 中的 .paper { display: flex; }
+                paper.style.display = 'flex'; 
+            } else {
+                paper.style.display = 'none';
+            }
+        });
+    }
+
+    function setupPagination() {
+        const pageCount = Math.ceil(papers.length / itemsPerPage);
+        paginationControls.innerHTML = '';
+
+        // 如果只有1页，不显示分页按钮
+        if (pageCount <= 1) return; 
+
+        for (let i = 1; i <= pageCount; i++) {
+            const btn = document.createElement('button');
+            btn.innerText = i;
+            if (i === currentPage) {
+                btn.classList.add('active');
+            }
+
+            btn.addEventListener('click', function() {
+                currentPage = i;
+                displayPage(currentPage);
+
+                // 更新按钮的高亮状态
+                const currentActive = paginationControls.querySelector('.active');
+                if (currentActive) {
+                    currentActive.classList.remove('active');
+                }
+                this.classList.add('active');
+
+                // 翻页后，页面自动平滑滚动回列表的顶部，方便阅读
+                listContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+
+            paginationControls.appendChild(btn);
+        }
+    }
+
+    // 初始化执行
+    if (papers.length > 0) {
+        displayPage(1);
+        setupPagination();
+    }
+});
+</script>
+</body>
 </html>
-    
-
-
-    
-
-    
