@@ -74,28 +74,6 @@
             vertical-align: middle;
         }
         
-        /* 年份分割线样式 (已被移除以适应分页，但保留样式类备用) */
-        .year-divider {
-            font-size: 22px;
-            color: #222;
-            font-weight: 600;
-            margin-top: 45px;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #eef0f2;
-            padding-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        .year-divider::before {
-            content: "";
-            display: inline-block;
-            width: 5px;
-            height: 18px;
-            background-color: #1772d0;
-            margin-right: 10px;
-            border-radius: 2px;
-        }
-        
         /* 摘要样式 */
         .paper-desc { 
             font-size: 14px; 
@@ -112,7 +90,7 @@
         }
         .paper-links a:hover { background-color: #1772d0; color: white; }
         
-        /* ===== 新增：分页控件样式 ===== */
+        /* 分页控件样式 */
         .pagination {
             display: flex;
             justify-content: center;
@@ -210,9 +188,10 @@
         </li>
     </ul>
     
-    <h2>Preprints</h2>
+    <h2>Preprints & Submissions</h2>
 
     <div class="paper">
+        <div style="font-weight: bold; color: #555; margin-right: 15px; font-size: 18px; min-width: 35px;">[P5]</div>
         <div class="paper-info">
             <div class="paper-title">Measurement-Device-Independent Quantum Steering Remains Fragile</div>
             <div class="paper-authors">Wenhao Zhang, <strong>Qi-Ming Ding <sup>†</sup> </strong> and Xiao Yuan<sup>†</sup> </div>
@@ -222,6 +201,7 @@
     </div>
     
     <div class="paper">
+        <div style="font-weight: bold; color: #555; margin-right: 15px; font-size: 18px; min-width: 35px;">[P4]</div>
         <div class="paper-info">
             <div class="paper-title">Unveiling non-Markovianity in unital quantum dynamical maps via Majorization</div>
             <div class="paper-authors">Fan Wu, Wei-Ran Ma, C. L. Liu<sup>†</sup> , <strong>Qi-Ming Ding <sup>†</sup> </strong> </div>
@@ -231,6 +211,7 @@
     </div>
 
     <div class="paper">
+        <div style="font-weight: bold; color: #555; margin-right: 15px; font-size: 18px; min-width: 35px;">[P3]</div>
         <div class="paper-info">
             <div class="paper-title">Accelerating Drug Discovery with Gaussian Boson Sampling</div>
             <div class="paper-authors">Yuanye Zhu, Yuan Yao, <strong>Qi-Ming Ding <sup>†</sup> </strong> </div>
@@ -240,6 +221,7 @@
     </div>
     
     <div class="paper">
+        <div style="font-weight: bold; color: #555; margin-right: 15px; font-size: 18px; min-width: 35px;">[P2]</div>
         <div class="paper-info">
             <div class="paper-title">Boolean Convex-Roof Measure: An Operationally Meaningful Quantifier of Quantum Resources</div>
             <div class="paper-authors">Chaohui Zhou*, <strong>Qi-Ming Ding*</strong>, Xiaodan Cui, Baoqing Sun, and C. L. Liu<sup>†</sup> </div>
@@ -249,15 +231,7 @@
     </div>
     
     <div class="paper">
-        <div class="paper-info">
-            <div class="paper-title">Gap-closing Experimental Estimation of Quantum Fisher Information</div>
-            <div class="paper-authors">Qian-Xi Zhang*, <strong>Qi-Ming Ding*</strong>, Hu Chen, Shan Ling, Ya-Li Mao, Da-Jian Zhang<sup>†</sup>, Xiao Yuan<sup>†</sup>, Zheng-Da Li<sup>†</sup> </div>
-            <div class="paper-venue"><em></em> <span class="year-badge">2026</span></div>
-            <div class="paper-desc">Estimating the quantum Fisher information (QFI) is a central task in quantum science and technology, underpinning the benchmarking of measurement devices and the certification of metrological advantages. However, due to the nonlinearity of QFI, standard estimation methods struggle to close the gap to the true value, causing inefficient convergence...</div>
-        </div>
-    </div>
-    
-    <div class="paper">
+        <div style="font-weight: bold; color: #555; margin-right: 15px; font-size: 18px; min-width: 35px;">[P1]</div>
         <div class="paper-info">
             <div class="paper-title">Dynamics Simulation of Arbitrary Non-Hermitian Systems Based on Quantum Monte Carlo</div>
             <div class="paper-authors">Xiaogang Li, Kecheng Liu, <strong>Qi-Ming Ding<sup>†</sup></strong></div>
@@ -273,6 +247,18 @@
     
     <div id="publications-list">
         
+        <div class="paper">
+            <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
+                [F10]
+            </div>
+            <div class="paper-info">
+                <div class="paper-title">Gap-closing Experimental Estimation of Quantum Fisher Information</div>
+                <div class="paper-authors">Qian-Xi Zhang*, <strong>Qi-Ming Ding*</strong>, Hu Chen, Shan Ling, Ya-Li Mao, Da-Jian Zhang<sup>†</sup>, Xiao Yuan<sup>†</sup>, Zheng-Da Li<sup>†</sup></div>
+                <div class="paper-venue"><em>Science Advances</em> (Accepted) <span class="year-badge">2026</span></div>
+                <div class="paper-desc">Estimating the quantum Fisher information (QFI) is a central task in quantum science and technology, underpinning the benchmarking of measurement devices and the certification of metrological advantages. However, due to the nonlinearity of QFI, standard estimation methods struggle to close the gap to the true value, causing inefficient convergence...</div>
+            </div>
+        </div>
+
         <div class="paper">
             <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
                 [F9]
@@ -522,7 +508,7 @@
 
    </div>
 
-    <!-- 共同作者的分页控件：添加了全新的 id -->
+    <!-- 共同作者的分页控件 -->
     <div class="pagination" id="co-authored-pagination"></div>
 
 </div> 
@@ -530,13 +516,11 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     
-    // 封装一个通用的分页函数
-    // 参数: listId (文章列表容器的ID), paginationId (分页按钮容器的ID), itemsPerPage (每页显示数量)
+    // 封装通用分页函数
     function setupPaginationForList(listId, paginationId, itemsPerPage) {
         const listContainer = document.getElementById(listId);
         const paginationControls = document.getElementById(paginationId);
         
-        // 如果找不到对应的容器，直接跳过
         if (!listContainer || !paginationControls) return; 
         
         const papers = listContainer.querySelectorAll('.paper');
@@ -548,7 +532,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             papers.forEach((paper, index) => {
                 if (index >= startIndex && index < endIndex) {
-                    // 匹配你 CSS 中的 .paper { display: flex; }
                     paper.style.display = 'flex'; 
                 } else {
                     paper.style.display = 'none';
@@ -560,7 +543,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const pageCount = Math.ceil(papers.length / itemsPerPage);
             paginationControls.innerHTML = '';
 
-            // 如果只有1页，不显示分页按钮
             if (pageCount <= 1) return; 
 
             for (let i = 1; i <= pageCount; i++) {
@@ -574,14 +556,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     currentPage = i;
                     displayPage(currentPage);
 
-                    // 更新按钮的高亮状态
                     const currentActive = paginationControls.querySelector('.active');
                     if (currentActive) {
                         currentActive.classList.remove('active');
                     }
                     this.classList.add('active');
 
-                    // 翻页后，页面自动平滑滚动回当前列表的顶部，方便阅读
                     listContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
 
@@ -589,17 +569,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // 初始化执行
         if (papers.length > 0) {
             displayPage(1);
             setupPagination();
         }
     }
 
-    // 分别为两个列表初始化分页
-    // 你可以随时修改最后的数字来调整对应列表“每页显示的文章数量”
-    setupPaginationForList('publications-list', 'pagination-controls', 5); // 第一作者列表：每页 5 篇
-    setupPaginationForList('co-authored-list', 'co-authored-pagination', 5); // 共同作者列表：每页 5 篇 (可改成10)
+    // 初始化分页
+    setupPaginationForList('publications-list', 'pagination-controls', 5);
+    setupPaginationForList('co-authored-list', 'co-authored-pagination', 5);
     
 });
 </script>
