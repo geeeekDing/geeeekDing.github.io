@@ -18,6 +18,7 @@
             max-width: 840px;
             margin: 0 auto;
             padding: 50px 20px;
+            position: relative;
         }
         a { color: #1772d0; text-decoration: none; }
         a:hover { color: #f09228; text-decoration: underline; }
@@ -119,6 +120,29 @@
             background-color: #f0f8ff;
         }
 
+        /* 语言切换样式 */
+        .lang-toggle-btn {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #1772d0;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            z-index: 100;
+        }
+        .lang-toggle-btn:hover {
+            background-color: #f09228;
+        }
+        .lang-zh {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .header { flex-direction: column-reverse; text-align: center; }
             .header-text { padding-right: 0; }
@@ -126,6 +150,7 @@
             .paper { flex-direction: column; }
             .paper-img { width: 100%; max-width: 200px; margin: 0 auto 15px auto; }
             .paper-info { width: 100%; }
+            .lang-toggle-btn { top: 20px; right: 20px; }
         }
     </style>
 </head>
@@ -133,16 +158,24 @@
 
 <div class="container">
     
+    <button class="lang-toggle-btn" onclick="toggleLanguage()">English / 中文</button>
+
     <div class="header">
         <div class="header-text">
             <h1>Qi-Ming Ding</h1>
-            <p style="font-size: 15px; color: #666;">
-            I am an Associate Researcher at the School of Computer Science at Peking University. 
-            Previously I served as a Postdoctoral Fellow at the Center on Frontiers of Computing Studies at Peking University from April 2022 to April 2025 under the guidance of Professor <a href="http://qtheorist.site/research/" target="_blank">Xiao Yuan</a>. 
-                I earned my Doctor of Philosophy in Physics from the School of Physics at Shandong University in December 2021 under the supervision of Professor <a href="https://www.researchgate.net/profile/Dianmin-Tong" target="_blank">Dian Min Tong</a>. 
-                My core research interests span quantum resource theory, quantum information theory, near term quantum algorithms, and the intersection of quantum computing and artificial intelligence. 
-                As of September 2026, I have authored 19 peer reviewed papers. Among these I am the first or corresponding author on 11 publications in prestigious journals including Nature Nanotechnology, Physical Review Letters, Science Advances, Journal of Chemical Theory and Computation, Nature Communications, Physical Review A, and Physical Review Applied.
-            </p>
+            
+            <div class="lang-en">
+                <p style="font-size: 15px; color: #666;">
+                    I am an Associate Researcher at the School of Computer Science at Peking University. Previously I served as a Postdoctoral Fellow at the Center on Frontiers of Computing Studies at Peking University from April 2022 to April 2025 under the guidance of Professor <a href="http://qtheorist.site/research/" target="_blank">Xiao Yuan</a>. I earned my Doctor of Philosophy in Physics from the School of Physics at Shandong University in December 2021 under the supervision of Professor <a href="https://www.researchgate.net/profile/Dianmin-Tong" target="_blank">Dian Min Tong</a>. My core research interests span quantum resource theory, quantum information theory, near term quantum algorithms, and the intersection of quantum computing and artificial intelligence. As of September 2026, I have authored 17 peer reviewed papers. Among these I am the first or corresponding author on 11 publications in prestigious journals including Nature Nanotechnology, Physical Review Letters, Science Advances, Journal of Chemical Theory and Computation, Nature Communications, Physical Review A, and Physical Review Applied.
+                </p>
+            </div>
+            
+            <div class="lang-zh">
+                <p style="font-size: 15px; color: #666;">
+                    我目前在北京大学计算机学院担任副研究员。此前我于2022年4月至2025年4月在北京大学前沿计算研究中心担任博士后研究员，师从<a href="http://qtheorist.site/research/" target="_blank">袁骁</a>教授。我于2021年12月在山东大学物理学院获得物理学博士学位，导师为<a href="https://www.researchgate.net/profile/Dianmin-Tong" target="_blank">仝殿民</a>教授。我的核心研究兴趣涵盖量子资源理论、量子信息理论、近期量子算法以及量子计算与人工智能的交叉领域。截至2026年9月，我已发表17篇同行评审论文。其中作为第一作者或通讯作者，我在《自然·纳米技术》、《物理评论快报》、《科学进展》、《化学理论与计算杂志》、《自然通讯》、《物理评论A》以及《物理评论应用》等顶级期刊上发表了11篇论文。
+                </p>
+            </div>
+
             <div class="nav-links">
                 <a href="mailto:dqiming94@pku.edu.cn">Email</a>
                 <a href="https://scholar.google.com.hk/citations?user=Pl5r_UgAAAAJ" target="_blank">Google Scholar</a>
@@ -165,23 +198,44 @@
         <li><strong>[2026.01.13]</strong> 很高兴我们在量子计算应用于大尺度分子几何优化的工作在中科院一区Top杂志 <em>Journal of Chemical Theory and Computation</em> 发表！</li>
     </ul>
 
-<h2>Research Summary</h2>
-<p style="font-size: 15px; color: #555; margin-bottom: 20px;">
-    My research bridges fundamental quantum information theory with practical quantum algorithms to solve complex problems in chemistry and biology in the real world. Moving from physical resource quantification to the design of algorithms that are efficient for hardware and finally to interdisciplinary applications, my work progresses along three continuous main lines:
-</p>
-<ul style="font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 50px;">
-    <li style="margin-bottom: 12px;">
-        <strong>Quantum Resources Theory:</strong> Nonclassical resources like quantum coherence form the physical foundation of quantum advantage. My early work established theoretical boundaries by proving <a href="https://doi.org/10.1088/1751-8121/ac4ecd" target="_blank">theorems prohibiting coherence purification and enhancement</a>. As quantum systems scale up, traditional state tomography becomes infeasible. My research naturally transitioned to efficiently extracting resource information under environments that are noisy and scarce in data. I developed a series of protocols from <a href="https://doi.org/10.1103/PhysRevResearch.3.023228" target="_blank">spectrum estimation</a> and <a href="https://doi.org/10.3390/e23111519" target="_blank">entropy evaluation</a> to <a href="https://doi.org/10.1103/g8sh-hts2" target="_blank">relaxation based on optimization</a>. These methods successfully achieved experimental estimations for multipartite coherence, <a href="https://doi.org/10.1103/wgqg-hfw8" target="_blank">quantum steering</a>, and Quantum Fisher Information.
-    </li>
-    <li style="margin-bottom: 12px;">
-        <strong>Quantum Algorithms and Error Mitigation:</strong> To realize practical computing on quantum devices operating at an intermediate scale with noise, I design hybrid algorithms that are aware of constraints and resilient to noise. I proposed an adaptive architecture for quantum approximate optimization based on Hamming weight operators, which fundamentally <a href="https://doi.org/10.1007/s11433-025-2895-4" target="_blank">solves optimization under strict linear constraints</a>. I also developed a hybrid framework based on Quantum Monte Carlo methods to <a href="https://arxiv.org/abs/2507.11675" target="_blank">efficiently simulate systems that are not Hermitian</a>. Crucially, I have made substantial contributions to Quantum Error Mitigation. I designed a <a href="https://doi.org/10.1103/lx3w-w6jx" target="_blank">purification technique based on Semidefinite Programming</a> to extract molecular ground states with high accuracy on noisy hardware. Furthermore, I supported the <a href="https://www.nature.com/articles/s41565-026-02140-1" target="_blank">first experimental demonstration of universal logical operations</a> and variational quantum eigensolvers on a silicon quantum processor.
-    </li>
-    <li style="margin-bottom: 12px;">
-        <strong>Interdisciplinary Applications:</strong> I actively push frontier algorithms into practical scenarios like drug discovery and computational chemistry. For static structure solving, I extended hybrid quantum computing to the <a href="https://doi.org/10.1021/acs.jctc.5c01435" target="_blank">geometry optimization of molecules on a large scale</a> by integrating Density Matrix Embedding Theory. For dynamic simulations, I facilitated <a href="https://doi.org/10.1039/D5DD00433K" target="_blank">quantum simulations of molecular dynamics that are not adiabatic</a> with high precision electronic structures. To tackle the immense complexity of molecular docking in drug research and development, I proposed a <a href="https://doi.org/10.1103/PhysRevApplied.21.034036" target="_blank">solution utilizing digitized counterdiabatic methods</a>. I also contributed to developing a <a href="https://doi.org/10.1038/s41467-025-67309-z" target="_blank">probabilistic computer hardware prototype based on resistive random access memory</a>, offering breakthroughs across multiple dimensions for classical computing bottlenecks.
-    </li>
-</ul>
+    <h2 class="lang-en">Research Summary</h2>
+    <h2 class="lang-zh">研究总结</h2>
     
-<h2>Preprints & Submissions</h2>
+    <div class="lang-en">
+        <p style="font-size: 15px; color: #555; margin-bottom: 20px;">
+            My research bridges fundamental quantum information theory with practical quantum algorithms to solve complex problems in chemistry and biology in the real world. Moving from physical resource quantification to the design of algorithms that are efficient for hardware and finally to interdisciplinary applications, my work progresses along three continuous main lines:
+        </p>
+        <ul style="font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 50px;">
+            <li style="margin-bottom: 12px;">
+                <strong>Quantum Resources Theory:</strong> Nonclassical resources like quantum coherence form the physical foundation of quantum advantage. My early work established theoretical boundaries by proving theorems prohibiting coherence purification and enhancement [<a href="https://doi.org/10.1088/1751-8121/ac4ecd" target="_blank">J. Phys. A 2022</a>]. As quantum systems scale up, traditional state tomography becomes infeasible. My research naturally transitioned to efficiently extracting resource information under environments that are noisy and scarce in data. I developed a series of protocols from spectrum estimation [<a href="https://doi.org/10.1103/PhysRevResearch.3.023228" target="_blank">Phys. Rev. Res. 2021</a>, <a href="https://doi.org/10.3390/e23111519" target="_blank">Entropy 2021</a>] to relaxation based on optimization [<a href="https://doi.org/10.1103/g8sh-hts2" target="_blank">Phys. Rev. A 2026</a>]. These methods successfully achieved experimental estimations for multipartite coherence, quantum steering [<a href="https://doi.org/10.1103/wgqg-hfw8" target="_blank">Phys. Rev. Lett. 2026</a>], and Quantum Fisher Information.
+            </li>
+            <li style="margin-bottom: 12px;">
+                <strong>Quantum Algorithms and Error Mitigation:</strong> To realize practical computing on quantum devices operating at an intermediate scale with noise, I design hybrid algorithms that are aware of constraints and resilient to noise. I proposed an adaptive architecture for quantum approximate optimization based on Hamming weight operators, which fundamentally solves optimization under strict linear constraints [<a href="https://doi.org/10.1007/s11433-025-2895-4" target="_blank">SCPMA 2026</a>]. I also developed a hybrid framework based on Quantum Monte Carlo methods to efficiently simulate systems that are not Hermitian [<a href="https://arxiv.org/abs/2507.11675" target="_blank">arXiv 2025</a>]. Crucially, I have made substantial contributions to Quantum Error Mitigation. I designed a purification technique based on Semidefinite Programming to extract molecular ground states with high accuracy on noisy hardware [<a href="https://doi.org/10.1103/lx3w-w6jx" target="_blank">Phys. Rev. Appl. 2026</a>]. Furthermore, I supported the first experimental demonstration of universal logical operations and variational quantum eigensolvers on a silicon quantum processor [<a href="https://www.nature.com/articles/s41565-026-02140-1" target="_blank">Nat. Nanotechnol. 2026</a>].
+            </li>
+            <li style="margin-bottom: 12px;">
+                <strong>Interdisciplinary Applications:</strong> I actively push frontier algorithms into practical scenarios like drug discovery and computational chemistry. For static structure solving, I extended hybrid quantum computing to the geometry optimization of molecules on a large scale by integrating Density Matrix Embedding Theory [<a href="https://doi.org/10.1021/acs.jctc.5c01435" target="_blank">JCTC 2026</a>]. For dynamic simulations, I facilitated quantum simulations of molecular dynamics that are not adiabatic with high precision electronic structures [<a href="https://doi.org/10.1039/D5DD00433K" target="_blank">Digital Discovery 2026</a>]. To tackle the immense complexity of molecular docking in drug research and development, I proposed a solution utilizing digitized counterdiabatic methods [<a href="https://doi.org/10.1103/PhysRevApplied.21.034036" target="_blank">Phys. Rev. Appl. 2024</a>]. I also contributed to developing a probabilistic computer hardware prototype based on resistive random access memory, offering breakthroughs across multiple dimensions for classical computing bottlenecks [<a href="https://doi.org/10.1038/s41467-025-67309-z" target="_blank">Nat. Commun. 2026</a>].
+            </li>
+        </ul>
+    </div>
+    
+    <div class="lang-zh">
+        <p style="font-size: 15px; color: #555; margin-bottom: 20px;">
+            我的研究致力于将基础量子信息理论与实用的量子算法相结合，旨在解决化学和生物学领域复杂的现实问题。从物理资源的量化到适配硬件的高效算法设计，再到跨学科应用，我的工作沿着以下三条主线持续推进：
+        </p>
+        <ul style="font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 50px;">
+            <li style="margin-bottom: 12px;">
+                <strong>量子资源理论：</strong>量子相干性等非经典资源是量子优势的物理基础。我早期的工作确立了理论边界，证明了禁止相干性纯化与放大的定理 [<a href="https://doi.org/10.1088/1751-8121/ac4ecd" target="_blank">J. Phys. A 2022</a>]。随着量子系统规模的扩大，传统的量子态层析变得不再可行。我的研究自然过渡到在数据稀缺和噪声环境下高效提取资源信息。我提出了一系列协议，从光谱估计 [<a href="https://doi.org/10.1103/PhysRevResearch.3.023228" target="_blank">Phys. Rev. Res. 2021</a>, <a href="https://doi.org/10.3390/e23111519" target="_blank">Entropy 2021</a>] 到基于优化的松弛方法 [<a href="https://doi.org/10.1103/g8sh-hts2" target="_blank">Phys. Rev. A 2026</a>]。这些方法成功实现了多体相干性、量子导引 [<a href="https://doi.org/10.1103/wgqg-hfw8" target="_blank">Phys. Rev. Lett. 2026</a>] 以及量子费舍尔信息的实验估算。
+            </li>
+            <li style="margin-bottom: 12px;">
+                <strong>量子算法与错误缓解：</strong>为了在含噪声的中等规模量子设备上实现具有实用价值的计算，我设计了感知约束且对噪声具有鲁棒性的混合算法。我提出了一种基于汉明权重算子的自适应量子近似优化架构，从根本上解决了严格线性约束下的优化问题 [<a href="https://doi.org/10.1007/s11433-025-2895-4" target="_blank">SCPMA 2026</a>]。我也开发了一个基于量子蒙特卡洛方法的混合框架用于高效模拟非厄米系统 [<a href="https://arxiv.org/abs/2507.11675" target="_blank">arXiv 2025</a>]。至关重要的是，我在量子错误缓解方面做出了实质性贡献。我设计了一种基于半正定规划的纯化技术，能够在含噪声硬件上高精度地提取分子基态 [<a href="https://doi.org/10.1103/lx3w-w6jx" target="_blank">Phys. Rev. Appl. 2026</a>]。此外我支持了在硅基量子处理器上实现通用逻辑门操作和变分量子本征求解器的首次实验演示 [<a href="https://www.nature.com/articles/s41565-026-02140-1" target="_blank">Nat. Nanotechnol. 2026</a>]。
+            </li>
+            <li style="margin-bottom: 12px;">
+                <strong>跨学科应用：</strong>我积极将前沿算法推向药物发现和计算化学等实际场景。在静态结构求解方面，我通过整合密度矩阵嵌入理论将混合量子计算扩展到大规模分子的几何优化中 [<a href="https://doi.org/10.1021/acs.jctc.5c01435" target="_blank">JCTC 2026</a>]。在动态模拟方面，我以高精度的电子结构促进了非绝热分子动力学的量子模拟 [<a href="https://doi.org/10.1039/D5DD00433K" target="_blank">Digital Discovery 2026</a>]。为了应对药物研发中分子对接的巨大复杂性，我提出了一种利用数字化反绝热方法的解决方案 [<a href="https://doi.org/10.1103/PhysRevApplied.21.034036" target="_blank">Phys. Rev. Appl. 2024</a>]。我也参与开发了一种基于阻变存储器的概率计算机硬件原型，为突破经典计算瓶颈提供了多维度的创新方案 [<a href="https://doi.org/10.1038/s41467-025-67309-z" target="_blank">Nat. Commun. 2026</a>]。
+            </li>
+        </ul>
+    </div>
+
+    <h2>Preprints & Submissions</h2>
 
     <div class="paper">
         <div style="font-weight: bold; color: #555; margin-right: 15px; font-size: 18px; min-width: 35px;">[P5]</div>
@@ -516,12 +570,28 @@
 
    </div>
 
-    <!-- 共同作者的分页控件 -->
-    <div class="pagination" id="co-authored-pagination"></div>
+   <!-- 共同作者的分页控件 -->
+   <div class="pagination" id="co-authored-pagination"></div>
 
 </div> 
 
 <script>
+let currentLang = 'en';
+function toggleLanguage() {
+    const enElements = document.querySelectorAll('.lang-en');
+    const zhElements = document.querySelectorAll('.lang-zh');
+    
+    if (currentLang === 'en') {
+        enElements.forEach(el => el.style.display = 'none');
+        zhElements.forEach(el => el.style.display = 'block');
+        currentLang = 'zh';
+    } else {
+        enElements.forEach(el => el.style.display = 'block');
+        zhElements.forEach(el => el.style.display = 'none');
+        currentLang = 'en';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     
     // 封装通用分页函数
