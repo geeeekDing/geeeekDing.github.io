@@ -18,7 +18,7 @@
   const topics = {
     resources: ['Quantum resources', '量子资源'],
     algorithms: ['Algorithms & computing', '量子算法与计算'],
-    chemistry: ['Chemistry & discovery', '量子化学与应用']
+    chemistry: ['Chemistry & molecular computing', '量子化学与分子计算']
   };
   let mode = 'all', topic = null, currentPage = 1;
   const pageSize = 6;
@@ -58,7 +58,7 @@
     const langButton = document.getElementById('language-toggle');
     langButton.textContent = isZh() ? 'EN' : '中文';
     langButton.setAttribute('aria-label', isZh() ? 'Switch to English' : '切换到中文');
-    controls.search.placeholder = isZh() ? '搜索题名、作者、研究主题…' : 'Search title, author, topic…';
+    controls.search.placeholder = isZh() ? '搜索论文、作者或关键词…' : 'Search title, author, topic…';
     controls.search.setAttribute('aria-label', isZh() ? '按题名、作者或研究主题搜索论文' : 'Search papers by title, author, or topic');
     controls.year.setAttribute('aria-label', isZh() ? '按年份筛选' : 'Filter by year');
     try { localStorage.setItem('qmd-language', language); } catch (_) {}
@@ -74,41 +74,6 @@
   controls.topic.addEventListener('click', () => { topic = null; currentPage = 1; filterPapers(); });
   document.querySelectorAll('.research-filter').forEach(b => b.addEventListener('click', () => {
     topic = b.dataset.topic; mode = 'all'; currentPage = 1; controls.search.value = ''; controls.year.value = 'all'; filterPapers(); scrollToPapers();
-  }));
-
-  const theta = document.getElementById('theta');
-  const phi = document.getElementById('phi');
-  const radius = document.getElementById('radius');
-  const fixed = n => (Math.abs(n) < 0.0005 ? 0 : n).toFixed(3);
-  function updateQubit() {
-    const a = Number(theta.value) * Math.PI / 180;
-    const b = Number(phi.value) * Math.PI / 180;
-    const r = Number(radius.value) / 100;
-    const x = r * Math.sin(a) * Math.cos(b), y = r * Math.sin(a) * Math.sin(b), z = r * Math.cos(a);
-    // Orthographic camera: orthonormal rows keep every state inside the sphere.
-    const azimuth = Math.PI / 6, elevation = 25 * Math.PI / 180, scale = 103;
-    const ex = 160 + scale * (Math.cos(azimuth) * x - Math.sin(azimuth) * y);
-    const ey = 136 + scale * Math.sin(elevation) * (Math.sin(azimuth) * x + Math.cos(azimuth) * y);
-    const sx = ex, sy = ey - scale * Math.cos(elevation) * z;
-    const line = document.getElementById('state-vector');
-    line.setAttribute('x2', sx.toFixed(2)); line.setAttribute('y2', sy.toFixed(2));
-    line.setAttribute('marker-end', r < .015 ? '' : 'url(#vector-arrow)');
-    const dot = document.getElementById('state-point'); dot.setAttribute('cx', sx.toFixed(2)); dot.setAttribute('cy', sy.toFixed(2));
-    document.getElementById('state-projection').setAttribute('d', `M160 136 L${ex.toFixed(2)} ${ey.toFixed(2)} L${sx.toFixed(2)} ${sy.toFixed(2)}`);
-    document.getElementById('coherence-value').textContent = fixed(r * Math.sin(a));
-    document.getElementById('theta-value').value = theta.value + '°';
-    document.getElementById('phi-value').value = phi.value + '°';
-    document.getElementById('radius-value').value = r.toFixed(2);
-    document.getElementById('rho00').textContent = fixed((1 + z) / 2);
-    document.getElementById('rho11').textContent = fixed((1 - z) / 2);
-    const re = x / 2, im = y / 2;
-    document.getElementById('rho01').textContent = `${fixed(re)} ${im >= 0 ? '−' : '+'} ${fixed(Math.abs(im))}i`;
-    document.getElementById('rho10').textContent = `${fixed(re)} ${im >= 0 ? '+' : '−'} ${fixed(Math.abs(im))}i`;
-  }
-  [theta, phi, radius].forEach(el => el.addEventListener('input', updateQubit));
-  document.querySelectorAll('[data-state]').forEach(b => b.addEventListener('click', () => {
-    const states = {plus: [90, 0, 100], zero: [0, 0, 100], mixed: [90, 0, 0]};
-    [theta.value, phi.value, radius.value] = states[b.dataset.state]; updateQubit();
   }));
 
   let toastTimer;
@@ -135,5 +100,5 @@
   }
   window.addEventListener('scroll', updateProgress, {passive: true});
   window.addEventListener('resize', updateProgress);
-  setLanguage(language); updateQubit(); updateProgress();
+  setLanguage(language); updateProgress();
 })();
