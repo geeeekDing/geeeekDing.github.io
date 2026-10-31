@@ -1,674 +1,198 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qi-Ming Ding</title>
-    <style>
-        /* 全局高级感字体与配色 */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #ffffff;
-            color: #444444;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 840px;
-            margin: 0 auto;
-            padding: 50px 20px;
-            position: relative;
-        }
-        a { color: #1772d0; text-decoration: none; }
-        a:hover { color: #f09228; text-decoration: underline; }
-        
-        h1 { font-size: 34px; color: #222222; font-weight: 500; margin-bottom: 15px; }
-        h2 {
-            font-size: 24px; color: #222222; border-bottom: 1px solid #eeeeee;
-            padding-bottom: 10px; margin-top: 50px; margin-bottom: 25px; font-weight: 500;
-        }
-        
-        /* 顶部：左边文字，右边头像 */
-        .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 50px; }
-        .header-text { flex: 1; padding-right: 50px; font-size: 16px; }
-        .header-text p { margin-bottom: 15px; }
-        .profile-img {
-            width: 220px; height: 220px; border-radius: 50%; object-fit: cover;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-        }
-        
-        /* 导航链接 */
-        .nav-links { margin-top: 25px; }
-        .nav-links a { margin-right: 18px; font-size: 15px; font-weight: 500; }
-        
-        /* 动态列表 */
-        .news-list { list-style-type: none; padding-left: 0; }
-        .news-list li { margin-bottom: 10px; font-size: 15px; }
-        
-        /* 论文排版 */
-        .paper { display: flex; margin-bottom: 40px; align-items: flex-start; }
-        .paper-img {
-            width: 25%; margin-right: 25px; border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden; flex-shrink: 0; border: 1px solid #eee;
-        }
-        .paper-img img { width: 100%; display: block; }
-        .paper-info { flex: 1;}
-        .paper-title { font-weight: 600; font-size: 16.5px; color: #222; margin-bottom: 5px; }
-        .paper-authors { color: #555; font-size: 14.5px; margin-bottom: 4px; }
-        
-        /* 年份标签样式 */
-        .paper-venue em {
-            font-style: normal; 
-            font-weight: 600;   
-            color: #222;        
-        }
-        .year-badge {
-            display: inline-block;
-            background-color: #f1f3f5;
-            color: #495057;
-            padding: 1px 7px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-left: 6px;
-            vertical-align: middle;
-        }
-        
-        /* 摘要样式 */
-        .paper-desc { 
-            font-size: 14px; 
-            color: #555; 
-            margin-bottom: 12px; 
-            background-color: #fdfdfd;
-            border-left: 3px solid #1772d0;
-            padding: 5px 10px;
-        }
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Qi-Ming Ding, quantum information and computing researcher at Peking University. Quantum resources, algorithms, error mitigation, and computational chemistry.">
+<link rel="canonical" href="https://geeeekding.github.io/"><meta property="og:title" content="Qi-Ming Ding 丁齐鸣 · Quantum Information & Computing"><meta property="og:description" content="Quantum resources, practical algorithms, and computational chemistry. Explore publications and selected research citations."><meta property="og:image" content="https://geeeekding.github.io/assets/qiming2024.jpg">
+<meta name="theme-color" content="#f8f8f5"><title>Qi-Ming Ding 丁齐鸣 · Quantum Information & Computing</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css"><script src="assets/bibliography.js" defer></script><script src="assets/site.js" defer></script>
+</head><body><a class="skip" href="#main">Skip to content</a><div class="reading-progress" aria-hidden="true"></div>
+<header class="site-header"><div class="wrap header-inner"><a class="wordmark" href="#">Qi-Ming Ding<span>丁齐鸣</span></a><nav class="main-nav" aria-label="Main navigation">
+<a href="#research"><span data-en="Research" data-zh="研究" >Research</span></a><a href="#impact"><span data-en="Citations" data-zh="学术引用" >Citations</span></a><a href="#publications"><span data-en="Publications" data-zh="论文" >Publications</span></a><a href="#journey"><span data-en="About" data-zh="经历" >About</span></a></nav><button id="language-toggle" class="lang-button" type="button" aria-label="Switch to Chinese">中文</button></div></header>
+<main id="main" class="wrap">
+<section class="hero" aria-labelledby="name"><div><div class="eyebrow"><span data-en="Quantum information &amp; computing" data-zh="量子信息与量子计算" >Quantum information &amp; computing</span></div>
+<div class="profile-line"><img src="assets/qiming2024.jpg" alt="Portrait of Qi-Ming Ding 丁齐鸣" class="portrait" width="76" height="76"><h1 id="name">Qi-Ming Ding<small>丁 齐 鸣</small></h1></div>
+<div class="position"><strong><span data-en="Associate Researcher · Peking University" data-zh="副研究员 · 北京大学" >Associate Researcher · Peking University</span></strong><br><span data-en="School of Computer Science · Beijing, China" data-zh="计算机学院 · 中国 北京" >School of Computer Science · Beijing, China</span></div>
+<p class="hero-statement lang-en">Understanding quantum resources.<br><em>Building useful quantum algorithms.</em></p>
+<p class="hero-statement lang-zh">理解量子资源，<br><em>探索量子算法的实际用途。</em></p>
+<div class="hero-bio lang-en">I work on quantum resources, near-term algorithms, and error mitigation, with applications in chemistry and drug discovery. Previously, I was a postdoctoral fellow at PKU's CFCS with <a href="https://qtheorist.site/" target="_blank" rel="noopener noreferrer" >Xiao Yuan</a>, and received my PhD at Shandong University with <a href="https://www.researchgate.net/profile/Dianmin-Tong" target="_blank" rel="noopener noreferrer" >Dian Min Tong</a>.</div>
+<div class="hero-bio lang-zh">我研究量子资源、近期量子算法与错误缓解，并探索其在计算化学和药物研发中的应用。此前在北京大学前沿计算研究中心从事博士后研究，合作导师为<a href="https://qtheorist.site/" target="_blank" rel="noopener noreferrer" >袁骁</a>；博士毕业于山东大学，导师为<a href="https://www.researchgate.net/profile/Dianmin-Tong" target="_blank" rel="noopener noreferrer" >仝殿民</a>。</div>
+<div class="profile-links"><a href="mailto:dqiming94@pku.edu.cn">Email</a><a href="https://scholar.google.com/citations?user=Pl5r_UgAAAAJ" target="_blank" rel="noopener noreferrer" >Google Scholar</a><a href="https://orcid.org/0000-0002-0548-6519" target="_blank" rel="noopener noreferrer" >ORCID</a><a href="https://github.com/geeeekDing" target="_blank" rel="noopener noreferrer" >GitHub</a><a href="https://www.zhihu.com/people/curry-paul" target="_blank" rel="noopener noreferrer" >Zhihu</a></div>
+<div class="hero-stats"><div class="stat"><strong>19</strong><span data-en="Peer-reviewed papers" data-zh="已正式发表论文" >Peer-reviewed papers</span></div><div class="stat"><strong>11</strong><span data-en="First / co-first or corresponding author" data-zh="第一／共同第一或通讯作者论文" >First / co-first or corresponding author</span></div><div class="stat"><strong>3</strong><span data-en="Public preprints" data-zh="公开预印本" >Public preprints</span></div></div></div>
+<section class="playground" aria-labelledby="playground-title"><div class="playground-head"><span id="playground-title"><i class="live-dot" aria-hidden="true"></i><span data-en="A qubit you can explore" data-zh="一个可以探索的量子比特" >A qubit you can explore</span></span><span class="toy-label">ρ = (I + r · σ) / 2</span></div>
+<svg class="bloch-scene" viewBox="0 0 320 265" role="img" aria-label="Interactive Bloch sphere representation of a qubit"><defs><radialGradient id="sphere-fill"><stop offset="0" stop-color="#edf5fb"/><stop offset="1" stop-color="#f8fafc" stop-opacity=".3"/></radialGradient><marker id="vector-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="m0 0 8 4-8 4" fill="#246597"/></marker></defs><circle cx="160" cy="136" r="103" fill="url(#sphere-fill)"/><circle class="sphere-line" cx="160" cy="136" r="103"/><ellipse class="sphere-line sphere-dashed" cx="160" cy="136" rx="103" ry="43.53"/><path class="sphere-line" d="M249.20 157.76 L248.86 149.55 L247.85 141.22 L246.16 132.86 L243.82 124.52 L240.84 116.27 L237.25 108.17 L233.07 100.29 L228.33 92.67 L223.07 85.38 L217.34 78.48 L211.16 72.02 L204.60 66.04 L197.70 60.59 L190.51 55.72 L183.09 51.46 L175.49 47.85 L167.77 44.90 L160.00 42.65 L152.23 41.11 L144.51 40.29 L136.91 40.20 L129.49 40.84 L122.30 42.20 L115.40 44.27 L108.84 47.05 L102.66 50.50 L96.93 54.60 L91.67 59.32 L86.93 64.63 L82.75 70.48 L79.16 76.82 L76.18 83.62 L73.84 90.82 L72.15 98.36 L71.14 106.18 L70.80 114.24 L71.14 122.45 L72.15 130.78 L73.84 139.14 L76.18 147.48 L79.16 155.73 L82.75 163.83 L86.93 171.71 L91.67 179.33 L96.93 186.62 L102.66 193.52 L108.84 199.98 L115.40 205.96 L122.30 211.41 L129.49 216.28 L136.91 220.54 L144.51 224.15 L152.23 227.10 L160.00 229.35 L167.77 230.89 L175.49 231.71 L183.09 231.80 L190.51 231.16 L197.70 229.80 L204.60 227.73 L211.16 224.95 L217.34 221.50 L223.07 217.40 L228.33 212.68 L233.07 207.37 L237.25 201.52 L240.84 195.18 L243.82 188.38 L246.16 181.18 L247.85 173.64 L248.86 165.82 L249.20 157.76 Z"/><path class="sphere-axis" d="M160 27.7v216.6M56.5 110.8l207 50.4M219.7 92.3l-119.4 87.4"/><text class="sphere-text" x="145" y="18">|0⟩</text><text class="sphere-text" x="145" y="263">|1⟩</text><text class="sphere-text" x="269" y="168">x</text><text class="sphere-text" x="87" y="190">y</text><path id="state-projection" class="sphere-line sphere-dashed" d="M160 136L205 100"/><line id="state-vector" class="vector-line" x1="160" y1="136" x2="185" y2="100" marker-end="url(#vector-arrow)"/><circle id="state-point" class="state-point" cx="185" cy="100" r="5"/><circle cx="160" cy="136" r="2.5" fill="#849aa8"/></svg>
+<div class="coherence-readout"><div class="readout-label"><span data-en="Coherence" data-zh="量子相干性" >Coherence</span> <span>C<sub>l₁</sub>(ρ)</span></div><strong id="coherence-value">0.736</strong></div>
+<div class="control-row"><label for="theta"><span data-en="Polar angle θ" data-zh="极角 θ" >Polar angle θ</span></label><input id="theta" type="range" min="0" max="180" value="60"><output id="theta-value" for="theta">60°</output></div>
+<div class="control-row"><label for="phi"><span data-en="Phase φ" data-zh="相位 φ" >Phase φ</span></label><input id="phi" type="range" min="0" max="360" value="30"><output id="phi-value" for="phi">30°</output></div>
+<div class="control-row"><label for="radius"><span data-en="Bloch length r" data-zh="Bloch向量长度 r" >Bloch length r</span></label><input id="radius" type="range" min="0" max="100" value="85"><output id="radius-value" for="radius">0.85</output></div>
+<div class="state-presets"><button type="button" data-state="plus">|+⟩</button><button type="button" data-state="zero">|0⟩</button><button type="button" data-state="mixed"><span data-en="Maximally mixed" data-zh="最大混合态" >Maximally mixed</span></button></div>
+<details class="matrix-details"><summary><span data-en="Look inside the density matrix" data-zh="看看密度矩阵" >Look inside the density matrix</span></summary><div class="density-matrix"><span id="rho00"></span><span id="rho01"></span><span id="rho10"></span><span id="rho11"></span></div></details>
+<p data-en="Illustration in the computational basis. Cₗ₁ = r sin θ; changing phase alone leaves its value unchanged." data-zh="计算基下的单量子比特示意。Cₗ₁ = r sin θ；单独改变相位不会改变该相干性度量。" class="toy-note">Illustration in the computational basis. Cₗ₁ = r sin θ; changing phase alone leaves its value unchanged.</p></section></section>
 
-        .paper-links a {
-            margin-right: 10px; font-size: 12px; font-weight: 500; border: 1px solid #1772d0;
-            padding: 2px 8px; border-radius: 4px; transition: all 0.2s; text-decoration: none;
-        }
-        .paper-links a:hover { background-color: #1772d0; color: white; }
-        
-        /* 分页控件样式 */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-            margin-bottom: 50px;
-            gap: 8px;
-        }
-        .pagination button {
-            padding: 6px 14px;
-            border: 1px solid #1772d0;
-            background-color: #ffffff;
-            color: #1772d0;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 14.5px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-        .pagination button.active {
-            background-color: #1772d0;
-            color: #ffffff;
-            border-color: #1772d0;
-        }
-        .pagination button:hover:not(.active) {
-            background-color: #f0f8ff;
-        }
+<section id="research" class="section"><div class="section-heading"><div><span class="section-no">01 / RESEARCH</span><h2 data-en="Three connected directions" data-zh="三个相互联系的研究方向" >Three connected directions</h2></div><p data-en="From characterizing quantum resources to designing algorithms and studying molecular problems." data-zh="从量子资源表征出发，连接算法设计与分子问题研究。" >From characterizing quantum resources to designing algorithms and studying molecular problems.</p></div><div class="research-grid"><article class="research-card"><svg viewBox="0 0 180 85" aria-hidden="true"><rect x="10" y="8" width="62" height="62" rx="4" fill="#f0f5fa" stroke="#c3d4df"/><g fill="#246597"><circle cx="25" cy="23" r="6"/><circle cx="57" cy="55" r="6"/><circle cx="57" cy="23" r="6" opacity=".4"/><circle cx="25" cy="55" r="6" opacity=".4"/></g><path d="M86 39h25m-5-5 5 5-5 5" fill="none" stroke="#849ba9"/><path d="M130 65V15m0 50h40m-32-8V38m10 19V27m10 30V20" fill="none" stroke="#246597" stroke-width="2"/><text x="23" y="82" font-size="8" fill="#7f919b" font-family="monospace">ρ → resources</text></svg><span class="field-no">01</span><h3 data-en="Quantifying quantum resources" data-zh="量化量子资源" >Quantifying quantum resources</h3><p data-en="Coherence, steering, and Fisher information. Extracting useful structure from incomplete and imperfect measurements." data-zh="相干性、量子导引与费舍尔信息。从有限且不完美的测量中提取资源信息。" >Coherence, steering, and Fisher information. Extracting useful structure from incomplete and imperfect measurements.</p><button class="text-button research-filter" data-topic="resources" type="button"><span data-en="Explore the papers" data-zh="查看相关论文" >Explore the papers</span></button></article><article class="research-card"><svg viewBox="0 0 180 85" aria-hidden="true"><g stroke="#c5d8d0" fill="none"><path d="M8 20h164M8 43h164M8 66h164"/><path d="M83 20v46M136 20v23"/></g><g fill="#487a69"><circle cx="83" cy="20" r="4"/><circle cx="136" cy="20" r="4"/></g><g stroke="#487a69" fill="#f2f7f4"><rect x="25" y="10" width="26" height="20" rx="3"/><rect x="109" y="56" width="26" height="20" rx="3"/><circle cx="83" cy="66" r="8"/><circle cx="136" cy="43" r="8"/></g><path d="M77 66h12m-6-6v12m47-29h12m-6-6v12" stroke="#487a69"/><g font-size="10" font-family="monospace" fill="#487a69"><text x="34" y="24">H</text><text x="117" y="70">R</text></g></svg><span class="field-no">02</span><h3 data-en="Making algorithms practical" data-zh="让算法适配真实设备" >Making algorithms practical</h3><p data-en="Constraint-aware optimization, error mitigation, and the resources needed to run useful quantum computations." data-zh="约束感知优化、错误缓解，以及运行量子计算所需的资源评估。" >Constraint-aware optimization, error mitigation, and the resources needed to run useful quantum computations.</p><button class="text-button research-filter" data-topic="algorithms" type="button"><span data-en="Explore the papers" data-zh="查看相关论文" >Explore the papers</span></button></article><article class="research-card"><svg viewBox="0 0 180 85" aria-hidden="true"><g fill="none" stroke="#d4b8a9" stroke-width="1.5"><path d="m48 14 25 14v29L48 72 22 57V28zM73 28l27-13 26 15v29l-26 14-27-16m53-27 26-15"/><path d="m30 32 18-10 17 10M30 53l18 10 17-10m37-30 17 10v21"/></g><g fill="#b36a49"><circle cx="22" cy="28" r="5"/><circle cx="73" cy="57" r="5"/><circle cx="126" cy="30" r="5"/><circle cx="152" cy="15" r="7"/></g><g fill="#d7b8a5"><circle cx="48" cy="72" r="4"/><circle cx="100" cy="15" r="4"/></g></svg><span class="field-no">03</span><h3 data-en="From circuits to molecules" data-zh="从量子线路到分子问题" >From circuits to molecules</h3><p data-en="Molecular docking, geometry optimization, and non-adiabatic dynamics with hybrid computational methods." data-zh="利用混合计算方法，研究分子对接、几何优化与非绝热动力学。" >Molecular docking, geometry optimization, and non-adiabatic dynamics with hybrid computational methods.</p><button class="text-button research-filter" data-topic="chemistry" type="button"><span data-en="Explore the papers" data-zh="查看相关论文" >Explore the papers</span></button></article></div><div class="research-strip"><span>QUANTUM RESOURCES</span><i class="strip-line"></i><span>ALGORITHMS</span><i class="strip-line"></i><span>APPLICATIONS</span></div></section>
 
-        /* 语言切换样式 */
-        .lang-toggle-btn {
-            position: absolute;
-            top: 50px;
-            right: 20px;
-            background-color: #1772d0;
-            color: #ffffff;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: background-color 0.3s;
-            z-index: 100;
-        }
-        .lang-toggle-btn:hover {
-            background-color: #f09228;
-        }
-        .lang-zh {
-            display: none;
-        }
+<section class="section news-section" id="news"><div class="news-head"><span class="section-no">RECENT NOTES</span><h2 data-en="Research updates" data-zh="研究动态" >Research updates</h2><a class="small-link" href="#publications"><span data-en="All publications →" data-zh="查看全部论文 →" >All publications →</span></a></div><div><div class="news-item"><time datetime="2026-10-13">2026.10.13</time><p><a href="https://arxiv.org/abs/2609.10965v2" target="_blank" rel="noopener noreferrer" ><span data-en="Updated preprint: an algorithm-to-execution framework for surface-code quantum computing." data-zh="表面码量子计算的算法到执行框架预印本更新至v2。" >Updated preprint: an algorithm-to-execution framework for surface-code quantum computing.</span></a></p></div><div class="news-item"><time datetime="2026-09-15">2026.09.15</time><p><a href="https://doi.org/10.1103/q9lf-cp11" target="_blank" rel="noopener noreferrer" ><span data-en="Symmetry-assisted quantum measurements, published in Physical Review Letters." data-zh="对称性辅助量子测量研究发表于Physical Review Letters。" >Symmetry-assisted quantum measurements, published in Physical Review Letters.</span></a></p></div><div class="news-item"><time datetime="2026-09-09">2026.09.09</time><p><a href="https://doi.org/10.1126/sciadv.aef4342" target="_blank" rel="noopener noreferrer" ><span data-en="Experimental quantum Fisher information estimation, published in Science Advances." data-zh="量子费舍尔信息估计的实验研究发表于Science Advances。" >Experimental quantum Fisher information estimation, published in Science Advances.</span></a></p></div><div class="news-item"><time datetime="2026-09-03">2026.09.03</time><p><a href="https://doi.org/10.1103/yd74-5t5x" target="_blank" rel="noopener noreferrer" ><span data-en="Non-Hermitian dynamics via quantum circuit Monte Carlo, published in Physical Review A." data-zh="量子线路蒙特卡洛模拟非厄米动力学研究发表于Physical Review A。" >Non-Hermitian dynamics via quantum circuit Monte Carlo, published in Physical Review A.</span></a></p></div><details class="news-more"><summary><span data-en="Earlier updates" data-zh="更早的动态" >Earlier updates</span></summary><div class="news-item"><time datetime="2026-05-21">2026.05.21</time><p><a href="https://doi.org/10.1103/lx3w-w6jx" target="_blank" rel="noopener noreferrer" ><span data-en="Error mitigation for accurate molecular ground-state properties, published in Physical Review Applied." data-zh="面向精确分子基态性质的错误缓解研究发表于Physical Review Applied。" >Error mitigation for accurate molecular ground-state properties, published in Physical Review Applied.</span></a></p></div><div class="news-item"><time datetime="2026-03-26">2026.03.26</time><p><a href="https://doi.org/10.1007/s11433-025-2895-4" target="_blank" rel="noopener noreferrer" ><span data-en="Constraint-aware quantum optimization, published in Science China Physics, Mechanics &amp; Astronomy." data-zh="约束感知量子优化研究发表于Science China Physics, Mechanics &amp; Astronomy。" >Constraint-aware quantum optimization, published in Science China Physics, Mechanics &amp; Astronomy.</span></a></p></div><div class="news-item"><time datetime="2026-03-26">2026.03.26</time><p><a href="https://doi.org/10.1103/g8sh-hts2" target="_blank" rel="noopener noreferrer" ><span data-en="Coherence estimation from scarce data, published in Physical Review A." data-zh="稀缺数据下的相干性估计研究发表于Physical Review A。" >Coherence estimation from scarce data, published in Physical Review A.</span></a></p></div><div class="news-item"><time datetime="2026-03-02">2026.03.02</time><p><a href="https://doi.org/10.1103/wgqg-hfw8" target="_blank" rel="noopener noreferrer" ><span data-en="Reliable quantum steering detection, published in Physical Review Letters." data-zh="可靠量子导引探测研究发表于Physical Review Letters。" >Reliable quantum steering detection, published in Physical Review Letters.</span></a></p></div><div class="news-item"><time datetime="2026-01-13">2026.01.13</time><p><a href="https://doi.org/10.1021/acs.jctc.5c01435" target="_blank" rel="noopener noreferrer" ><span data-en="Molecular geometry optimization with hybrid quantum–classical computing, published in JCTC." data-zh="混合量子—经典分子几何优化研究发表于JCTC。" >Molecular geometry optimization with hybrid quantum–classical computing, published in JCTC.</span></a></p></div></details></div></section>
 
-        @media (max-width: 768px) {
-            .header { flex-direction: column-reverse; text-align: center; }
-            .header-text { padding-right: 0; }
-            .profile-img { margin-bottom: 25px; }
-            .paper { flex-direction: column; }
-            .paper-img { width: 100%; max-width: 200px; margin: 0 auto 15px auto; }
-            .paper-info { width: 100%; }
-            .lang-toggle-btn { top: 20px; right: 20px; }
-        }
-    </style>
-</head>
-<body>
+<section id="impact" class="impact-section"><div class="section-heading"><div><span class="section-no">02 / RESEARCH IN CONTEXT</span><h2 data-en="Selected citations &amp; research uptake" data-zh="正面引用与研究应用" >Selected citations &amp; research uptake</h2></div><p data-en="How other papers discuss, use, or build on this work. Selected passages linked to their sources." data-zh="其他论文如何评价、采用或拓展这些工作。每条摘录均链接至原始出处。" >How other papers discuss, use, or build on this work. Selected passages linked to their sources.</p></div><div class="citation-grid"><article class="citation-card"><div class="citation-top"><span data-en="Review assessment" data-zh="综述评价" class="citation-category">Review assessment</span><span>2021</span></div>
+    <h3><a href="https://doi.org/10.1002/qute.202100040" target="_blank" rel="noopener noreferrer" >Experimental Progress on Quantum Coherence: Detection, Quantification, and Manipulation</a></h3><p class="citation-journal">Advanced Quantum Technologies 4, 2100040 · Kang-Da Wu et al.</p>
+    <blockquote><p>“use stabilizer measurements to ensure that measuring few local observables can effectively and efficiently bound multipartite coherence”</p></blockquote><p data-en="The review highlights our photonic experiment and its efficient bounds on multipartite coherence from a few local measurements." data-zh="综述介绍了我们的光子实验，并肯定少量局域测量可有效、高效地约束多体相干性。" class="citation-explanation">The review highlights our photonic experiment and its efficient bounds on multipartite coherence from a few local measurements.</p>
+    <div class="cited-work"><span data-en="Citing our work" data-zh="所引用的本人论文" >Citing our work</span><a href="https://doi.org/10.1103/PhysRevResearch.3.023228" target="_blank" rel="noopener noreferrer" >Efficient estimation of multipartite quantum coherence · Phys. Rev. Research (2021)</a></div>
+    <details class="citation-details"><summary><span data-en="Where this appears" data-zh="查看引用位置与上下文" >Where this appears</span></summary><p data-en="PDF page 7, section 3.1; reference [117] points to arXiv:2010.02612, the preprint of our Physical Review Research article." data-zh="PDF第7页，第3.1节；参考文献[117]指向arXiv:2010.02612，即本人Physical Review Research论文的预印本。" >PDF page 7, section 3.1; reference [117] points to arXiv:2010.02612, the preprint of our Physical Review Research article.</p><p data-en="The preceding spectrum-estimation theory is credited to reference [116]; our experimental demonstration is cited as [117]. The statement concerns the efficiency of the experimental estimation." data-zh="前述谱估计理论归于文献[116]，本人的实验演示对应[117]。摘录肯定的是该实验估计的效率，不将理论方法的全部源头归于本人。" >The preceding spectrum-estimation theory is credited to reference [116]; our experimental demonstration is cited as [117]. The statement concerns the efficiency of the experimental estimation.</p></details>
+    <div class="citation-bottom"><a href="https://www.ippt.pan.pl/repository/open/o8857.pdf#page=7" target="_blank" rel="noopener noreferrer" ><span data-en="Read source ↗" data-zh="阅读原文 ↗" >Read source ↗</span></a><a href="https://doi.org/10.1002/qute.202100040" target="_blank" rel="noopener noreferrer" >DOI ↗</a></div></article><article class="citation-card"><div class="citation-top"><span data-en="Reproduction example" data-zh="方法复现案例" class="citation-category">Reproduction example</span><span>2025</span></div>
+    <h3><a href="https://doi.org/10.1021/acs.chemrev.4c00678" target="_blank" rel="noopener noreferrer" >Quantum Machine Learning in Drug Discovery: Applications in Academia and Pharmaceutical Industries</a></h3><p class="citation-journal">Chemical Reviews 125, 5436–5460 · Anthony M. Smaldone et al.</p>
+    <blockquote><p>“reproduces the results using DC-QAOA and compares the CPU and GPU runtimes”</p></blockquote><p data-en="The review discusses our docking paper and points to a CUDA-Q tutorial reproducing DC-QAOA results and comparing CPU/GPU simulation runtimes." data-zh="综述介绍本人分子对接论文，并说明CUDA-Q教程复现了DC-QAOA结果、比较CPU与GPU模拟运行时间。" class="citation-explanation">The review discusses our docking paper and points to a CUDA-Q tutorial reproducing DC-QAOA results and comparing CPU/GPU simulation runtimes.</p>
+    <div class="cited-work"><span data-en="Citing our work" data-zh="所引用的本人论文" >Citing our work</span><a href="https://doi.org/10.1103/PhysRevApplied.21.034036" target="_blank" rel="noopener noreferrer" >Molecular docking via quantum approximate optimization algorithm · Phys. Rev. Applied (2024)</a></div>
+    <details class="citation-details"><summary><span data-en="Where this appears" data-zh="查看引用位置与上下文" >Where this appears</span></summary><p data-en="Section 5.1, printed page 5449 (PDF page 14). The docking paper is reference [194]; the CUDA-Q tutorial is reference [196]." data-zh="第5.1节，印刷页5449（PDF第14页）。本人对接论文对应文献[194]，CUDA-Q教程对应[196]。" >Section 5.1, printed page 5449 (PDF page 14). The docking paper is reference [194]; the CUDA-Q tutorial is reference [196].</p><p data-en="This is a concrete example of reproduction and computational benchmarking. The CPU/GPU comparison concerns classical simulation of a quantum algorithm, rather than demonstrated quantum-hardware speedup." data-zh="这是方法复现与计算基准比较的具体案例。CPU/GPU比较针对量子算法的经典模拟，不代表量子硬件加速。" >This is a concrete example of reproduction and computational benchmarking. The CPU/GPU comparison concerns classical simulation of a quantum algorithm, rather than demonstrated quantum-hardware speedup.</p></details>
+    <div class="citation-bottom"><a href="https://cqdmqd.yale.edu/sites/default/files/2025-09/revQML_DrugDiscovery.pdf#page=14" target="_blank" rel="noopener noreferrer" ><span data-en="Read source ↗" data-zh="阅读原文 ↗" >Read source ↗</span></a><a href="https://doi.org/10.1021/acs.chemrev.4c00678" target="_blank" rel="noopener noreferrer" >DOI ↗</a></div></article><article class="citation-card"><div class="citation-top"><span data-en="Subsequent algorithm research" data-zh="后续算法研究" class="citation-category">Subsequent algorithm research</span><span>2025</span></div>
+    <h3><a href="https://link.springer.com/article/10.1007/s10107-025-02318-w" target="_blank" rel="noopener noreferrer" >A fixed-point algorithm for matrix projections with applications in quantum information</a></h3><p class="citation-journal">Mathematical Programming · Shrigyan Brahmachari, Roberto Rubboli &amp; Marco Tomamichel</p>
+    <blockquote><p>“The fidelity of coherence is an important resource measure in this resource theory”</p></blockquote><p data-en="Fidelity of coherence is studied as an application and numerical benchmark for a new fixed-point algorithm, with our paper among the cited foundations." data-zh="后续研究将相干性保真度作为固定点算法的计算与数值比较对象，本人论文是其中引用的基础工作之一。" class="citation-explanation">Fidelity of coherence is studied as an application and numerical benchmark for a new fixed-point algorithm, with our paper among the cited foundations.</p>
+    <div class="cited-work"><span data-en="Citing our work" data-zh="所引用的本人论文" >Citing our work</span><a href="https://link.springer.com/article/10.1007/s11128-017-1650-7" target="_blank" rel="noopener noreferrer" >A new coherence measure based on fidelity · Quantum Information Processing (2017)</a></div>
+    <details class="citation-details"><summary><span data-en="Where this appears" data-zh="查看引用位置与上下文" >Where this appears</span></summary><p data-en="Author preprint v3, section 7 after equation (77), jointly citing [34,26]. See also section 8, equation (86), and Figure 1(b). Published reference [26] maps to our DOI." data-zh="作者预印本v3第7节，公式(77)之后的句子共同引用[34,26]；另见第8节公式(86)及图1(b)。正式版文献[26]与本人DOI对应。" >Author preprint v3, section 7 after equation (77), jointly citing [34,26]. See also section 8, equation (86), and Figure 1(b). Published reference [26] maps to our DOI.</p><p data-en="The assessment jointly cites two papers, so it should not be attributed exclusively to our article. The context is read from arXiv v3; publication metadata and the reference mapping are checked separately." data-zh="评价句同时引用两篇论文，因此不将其独占归因于本人工作。引用语境读取自arXiv v3，发表信息与参考文献对应关系另行核对。" >The assessment jointly cites two papers, so it should not be attributed exclusively to our article. The context is read from arXiv v3; publication metadata and the reference mapping are checked separately.</p></details>
+    <div class="citation-bottom"><a href="https://arxiv.org/html/2312.14615v3#S7" target="_blank" rel="noopener noreferrer" ><span data-en="Read source ↗" data-zh="阅读原文 ↗" >Read source ↗</span></a><a href="https://link.springer.com/article/10.1007/s10107-025-02318-w" target="_blank" rel="noopener noreferrer" >DOI ↗</a></div></article><article class="citation-card"><div class="citation-top"><span data-en="Method adoption · preprint" data-zh="方法采用 · 预印本" class="citation-category">Method adoption · preprint</span><span>2025</span></div>
+    <h3><a href="https://arxiv.org/abs/2503.04239" target="_blank" rel="noopener noreferrer" >Quantum Approximate Optimization Algorithms for Molecular Docking</a></h3><p class="citation-journal">arXiv:2503.04239 · Preprint · Christos Papalitsas et al. · Pfizer</p>
+    <blockquote><p>“We then follow strategies by Ding et al [1] and Banchi et al [37] to construct edges connecting those nodes.”</p></blockquote><p data-en="Researchers at Pfizer adopt and extend graph-construction ideas from our work and another prior paper, studying simulated docking instances with 14 and 17 nodes." data-zh="辉瑞研究人员沿用并拓展本人及另一前作的构图策略，研究了14和17节点的模拟分子对接实例。" class="citation-explanation">Researchers at Pfizer adopt and extend graph-construction ideas from our work and another prior paper, studying simulated docking instances with 14 and 17 nodes.</p>
+    <div class="cited-work"><span data-en="Citing our work" data-zh="所引用的本人论文" >Citing our work</span><a href="https://doi.org/10.1103/PhysRevApplied.21.034036" target="_blank" rel="noopener noreferrer" >Molecular docking via quantum approximate optimization algorithm · Phys. Rev. Applied (2024)</a></div>
+    <details class="citation-details"><summary><span data-en="Where this appears" data-zh="查看引用位置与上下文" >Where this appears</span></summary><p data-en="arXiv v1, “Construction of Example Instances”, the paragraph explaining edge construction after Figure 1(d). Our paper is reference [1]." data-zh="arXiv v1的“Construction of Example Instances”部分，图1(d)后介绍构建边的段落。本人论文对应文献[1]。" >arXiv v1, “Construction of Example Instances”, the paragraph explaining edge construction after Figure 1(d). Our paper is reference [1].</p><p data-en="The passage cites both Ding et al. [1] and Banchi et al. [37]. This is a preprint reporting GPU-based simulations, not a peer-reviewed demonstration of quantum-hardware advantage." data-zh="该句共同引用Ding等[1]与Banchi等[37]。这是使用GPU模拟的预印本研究，不将其表述为已同行评审的量子硬件优势验证。" >The passage cites both Ding et al. [1] and Banchi et al. [37]. This is a preprint reporting GPU-based simulations, not a peer-reviewed demonstration of quantum-hardware advantage.</p></details>
+    <div class="citation-bottom"><a href="https://arxiv.org/html/2503.04239v1" target="_blank" rel="noopener noreferrer" ><span data-en="Read source ↗" data-zh="阅读原文 ↗" >Read source ↗</span></a><a href="https://arxiv.org/abs/2503.04239" target="_blank" rel="noopener noreferrer" >arXiv ↗</a></div></article></div><p data-en="A curated selection, not a citation-count ranking. Each entry distinguishes an assessment, method use, or a research extension. Last checked: 31 October 2026." data-zh="此处展示经全文核对的精选实例，不代表总引用量。各条目分别标明评价、方法采用或研究延伸。核对日期：2026年10月31日。" class="impact-method">A curated selection, not a citation-count ranking. Each entry distinguishes an assessment, method use, or a research extension. Last checked: 31 October 2026.</p></section>
 
-<div class="container">
-    
-    <button class="lang-toggle-btn" onclick="toggleLanguage()">English / 中文</button>
+<section id="publications" class="section"><div class="section-heading publication-heading"><div><span class="section-no">03 / PUBLICATIONS</span><h2 data-en="Papers &amp; preprints" data-zh="论文与预印本" >Papers &amp; preprints</h2></div><a href="assets/publications.bib" download><span data-en="Download bibliography ↓" data-zh="下载已发表论文BibTeX ↓" >Download bibliography ↓</span></a></div>
+<div class="pub-controls"><div class="filter-tabs" role="group" aria-label="Filter publications"><button type="button" class="filter-tab" data-filter="all" aria-pressed="true"><span data-en="Published" data-zh="已发表" >Published</span></button><button type="button" class="filter-tab" data-filter="lead" aria-pressed="false"><span data-en="First / corresponding" data-zh="第一／通讯" >First / corresponding</span></button><button type="button" class="filter-tab" data-filter="preprint" aria-pressed="false"><span data-en="Preprints &amp; manuscripts" data-zh="预印本与手稿" >Preprints &amp; manuscripts</span></button></div><div class="search-tools"><div class="search-field"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5"/><path d="m10 10 4 4"/></svg><input id="paper-search" type="search" aria-label="Search papers by title, author, or topic" placeholder="Search title, author, topic…"></div><select id="year-filter" aria-label="Filter by year"><option value="all" data-en="All years" data-zh="全部年份">All years</option><option value="2026">2026</option><option value="2024">2024</option><option value="2022">2022</option><option value="2021">2021</option><option value="2018">2018</option><option value="2017">2017</option><option value="2014">2014</option></select></div></div>
+<div class="pub-status"><span id="publication-count" role="status" aria-live="polite">19 publications</span><button id="clear-topic" class="active-topic" type="button" hidden></button><span><span data-en="Author roles are shown for Qi-Ming Ding." data-zh="作者角色标签均指丁齐鸣本人。" >Author roles are shown for Qi-Ming Ding.</span></span></div><div id="paper-list"><article class="paper" id="paper-J19" data-status="published" data-lead="false" data-year="2026" data-topic="resources" data-search="symmetry speeds up quantum measurements physical review letters hu chen bujiao wu qian-xi zhang qi-ming ding haozhao wu mei-shi su ya-li mao xiao yuan zheng-da li using symmetry to design more sample-efficient quantum measurements, with photonic demonstrations. 将对称性信息融入量子测量设计，并在光量子平台中展示样本效率提升。 量子测量与对称性 10.1103/q9lf-cp11   ">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1103/q9lf-cp11" target="_blank" rel="noopener noreferrer" >Symmetry Speeds Up Quantum Measurements</a></h3><span data-en="Co-author" data-zh="合作作者" class="paper-role">Co-author</span></div>
+      <p class="paper-authors">Hu Chen, Bujiao Wu, Qian-Xi Zhang, <strong>Qi-Ming Ding</strong>, Haozhao Wu, Mei-Shi Su, Ya-Li Mao, Xiao Yuan, Zheng-Da Li</p><p class="paper-venue">Physical Review Letters 137, 120201</p>
+      <p data-en="Using symmetry to design more sample-efficient quantum measurements, with photonic demonstrations." data-zh="将对称性信息融入量子测量设计，并在光量子平台中展示样本效率提升。" class="paper-desc">Using symmetry to design more sample-efficient quantum measurements, with photonic demonstrations.</p><div class="paper-links"><a href="https://doi.org/10.1103/q9lf-cp11" target="_blank" rel="noopener noreferrer" >DOI ↗</a><button class="copy-bib" data-key="dingcv_j19" type="button">BibTeX</button><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-J18" data-status="published" data-lead="true" data-year="2026" data-topic="resources" data-search="gap-closing experimental estimation of quantum fisher information science advances qian-xi zhang qi-ming ding hu chen shan ling ya-li mao da-jian zhang xiao yuan zheng-da li an experimental benchmark of krylov shadow tomography for gap-closing estimates of quantum fisher information. 实验验证krylov影子层析对量子费舍尔信息的逼近能力，并检验其计量学意义。 量子计量与量子资源表征 10.1126/sciadv.aef4342   qfi krylov kst">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1126/sciadv.aef4342" target="_blank" rel="noopener noreferrer" >Gap-closing experimental estimation of quantum Fisher information</a></h3><span data-en="Co-first author" data-zh="共同第一作者" class="paper-role lead">Co-first author</span></div>
+      <p class="paper-authors">Qian-Xi Zhang, <strong>Qi-Ming Ding</strong>, Hu Chen, Shan Ling, Ya-Li Mao, Da-Jian Zhang, Xiao Yuan, Zheng-Da Li</p><p class="paper-venue">Science Advances 12, eaef4342</p>
+      <p data-en="An experimental benchmark of Krylov shadow tomography for gap-closing estimates of quantum Fisher information." data-zh="实验验证Krylov影子层析对量子费舍尔信息的逼近能力，并检验其计量学意义。" class="paper-desc">An experimental benchmark of Krylov shadow tomography for gap-closing estimates of quantum Fisher information.</p><div class="paper-links"><a href="https://doi.org/10.1126/sciadv.aef4342" target="_blank" rel="noopener noreferrer" >DOI ↗</a><button class="copy-bib" data-key="dingcv_j18" type="button">BibTeX</button><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-J17" data-status="published" data-lead="true" data-year="2026" data-topic="algorithms" data-search="simulating arbitrary non-hermitian dynamics via a quantum circuit monte carlo method physical review a xiaogang li kecheng liu qi-ming ding quantum circuit monte carlo sampling for simulating non-unitary and non-hermitian dynamics. 通过量子线路蒙特卡洛采样，模拟非幺正演化及非厄米系统动力学。 非厄米动力学模拟 10.1103/yd74-5t5x 2507.11675  ">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1103/yd74-5t5x" target="_blank" rel="noopener noreferrer" >Simulating arbitrary non-Hermitian dynamics via a quantum circuit Monte Carlo method</a></h3><span data-en="Corresponding author" data-zh="通讯作者" class="paper-role lead">Corresponding author</span></div>
+      <p class="paper-authors">Xiaogang Li, Kecheng Liu, <strong>Qi-Ming Ding</strong></p><p class="paper-venue">Physical Review A 114, 032602</p>
+      <p data-en="Quantum circuit Monte Carlo sampling for simulating non-unitary and non-Hermitian dynamics." data-zh="通过量子线路蒙特卡洛采样，模拟非幺正演化及非厄米系统动力学。" class="paper-desc">Quantum circuit Monte Carlo sampling for simulating non-unitary and non-Hermitian dynamics.</p><div class="paper-links"><a href="https://doi.org/10.1103/yd74-5t5x" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/2507.11675" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j17" type="button">BibTeX</button><span data-en="Algorithms &amp; computing" data-zh="量子算法与计算" class="paper-topic">Algorithms &amp; computing</span></div>
+      
+      </div></article><article class="paper" id="paper-J16" data-status="published" data-lead="true" data-year="2026" data-topic="chemistry" data-search="obtaining accurate ground-state properties on near-term quantum devices physical review applied qi-ming ding jiawei peng junxiang huang yukun zhang huiyuan wang xiaosi xu jiajun ren yingjin ma xiao yuan semidefinite purification of noisy two-electron reduced density matrices for more accurate molecular properties. 利用半正定规划纯化含噪二电子约化密度矩阵，提高分子基态性质的计算精度。 量子错误缓解与量子化学 10.1103/lx3w-w6jx 2510.21255  sdp n-representability error mitigation">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1103/lx3w-w6jx" target="_blank" rel="noopener noreferrer" >Obtaining accurate ground-state properties on near-term quantum devices</a></h3><span data-en="First author" data-zh="第一作者" class="paper-role lead">First author</span></div>
+      <p class="paper-authors"><strong>Qi-Ming Ding</strong>, Jiawei Peng, Junxiang Huang, Yukun Zhang, Huiyuan Wang, Xiaosi Xu, Jiajun Ren, Yingjin Ma, Xiao Yuan</p><p class="paper-venue">Physical Review Applied 25, 054057</p>
+      <p data-en="Semidefinite purification of noisy two-electron reduced density matrices for more accurate molecular properties." data-zh="利用半正定规划纯化含噪二电子约化密度矩阵，提高分子基态性质的计算精度。" class="paper-desc">Semidefinite purification of noisy two-electron reduced density matrices for more accurate molecular properties.</p><div class="paper-links"><a href="https://doi.org/10.1103/lx3w-w6jx" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/2510.21255" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j16" type="button">BibTeX</button><span data-en="Chemistry &amp; discovery" data-zh="量子化学与应用" class="paper-topic">Chemistry &amp; discovery</span></div>
+      
+      </div></article><article class="paper" id="paper-J15" data-status="published" data-lead="true" data-year="2026" data-topic="algorithms" data-search="constraint-aware quantum optimization via hamming weight operators science china physics, mechanics &amp; astronomy yajie hao qiming ding xiao yuan xiaoting wang hamming-weight operators keep quantum optimization inside the feasible subspace of strict linear constraints. 利用汉明权重算子，将量子优化过程限制在满足严格线性约束的可行子空间内。 约束优化与量子算法 10.1007/s11433-025-2895-4 2601.01516  qaoa">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1007/s11433-025-2895-4" target="_blank" rel="noopener noreferrer" >Constraint-aware quantum optimization via Hamming weight operators</a></h3><span data-en="Co-corresponding author" data-zh="共同通讯作者" class="paper-role lead">Co-corresponding author</span></div>
+      <p class="paper-authors">Yajie Hao, <strong>Qiming Ding</strong>, Xiao Yuan, Xiaoting Wang</p><p class="paper-venue">Science China Physics, Mechanics &amp; Astronomy 69, 250314</p>
+      <p data-en="Hamming-weight operators keep quantum optimization inside the feasible subspace of strict linear constraints." data-zh="利用汉明权重算子，将量子优化过程限制在满足严格线性约束的可行子空间内。" class="paper-desc">Hamming-weight operators keep quantum optimization inside the feasible subspace of strict linear constraints.</p><div class="paper-links"><a href="https://doi.org/10.1007/s11433-025-2895-4" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/2601.01516" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j15" type="button">BibTeX</button><span data-en="Algorithms &amp; computing" data-zh="量子算法与计算" class="paper-topic">Algorithms &amp; computing</span></div>
+      
+      </div></article><article class="paper" id="paper-J14" data-status="published" data-lead="true" data-year="2026" data-topic="resources" data-search="scalable protocol for coherence estimation from scarce data: theory and experiment physical review a qi-ming ding ting zhang hui li da-jian zhang estimating coherence from scarce data by relaxing a difficult inference problem into efficient optimization. 将相干性估计转化为高效优化问题，在数据稀缺条件下提取量子资源信息。 量子资源表征与测量 10.1103/g8sh-hts2 2510.21138  ">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1103/g8sh-hts2" target="_blank" rel="noopener noreferrer" >Scalable protocol for coherence estimation from scarce data: Theory and experiment</a></h3><span data-en="Co-first author" data-zh="共同第一作者" class="paper-role lead">Co-first author</span></div>
+      <p class="paper-authors"><strong>Qi-Ming Ding</strong>, Ting Zhang, Hui Li, Da-Jian Zhang</p><p class="paper-venue">Physical Review A 113, 032444</p>
+      <p data-en="Estimating coherence from scarce data by relaxing a difficult inference problem into efficient optimization." data-zh="将相干性估计转化为高效优化问题，在数据稀缺条件下提取量子资源信息。" class="paper-desc">Estimating coherence from scarce data by relaxing a difficult inference problem into efficient optimization.</p><div class="paper-links"><a href="https://doi.org/10.1103/g8sh-hts2" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/2510.21138" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j14" type="button">BibTeX</button><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-J13" data-status="published" data-lead="false" data-year="2026" data-topic="chemistry" data-search="universal logical operations in a silicon quantum processor nature nanotechnology chunhui zhang feng xu shihang zhang mingchao duan dupeng zhong xuesong bai hao wang chao huang yi deng miao gao yu-ning zhang jiaze liu chunhui li yan jiang baolong zhao huan shu kunrong wu keji shi qiming ding zhen tian guanyong wang xiao yuan tao xin guangchong hu song liu tianluo pan peihao huang yu he dapeng yu experimental logical operations and a logical-qubit vqe calculation on a silicon quantum processor. 合作实现硅基量子处理器上的逻辑操作，并开展逻辑量子比特上的vqe计算。 量子纠错与逻辑计算 10.1038/s41565-026-02140-1   ">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1038/s41565-026-02140-1" target="_blank" rel="noopener noreferrer" >Universal logical operations in a silicon quantum processor</a></h3><span data-en="Co-author" data-zh="合作作者" class="paper-role">Co-author</span></div>
+      <p class="paper-authors">Chunhui Zhang, Feng Xu, Shihang Zhang, …, <strong>Qiming Ding</strong>, …, Yu He, Dapeng Yu</p><p class="paper-venue">Nature Nanotechnology 21, 635-641</p>
+      <p data-en="Experimental logical operations and a logical-qubit VQE calculation on a silicon quantum processor." data-zh="合作实现硅基量子处理器上的逻辑操作，并开展逻辑量子比特上的VQE计算。" class="paper-desc">Experimental logical operations and a logical-qubit VQE calculation on a silicon quantum processor.</p><div class="paper-links"><a href="https://doi.org/10.1038/s41565-026-02140-1" target="_blank" rel="noopener noreferrer" >DOI ↗</a><button class="copy-bib" data-key="dingcv_j13" type="button">BibTeX</button><span data-en="Chemistry &amp; discovery" data-zh="量子化学与应用" class="paper-topic">Chemistry &amp; discovery</span></div>
+      <details class="paper-details"><summary><span data-en="Full author list" data-zh="完整作者列表" >Full author list</span></summary><p>Chunhui Zhang, Feng Xu, Shihang Zhang, Mingchao Duan, Dupeng Zhong, Xuesong Bai, Hao Wang, Chao Huang, Yi Deng, Miao Gao, Yu-Ning Zhang, Jiaze Liu, Chunhui Li, Yan Jiang, Baolong Zhao, Huan Shu, Kunrong Wu, Keji Shi, <strong>Qiming Ding</strong>, Zhen Tian, Guanyong Wang, Xiao Yuan, Tao Xin, Guangchong Hu, Song Liu, Tianluo Pan, Peihao Huang, Yu He, Dapeng Yu</p></details>
+      </div></article><article class="paper" id="paper-J12" data-status="published" data-lead="true" data-year="2026" data-topic="resources" data-search="reliable quantum steering detection under imperfect measurement physical review letters ting zhang wenhao zhang jing-tao qiu leilei huang xiao yuan qi-ming ding randomized local measurements make quantum steering detection more reliable under measurement imperfections. 通过随机局域测量抑制测量误差，提高量子导引探测的可靠性。 量子导引与可靠测量 10.1103/wgqg-hfw8   ">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1103/wgqg-hfw8" target="_blank" rel="noopener noreferrer" >Reliable Quantum Steering Detection under Imperfect Measurement</a></h3><span data-en="Co-corresponding author" data-zh="共同通讯作者" class="paper-role lead">Co-corresponding author</span></div>
+      <p class="paper-authors">Ting Zhang, Wenhao Zhang, Jing-Tao Qiu, Leilei Huang, Xiao Yuan, <strong>Qi-Ming Ding</strong></p><p class="paper-venue">Physical Review Letters 136, 090201</p>
+      <p data-en="Randomized local measurements make quantum steering detection more reliable under measurement imperfections." data-zh="通过随机局域测量抑制测量误差，提高量子导引探测的可靠性。" class="paper-desc">Randomized local measurements make quantum steering detection more reliable under measurement imperfections.</p><div class="paper-links"><a href="https://doi.org/10.1103/wgqg-hfw8" target="_blank" rel="noopener noreferrer" >DOI ↗</a><button class="copy-bib" data-key="dingcv_j12" type="button">BibTeX</button><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-J10" data-status="published" data-lead="false" data-year="2026" data-topic="chemistry" data-search="efficient quantum simulation of non-adiabatic molecular dynamics with precise electronic structure digital discovery tianyi li yumeng zeng qiming ding zixuan huo xiaosi xu jiajun ren diandong tang xiaoxia cai xiao yuan quantum-adapted non-adiabatic molecular dynamics supported by high-accuracy electronic-structure calculations. 结合高精度电子结构计算与适配量子计算的非绝热分子动力学模拟。 量子化学与分子动力学 10.1039/d5dd00433k 2512.02376  namd">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1039/d5dd00433k" target="_blank" rel="noopener noreferrer" >Efficient quantum simulation of non-adiabatic molecular dynamics with precise electronic structure</a></h3><span data-en="Co-author" data-zh="合作作者" class="paper-role">Co-author</span></div>
+      <p class="paper-authors">Tianyi Li, Yumeng Zeng, <strong>Qiming Ding</strong>, Zixuan Huo, Xiaosi Xu, Jiajun Ren, Diandong Tang, Xiaoxia Cai, Xiao Yuan</p><p class="paper-venue">Digital Discovery 5, 548-570</p>
+      <p data-en="Quantum-adapted non-adiabatic molecular dynamics supported by high-accuracy electronic-structure calculations." data-zh="结合高精度电子结构计算与适配量子计算的非绝热分子动力学模拟。" class="paper-desc">Quantum-adapted non-adiabatic molecular dynamics supported by high-accuracy electronic-structure calculations.</p><div class="paper-links"><a href="https://doi.org/10.1039/d5dd00433k" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/2512.02376" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j10" type="button">BibTeX</button><span data-en="Chemistry &amp; discovery" data-zh="量子化学与应用" class="paper-topic">Chemistry &amp; discovery</span></div>
+      
+      </div></article><article class="paper" id="paper-J11" data-status="published" data-lead="true" data-year="2026" data-topic="chemistry" data-search="large-scale efficient molecule geometry optimization with hybrid quantum–classical computing journal of chemical theory and computation yajie hao qiming ding xiaoting wang xiao yuan co-optimizing molecular geometry with density matrix embedding theory and a variational quantum eigensolver. 结合密度矩阵嵌入理论与变分量子本征求解器，协同优化分子结构。 量子化学与分子几何优化 10.1021/acs.jctc.5c01435 2509.07460  dmet vqe">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1021/acs.jctc.5c01435" target="_blank" rel="noopener noreferrer" >Large-Scale Efficient Molecule Geometry Optimization with Hybrid Quantum–Classical Computing</a></h3><span data-en="Co-corresponding author" data-zh="共同通讯作者" class="paper-role lead">Co-corresponding author</span></div>
+      <p class="paper-authors">Yajie Hao, <strong>Qiming Ding</strong>, Xiaoting Wang, Xiao Yuan</p><p class="paper-venue">Journal of Chemical Theory and Computation 22, 859-868</p>
+      <p data-en="Co-optimizing molecular geometry with density matrix embedding theory and a variational quantum eigensolver." data-zh="结合密度矩阵嵌入理论与变分量子本征求解器，协同优化分子结构。" class="paper-desc">Co-optimizing molecular geometry with density matrix embedding theory and a variational quantum eigensolver.</p><div class="paper-links"><a href="https://doi.org/10.1021/acs.jctc.5c01435" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/2509.07460" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j11" type="button">BibTeX</button><span data-en="Chemistry &amp; discovery" data-zh="量子化学与应用" class="paper-topic">Chemistry &amp; discovery</span></div>
+      
+      </div></article><article class="paper" id="paper-J09" data-status="published" data-lead="false" data-year="2026" data-topic="chemistry" data-search="a hardware demonstration of a universal programmable rram-based probabilistic computer for molecular docking nature communications yihan he ming-chun hong qiming ding chih-sheng lin chih-ming lai chao fang xiao gong tuo-hung hou gengchiau liang a programmable rram-based probabilistic computer applied to molecular docking. 参与开发可编程rram概率计算机，并将其用于分子对接任务。 概率计算硬件与分子对接 10.1038/s41467-025-67309-z 2503.20254  ">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1038/s41467-025-67309-z" target="_blank" rel="noopener noreferrer" >A hardware demonstration of a universal programmable RRAM-based probabilistic computer for molecular docking</a></h3><span data-en="Co-author" data-zh="合作作者" class="paper-role">Co-author</span></div>
+      <p class="paper-authors">Yihan He, Ming-Chun Hong, <strong>Qiming Ding</strong>, Chih-Sheng Lin, Chih-Ming Lai, Chao Fang, Xiao Gong, Tuo-Hung Hou, Gengchiau Liang</p><p class="paper-venue">Nature Communications 17, 702</p>
+      <p data-en="A programmable RRAM-based probabilistic computer applied to molecular docking." data-zh="参与开发可编程RRAM概率计算机，并将其用于分子对接任务。" class="paper-desc">A programmable RRAM-based probabilistic computer applied to molecular docking.</p><div class="paper-links"><a href="https://doi.org/10.1038/s41467-025-67309-z" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/2503.20254" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j09" type="button">BibTeX</button><span data-en="Chemistry &amp; discovery" data-zh="量子化学与应用" class="paper-topic">Chemistry &amp; discovery</span></div>
+      
+      </div></article><article class="paper" id="paper-J08" data-status="published" data-lead="true" data-year="2024" data-topic="chemistry" data-search="molecular docking via quantum approximate optimization algorithm physical review applied qi-ming ding yi-ming huang xiao yuan digitized counterdiabatic qaoa for molecular docking, connecting combinatorial optimization with drug-discovery problems. 将数字化反绝热驱动融入qaoa，求解分子对接中的组合优化问题。 量子算法与分子对接 10.1103/physrevapplied.21.034036 2308.04098  dc-qaoa qaoa">
+      <div class="paper-year">2024</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1103/physrevapplied.21.034036" target="_blank" rel="noopener noreferrer" >Molecular docking via quantum approximate optimization algorithm</a></h3><span data-en="Co-first &amp; corresponding" data-zh="共同第一及通讯作者" class="paper-role lead">Co-first &amp; corresponding</span></div>
+      <p class="paper-authors"><strong>Qi-Ming Ding</strong>, Yi-Ming Huang, Xiao Yuan</p><p class="paper-venue">Physical Review Applied 21, 034036</p>
+      <p data-en="Digitized counterdiabatic QAOA for molecular docking, connecting combinatorial optimization with drug-discovery problems." data-zh="将数字化反绝热驱动融入QAOA，求解分子对接中的组合优化问题。" class="paper-desc">Digitized counterdiabatic QAOA for molecular docking, connecting combinatorial optimization with drug-discovery problems.</p><div class="paper-links"><a href="https://doi.org/10.1103/physrevapplied.21.034036" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/2308.04098" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j08" type="button">BibTeX</button><span data-en="Chemistry &amp; discovery" data-zh="量子化学与应用" class="paper-topic">Chemistry &amp; discovery</span></div>
+      
+      </div></article><article class="paper" id="paper-J07" data-status="published" data-lead="true" data-year="2022" data-topic="resources" data-search="no-go theorems for deterministic purification and probabilistic enhancement of coherence journal of physics a: mathematical and theoretical qiming ding quancheng liu feasibility criteria for deterministic coherence purification and probabilistic enhancement under restricted operations. 研究确定性相干性纯化与随机严格非相干操作下相干性增强的可行性边界。 量子相干资源 10.1088/1751-8121/ac4ecd 2203.15238  ">
+      <div class="paper-year">2022</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1088/1751-8121/ac4ecd" target="_blank" rel="noopener noreferrer" >No-go theorems for deterministic purification and probabilistic enhancement of coherence</a></h3><span data-en="Co-first &amp; corresponding" data-zh="共同第一及通讯作者" class="paper-role lead">Co-first &amp; corresponding</span></div>
+      <p class="paper-authors"><strong>Qiming Ding</strong>, Quancheng Liu</p><p class="paper-venue">Journal of Physics A: Mathematical and Theoretical 55, 105301</p>
+      <p data-en="Feasibility criteria for deterministic coherence purification and probabilistic enhancement under restricted operations." data-zh="研究确定性相干性纯化与随机严格非相干操作下相干性增强的可行性边界。" class="paper-desc">Feasibility criteria for deterministic coherence purification and probabilistic enhancement under restricted operations.</p><div class="paper-links"><a href="https://doi.org/10.1088/1751-8121/ac4ecd" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/2203.15238" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j07" type="button">BibTeX</button><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-J06" data-status="published" data-lead="true" data-year="2021" data-topic="resources" data-search="the tightness of multipartite coherence from spectrum estimation entropy qi-ming ding xiao-xu fang he lu extending spectrum-based coherence estimation and examining the tightness of the resulting bounds. 拓展基于谱估计的相干性探测方法，并检验多种相干性度量下界的紧致性。 量子资源表征与测量 10.3390/e23111519 2104.12094  ">
+      <div class="paper-year">2021</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.3390/e23111519" target="_blank" rel="noopener noreferrer" >The Tightness of Multipartite Coherence from Spectrum Estimation</a></h3><span data-en="First author" data-zh="第一作者" class="paper-role lead">First author</span></div>
+      <p class="paper-authors"><strong>Qi-Ming Ding</strong>, Xiao-Xu Fang, He Lu</p><p class="paper-venue">Entropy 23, 1519</p>
+      <p data-en="Extending spectrum-based coherence estimation and examining the tightness of the resulting bounds." data-zh="拓展基于谱估计的相干性探测方法，并检验多种相干性度量下界的紧致性。" class="paper-desc">Extending spectrum-based coherence estimation and examining the tightness of the resulting bounds.</p><div class="paper-links"><a href="https://doi.org/10.3390/e23111519" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/2104.12094" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j06" type="button">BibTeX</button><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-J05" data-status="published" data-lead="true" data-year="2021" data-topic="resources" data-search="efficient estimation of multipartite quantum coherence physical review research qi-ming ding xiao-xu fang xiao yuan ting zhang he lu lower and upper bounds on multipartite coherence from a small set of local measurements, demonstrated on photonic states. 利用少量局域测量估计多体相干性上下界，并在光量子系统中验证。 量子资源表征与测量 10.1103/physrevresearch.3.023228 2010.02612  ">
+      <div class="paper-year">2021</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1103/physrevresearch.3.023228" target="_blank" rel="noopener noreferrer" >Efficient estimation of multipartite quantum coherence</a></h3><span data-en="Co-first author" data-zh="共同第一作者" class="paper-role lead">Co-first author</span></div>
+      <p class="paper-authors"><strong>Qi-Ming Ding</strong>, Xiao-Xu Fang, Xiao Yuan, Ting Zhang, He Lu</p><p class="paper-venue">Physical Review Research 3, 023228</p>
+      <p data-en="Lower and upper bounds on multipartite coherence from a small set of local measurements, demonstrated on photonic states." data-zh="利用少量局域测量估计多体相干性上下界，并在光量子系统中验证。" class="paper-desc">Lower and upper bounds on multipartite coherence from a small set of local measurements, demonstrated on photonic states.</p><div class="paper-links"><a href="https://doi.org/10.1103/physrevresearch.3.023228" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/2010.02612" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j05" type="button">BibTeX</button><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-J04" data-status="published" data-lead="false" data-year="2018" data-topic="resources" data-search="superadditivity of convex roof coherence measures journal of physics a: mathematical and theoretical c l liu qi-ming ding d m tong a criterion for superadditivity, with a classification of several convex-roof coherence measures. 提出凸顶相干性度量的超可加性判据，区分满足与不满足该性质的度量。 量子相干资源 10.1088/1751-8121/aab64e 1809.05475  ">
+      <div class="paper-year">2018</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1088/1751-8121/aab64e" target="_blank" rel="noopener noreferrer" >Superadditivity of convex roof coherence measures</a></h3><span data-en="Co-author" data-zh="合作作者" class="paper-role">Co-author</span></div>
+      <p class="paper-authors">C L Liu, <strong>Qi-Ming Ding</strong>, D M Tong</p><p class="paper-venue">Journal of Physics A: Mathematical and Theoretical 51, 414012</p>
+      <p data-en="A criterion for superadditivity, with a classification of several convex-roof coherence measures." data-zh="提出凸顶相干性度量的超可加性判据，区分满足与不满足该性质的度量。" class="paper-desc">A criterion for superadditivity, with a classification of several convex-roof coherence measures.</p><div class="paper-links"><a href="https://doi.org/10.1088/1751-8121/aab64e" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/1809.05475" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j04" type="button">BibTeX</button><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-J03" data-status="published" data-lead="false" data-year="2017" data-topic="resources" data-search="a new coherence measure based on fidelity quantum information processing c. l. liu da-jian zhang xiao-dong yu qi-ming ding longjiang liu an analytically computable fidelity-based coherence measure for arbitrary qubit states. 提出基于保真度的相干性度量，并给出任意单量子比特态的解析计算方法。 量子相干资源 10.1007/s11128-017-1650-7 1706.07941  ">
+      <div class="paper-year">2017</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1007/s11128-017-1650-7" target="_blank" rel="noopener noreferrer" >A new coherence measure based on fidelity</a></h3><span data-en="Co-author" data-zh="合作作者" class="paper-role">Co-author</span></div>
+      <p class="paper-authors">C. L. Liu, Da-Jian Zhang, Xiao-Dong Yu, <strong>Qi-Ming Ding</strong>, Longjiang Liu</p><p class="paper-venue">Quantum Information Processing 16, 198</p>
+      <p data-en="An analytically computable fidelity-based coherence measure for arbitrary qubit states." data-zh="提出基于保真度的相干性度量，并给出任意单量子比特态的解析计算方法。" class="paper-desc">An analytically computable fidelity-based coherence measure for arbitrary qubit states.</p><div class="paper-links"><a href="https://doi.org/10.1007/s11128-017-1650-7" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/1706.07941" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j03" type="button">BibTeX</button><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-J02" data-status="published" data-lead="false" data-year="2017" data-topic="algorithms" data-search="single-shot realization of nonadiabatic holonomic quantum gates in decoherence-free subspaces physical review a p. z. zhao g. f. xu q. m. ding erik sjöqvist d. m. tong a single-shot protocol for holonomic quantum gates protected by decoherence-free subspaces. 在无退相干子空间中，以单次演化实现非绝热几何量子门。 量子门与退相干抑制 10.1103/physreva.95.062310 1706.02967  ">
+      <div class="paper-year">2017</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1103/physreva.95.062310" target="_blank" rel="noopener noreferrer" >Single-shot realization of nonadiabatic holonomic quantum gates in decoherence-free subspaces</a></h3><span data-en="Co-author" data-zh="合作作者" class="paper-role">Co-author</span></div>
+      <p class="paper-authors">P. Z. Zhao, G. F. Xu, <strong>Q. M. Ding</strong>, Erik Sjöqvist, D. M. Tong</p><p class="paper-venue">Physical Review A 95, 062310</p>
+      <p data-en="A single-shot protocol for holonomic quantum gates protected by decoherence-free subspaces." data-zh="在无退相干子空间中，以单次演化实现非绝热几何量子门。" class="paper-desc">A single-shot protocol for holonomic quantum gates protected by decoherence-free subspaces.</p><div class="paper-links"><a href="https://doi.org/10.1103/physreva.95.062310" target="_blank" rel="noopener noreferrer" >DOI ↗</a><a href="https://arxiv.org/abs/1706.02967" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><button class="copy-bib" data-key="dingcv_j02" type="button">BibTeX</button><span data-en="Algorithms &amp; computing" data-zh="量子算法与计算" class="paper-topic">Algorithms &amp; computing</span></div>
+      
+      </div></article><article class="paper" id="paper-J01" data-status="published" data-lead="false" data-year="2014" data-topic="chemistry" data-search="the effect of mno2-doping on the microstructure and microwave dielectric properties of bst/mgo composites journal of alloys and compounds qian xue honglei du xiaoyang gao yelong wang yongcheng zhang jie xu guibin wang qiming ding chong tian chunheng liu yueguang lü shandong li a materials study of mno₂ doping and the microwave dielectric properties of bst/mgo composites. 本科阶段关于mno₂掺杂及bst/mgo复合材料微波介电性能的合作研究。 材料与微波介电性能 10.1016/j.jallcom.2014.06.129   ">
+      <div class="paper-year">2014</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.1016/j.jallcom.2014.06.129" target="_blank" rel="noopener noreferrer" >The effect of MnO2-doping on the microstructure and microwave dielectric properties of BST/MgO composites</a></h3><span data-en="Co-author" data-zh="合作作者" class="paper-role">Co-author</span></div>
+      <p class="paper-authors">Qian Xue, Honglei Du, Xiaoyang Gao, …, <strong>Qiming Ding</strong>, …, Yueguang Lü, Shandong Li</p><p class="paper-venue">Journal of Alloys and Compounds 615, 372-374</p>
+      <p data-en="A materials study of MnO₂ doping and the microwave dielectric properties of BST/MgO composites." data-zh="本科阶段关于MnO₂掺杂及BST/MgO复合材料微波介电性能的合作研究。" class="paper-desc">A materials study of MnO₂ doping and the microwave dielectric properties of BST/MgO composites.</p><div class="paper-links"><a href="https://doi.org/10.1016/j.jallcom.2014.06.129" target="_blank" rel="noopener noreferrer" >DOI ↗</a><button class="copy-bib" data-key="dingcv_j01" type="button">BibTeX</button><span data-en="Chemistry &amp; discovery" data-zh="量子化学与应用" class="paper-topic">Chemistry &amp; discovery</span></div>
+      <details class="paper-details"><summary><span data-en="Full author list" data-zh="完整作者列表" >Full author list</span></summary><p>Qian Xue, Honglei Du, Xiaoyang Gao, Yelong Wang, Yongcheng Zhang, Jie Xu, Guibin Wang, <strong>Qiming Ding</strong>, Chong Tian, Chunheng Liu, Yueguang Lü, Shandong Li</p></details>
+      </div></article><article class="paper" id="paper-M05" data-status="preprint" data-lead="true" data-year="2026" data-topic="resources" data-search="boolean convex-roof measure: an operationally meaningful quantifier of quantum resources  chaohui zhou qi-ming ding xiaodan cui baoqing sun c. l. liu connecting a boolean convex-roof measure to resource weight and an operational interpretation. 联系boolean凸顶度量、资源权重及其操作意义。 量子资源度量    ">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title">Boolean Convex-Roof Measure: An Operationally Meaningful Quantifier of Quantum Resources</h3><span data-en="Co-first author" data-zh="共同第一作者" class="paper-role">Co-first author</span></div>
+      <p class="paper-authors">Chaohui Zhou, <strong>Qi-Ming Ding</strong>, Xiaodan Cui, Baoqing Sun, C. L. Liu</p><p class="paper-venue"><span data-en="Manuscript" data-zh="研究手稿" >Manuscript</span><span data-en="Manuscript" data-zh="研究手稿" class="preprint-badge">Manuscript</span></p>
+      <p data-en="Connecting a Boolean convex-roof measure to resource weight and an operational interpretation." data-zh="联系Boolean凸顶度量、资源权重及其操作意义。" class="paper-desc">Connecting a Boolean convex-roof measure to resource weight and an operational interpretation.</p><div class="paper-links"><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-M04" data-status="preprint" data-lead="true" data-year="2026" data-topic="chemistry" data-search="accelerating drug discovery with gaussian boson sampling  yuanye zhu yuan yao qi-ming ding exploring gaussian boson sampling as a source of candidate solutions for graph-based drug-discovery tasks. 探索以高斯玻色采样生成候选解，辅助基于图论的药物研发任务。 高斯玻色采样与药物发现    ">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title">Accelerating Drug Discovery with Gaussian Boson Sampling</h3><span data-en="Corresponding author" data-zh="通讯作者" class="paper-role">Corresponding author</span></div>
+      <p class="paper-authors">Yuanye Zhu, Yuan Yao, <strong>Qi-Ming Ding</strong></p><p class="paper-venue"><span data-en="Manuscript" data-zh="研究手稿" >Manuscript</span><span data-en="Manuscript" data-zh="研究手稿" class="preprint-badge">Manuscript</span></p>
+      <p data-en="Exploring Gaussian boson sampling as a source of candidate solutions for graph-based drug-discovery tasks." data-zh="探索以高斯玻色采样生成候选解，辅助基于图论的药物研发任务。" class="paper-desc">Exploring Gaussian boson sampling as a source of candidate solutions for graph-based drug-discovery tasks.</p><div class="paper-links"><span data-en="Chemistry &amp; discovery" data-zh="量子化学与应用" class="paper-topic">Chemistry &amp; discovery</span></div>
+      
+      </div></article><article class="paper" id="paper-M03" data-status="preprint" data-lead="true" data-year="2026" data-topic="resources" data-search="a majorization witness for cp-indivisibility in unital quantum dynamics  fan wu wei-ran ma c. l. liu qi-ming ding a majorization-based witness for cp-indivisibility in unital quantum dynamics. 利用主序关系构造幺元量子动力学中cp不可分性的见证。 开放量子系统与非马尔可夫性   unveiling non-markovianity in unital quantum dynamical maps via majorization ">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title">A majorization witness for CP-indivisibility in unital quantum dynamics</h3><span data-en="Co-corresponding author" data-zh="共同通讯作者" class="paper-role">Co-corresponding author</span></div>
+      <p class="paper-authors">Fan Wu, Wei-Ran Ma, C. L. Liu, <strong>Qi-Ming Ding</strong></p><p class="paper-venue"><span data-en="Manuscript" data-zh="研究手稿" >Manuscript</span><span data-en="Manuscript" data-zh="研究手稿" class="preprint-badge">Manuscript</span></p>
+      <p data-en="A majorization-based witness for CP-indivisibility in unital quantum dynamics." data-zh="利用主序关系构造幺元量子动力学中CP不可分性的见证。" class="paper-desc">A majorization-based witness for CP-indivisibility in unital quantum dynamics.</p><div class="paper-links"><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-M02" data-status="preprint" data-lead="true" data-year="2026" data-topic="resources" data-search="measurement-device-independent quantum steering remains fragile  wenhao zhang qi-ming ding xiao yuan characterizing how imperfect input-state preparation affects measurement-device-independent steering detection. 研究输入态制备误差对测量设备无关量子导引探测的影响。 量子导引可靠性    ">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title">Measurement-Device-Independent Quantum Steering Remains Fragile</h3><span data-en="Co-corresponding author" data-zh="共同通讯作者" class="paper-role">Co-corresponding author</span></div>
+      <p class="paper-authors">Wenhao Zhang, <strong>Qi-Ming Ding</strong>, Xiao Yuan</p><p class="paper-venue"><span data-en="Manuscript" data-zh="研究手稿" >Manuscript</span><span data-en="Manuscript" data-zh="研究手稿" class="preprint-badge">Manuscript</span></p>
+      <p data-en="Characterizing how imperfect input-state preparation affects measurement-device-independent steering detection." data-zh="研究输入态制备误差对测量设备无关量子导引探测的影响。" class="paper-desc">Characterizing how imperfect input-state preparation affects measurement-device-independent steering detection.</p><div class="paper-links"><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-M01" data-status="preprint" data-lead="true" data-year="2026" data-topic="resources" data-search="experimental quantum resource invariance under quantum reference-frame transformations  qinwei zhang yanan wang caiying ni jiatai wang haoxiang qin yang yang xia liu qi-ming ding lianzhen cao photonic experiments on the redistribution and invariance of quantum resources under changes of quantum reference frame. 通过光量子实验研究量子参考系变换中资源的重分配与不变量。 量子参考系与资源不变量    ">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title">Experimental Quantum Resource Invariance under Quantum Reference-Frame Transformations</h3><span data-en="Co-corresponding author" data-zh="共同通讯作者" class="paper-role">Co-corresponding author</span></div>
+      <p class="paper-authors">Qinwei Zhang, Yanan Wang, Caiying Ni, Jiatai Wang, Haoxiang Qin, Yang Yang, Xia Liu, <strong>Qi-Ming Ding</strong>, Lianzhen Cao</p><p class="paper-venue"><span data-en="Manuscript" data-zh="研究手稿" >Manuscript</span><span data-en="Manuscript" data-zh="研究手稿" class="preprint-badge">Manuscript</span></p>
+      <p data-en="Photonic experiments on the redistribution and invariance of quantum resources under changes of quantum reference frame." data-zh="通过光量子实验研究量子参考系变换中资源的重分配与不变量。" class="paper-desc">Photonic experiments on the redistribution and invariance of quantum resources under changes of quantum reference frame.</p><div class="paper-links"><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-P03" data-status="preprint" data-lead="false" data-year="2026" data-topic="algorithms" data-search="low-cost algorithm-to-execution framework for surface-code quantum computing arxiv yunxin tang zixuan huo junxiang huang zhou you zhirao wang zhenai ding yumeng zeng yangyu lu yiming huang zongkang zhang haipeng xie ruipeng xing qiming ding ying li jinzhao sun xiao yuan yuan yao a framework linking algorithm structure to surface-code layouts, non-clifford resources, and physical cost estimates. 连接量子算法结构、表面码布局、非clifford资源规划与物理资源开销评估。 容错量子计算与资源估算 10.48550/arxiv.2609.10965 2609.10965  ">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.48550/arXiv.2609.10965" target="_blank" rel="noopener noreferrer" >Low-cost algorithm-to-execution framework for surface-code quantum computing</a></h3><span data-en="Co-author" data-zh="合作作者" class="paper-role">Co-author</span></div>
+      <p class="paper-authors">Yunxin Tang, Zixuan Huo, Junxiang Huang, …, <strong>Qiming Ding</strong>, …, Xiao Yuan, Yuan Yao</p><p class="paper-venue">arXiv:2609.10965<span data-en="Preprint" data-zh="公开预印本" class="preprint-badge">Preprint</span></p>
+      <p data-en="A framework linking algorithm structure to surface-code layouts, non-Clifford resources, and physical cost estimates." data-zh="连接量子算法结构、表面码布局、非Clifford资源规划与物理资源开销评估。" class="paper-desc">A framework linking algorithm structure to surface-code layouts, non-Clifford resources, and physical cost estimates.</p><div class="paper-links"><a href="https://arxiv.org/abs/2609.10965" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><span data-en="Algorithms &amp; computing" data-zh="量子算法与计算" class="paper-topic">Algorithms &amp; computing</span></div>
+      <details class="paper-details"><summary><span data-en="Full author list" data-zh="完整作者列表" >Full author list</span></summary><p>Yunxin Tang, Zixuan Huo, Junxiang Huang, Zhou You, Zhirao Wang, Zhenai Ding, Yumeng Zeng, Yangyu Lu, Yiming Huang, Zongkang Zhang, Haipeng Xie, Ruipeng Xing, <strong>Qiming Ding</strong>, Ying Li, Jinzhao Sun, Xiao Yuan, Yuan Yao</p></details>
+      </div></article><article class="paper" id="paper-P02" data-status="preprint" data-lead="true" data-year="2026" data-topic="resources" data-search="distributed resource theory of entanglement and magic arxiv xiao yuan wenhao zhang qiming ding you zhou a distributed resource theory connecting entanglement, magic, and quantum communication. 建立联系纠缠、魔性资源与量子通信的分布式资源理论框架。 分布式量子资源理论 10.48550/arxiv.2608.24299 2608.24299 distributed resource theory of entanglement and magic resource dream">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.48550/arXiv.2608.24299" target="_blank" rel="noopener noreferrer" >Distributed Resource Theory of Entanglement and Magic</a></h3><span data-en="Co-corresponding author" data-zh="共同通讯作者" class="paper-role">Co-corresponding author</span></div>
+      <p class="paper-authors">Xiao Yuan, Wenhao Zhang, <strong>Qiming Ding</strong>, You Zhou</p><p class="paper-venue">arXiv:2608.24299<span data-en="Preprint" data-zh="公开预印本" class="preprint-badge">Preprint</span></p>
+      <p data-en="A distributed resource theory connecting entanglement, magic, and quantum communication." data-zh="建立联系纠缠、魔性资源与量子通信的分布式资源理论框架。" class="paper-desc">A distributed resource theory connecting entanglement, magic, and quantum communication.</p><div class="paper-links"><a href="https://arxiv.org/abs/2608.24299" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><span data-en="Quantum resources" data-zh="量子资源" class="paper-topic">Quantum resources</span></div>
+      
+      </div></article><article class="paper" id="paper-P01" data-status="preprint" data-lead="false" data-year="2026" data-topic="algorithms" data-search="a review of variational quantum algorithms: insights into fault-tolerant quantum computing arxiv zhirao wang junxiang huang runyu ye qingyu li qi-ming ding yiming huang ting zhang yumeng zeng jianshuo gao xiao yuan yuan yao a review of variational quantum algorithms across noisy, early fault-tolerant, and fault-tolerant regimes. 综述变分量子算法从含噪设备到早期容错、容错计算阶段的机遇与局限。 量子算法综述 10.48550/arxiv.2604.07909 2604.07909  vqa review">
+      <div class="paper-year">2026</div><div><div class="paper-top"><h3 class="paper-title"><a href="https://doi.org/10.48550/arXiv.2604.07909" target="_blank" rel="noopener noreferrer" >A Review of Variational Quantum Algorithms: Insights into Fault-Tolerant Quantum Computing</a></h3><span data-en="Co-author" data-zh="合作作者" class="paper-role">Co-author</span></div>
+      <p class="paper-authors">Zhirao Wang, Junxiang Huang, Runyu Ye, Qingyu Li, <strong>Qi-Ming Ding</strong>, Yiming Huang, Ting Zhang, Yumeng Zeng, Jianshuo Gao, Xiao Yuan, Yuan Yao</p><p class="paper-venue">arXiv:2604.07909<span data-en="Preprint" data-zh="公开预印本" class="preprint-badge">Preprint</span></p>
+      <p data-en="A review of variational quantum algorithms across noisy, early fault-tolerant, and fault-tolerant regimes." data-zh="综述变分量子算法从含噪设备到早期容错、容错计算阶段的机遇与局限。" class="paper-desc">A review of variational quantum algorithms across noisy, early fault-tolerant, and fault-tolerant regimes.</p><div class="paper-links"><a href="https://arxiv.org/abs/2604.07909" target="_blank" rel="noopener noreferrer" >arXiv ↗</a><span data-en="Algorithms &amp; computing" data-zh="量子算法与计算" class="paper-topic">Algorithms &amp; computing</span></div>
+      
+      </div></article></div><div id="empty-state" class="empty-state" hidden><span data-en="No matching papers. Try another keyword or year." data-zh="没有找到匹配的论文，可尝试其他关键词或年份。" >No matching papers. Try another keyword or year.</span></div><div class="pub-pagination" id="pub-pagination"><button type="button" id="previous-page" class="page-button"><span data-en="← Previous" data-zh="← 上一页" >← Previous</span></button><span id="page-description" class="page-description"></span><button type="button" id="next-page" class="page-button"><span data-en="Next →" data-zh="下一页 →" >Next →</span></button></div></section>
 
-    <div class="header">
-        <div class="header-text">
-            <h1>Qi-Ming Ding</h1>
-            
-            <div class="lang-en">
-                <p style="font-size: 15px; color: #666;">
-                    I am an Associate Researcher at the School of Computer Science at Peking University. Previously I served as a Postdoctoral Fellow at the Center on Frontiers of Computing Studies at Peking University from April 2022 to April 2025 under the guidance of Professor <a href="http://qtheorist.site/research/" target="_blank">Xiao Yuan</a>. I earned my Doctor of Philosophy in Physics from the School of Physics at Shandong University in December 2021 under the supervision of Professor <a href="https://www.researchgate.net/profile/Dianmin-Tong" target="_blank">Dian Min Tong</a>. My core research interests span quantum resource theory, quantum information theory, near term quantum algorithms, and the intersection of quantum computing and artificial intelligence. As of September 2026, I have authored 19 published peer reviewed papers and currently have 6 manuscripts under review. Among these I am the first or corresponding author on 11 publications in prestigious journals including Nature Nanotechnology, Physical Review Letters, Science Advances, Journal of Chemical Theory and Computation, Nature Communications.
-                </p>
-            </div>
-            
-            <div class="lang-zh">
-                <p style="font-size: 15px; color: #666;">
-                    我目前在北京大学计算机学院担任副研究员。此前我于2022年4月至2025年4月在北京大学前沿计算研究中心担任博士后研究员，师从<a href="http://qtheorist.site/research/" target="_blank">袁骁</a>教授。我于2021年12月在山东大学物理学院获得物理学博士学位，导师为<a href="https://www.researchgate.net/profile/Dianmin-Tong" target="_blank">仝殿民</a>教授。我的核心研究兴趣涵盖量子资源理论、量子信息理论、近期量子算法以及量子计算与人工智能的交叉领域。截至2026年9月，我已发表19篇同行评审论文，另有6篇手稿正在审稿中。其中作为第一作者或通讯作者，在Nature Nanotechnology, Physical Review Letters, Science Advances, Journal of Chemical Theory and Computation, Nature Communications等顶级期刊上发表了11篇论文。
-                </p>
-            </div>
-
-            <div class="nav-links">
-                <a href="mailto:dqiming94@pku.edu.cn">Email</a>
-                <a href="https://scholar.google.com.hk/citations?user=Pl5r_UgAAAAJ" target="_blank">Google Scholar</a>
-                <a href="https://www.zhihu.com/people/curry-paul" target="_blank">Zhihu</a>
-                <a href="https://github.com/geeeekDing" target="_blank">GitHub</a>
-            </div>
-        </div>
-        <img src="qiming2024.jpg" alt="丁齐鸣" class="profile-img">
-    </div>
-
-    <h2>News</h2>
-    <ul class="news-list">
-        <li><strong>[2026.09.15]</strong> 很高兴我们在对称性加速量子测量的实验研究被中科院一区Top杂志<em>Physical Review Letters</em>发表！</li>
-        <li><strong>[2026.09.11]</strong> 很高兴我们在QFI的实验研究被中科院一区Top杂志<em>Science Advances</em>发表！</li>
-        <li><strong>[2026.09.05]</strong> 很高兴我们在开放系统动力学模拟的工作被中科院二区杂志 <em>Physical Review A</em> 发表！</li>
-        <li><strong>[2026.05.21]</strong> 很高兴我们在量子错误缓解的研究被中科院二区杂志<em>Physical Review Applied</em>正式发表！</li>
-        <li><strong>[2026.04.02]</strong> 很高兴我们在线性约束下的QAOA算法的研究在中科院一区Top杂志<em>Sci. China-Phys. Mech. Astron.</em>正式发表！</li>
-        <li><strong>[2026.03.26]</strong> 很高兴我们在量子相干性探测的工作在中科院二区杂志 <em>Physical Review A</em> 正式发表！</li>
-        <li><strong>[2026.03.02]</strong> 很高兴我们在量子导引探测的工作在中科院一区Top杂志 <em>Physical Review Letters</em> 正式发表！</li>
-        <li><strong>[2026.01.13]</strong> 很高兴我们在量子计算应用于大尺度分子几何优化的工作在中科院一区Top杂志 <em>Journal of Chemical Theory and Computation</em> 发表！</li>
-    </ul>
-
-    <h2 class="lang-en">Research Summary</h2>
-    <h2 class="lang-zh">研究总结</h2>
-    
-    <div class="lang-en">
-        <p style="font-size: 15px; color: #555; margin-bottom: 20px;">
-            My research bridges fundamental quantum information theory with practical quantum algorithms to solve complex problems in chemistry and biology in the real world. Moving from physical resource quantification to the design of algorithms that are efficient for hardware and finally to interdisciplinary applications, my work progresses along three continuous main lines:
-        </p>
-        <ul style="font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 50px;">
-            <li style="margin-bottom: 12px;">
-                <strong>Quantum Resources Theory:</strong> Nonclassical resources like quantum coherence form the physical foundation of quantum advantage. My early work established theoretical boundaries by proving theorems prohibiting coherence purification and enhancement [<a href="https://doi.org/10.1088/1751-8121/ac4ecd" target="_blank">J. Phys. A 2022</a>]. As quantum systems scale up, traditional state tomography becomes infeasible. My research naturally transitioned to efficiently extracting resource information under environments that are noisy and scarce in data. I developed a series of protocols from spectrum estimation [<a href="https://doi.org/10.1103/PhysRevResearch.3.023228" target="_blank">Phys. Rev. Res. 2021</a>, <a href="https://doi.org/10.3390/e23111519" target="_blank">Entropy 2021</a>] to relaxation based on optimization [<a href="https://doi.org/10.1103/g8sh-hts2" target="_blank">Phys. Rev. A 2026</a>]. These methods successfully achieved experimental estimations for multipartite coherence, quantum steering [<a href="https://doi.org/10.1103/wgqg-hfw8" target="_blank">Phys. Rev. Lett. 2026</a>], and Quantum Fisher Information[<a href="10.1126/sciadv.aef4342" target="_blank">Sci. Adv. 2026</a>] .
-            </li>
-            <li style="margin-bottom: 12px;">
-                <strong>Quantum Algorithms and Error Mitigation:</strong> To realize practical computing on quantum devices operating at an intermediate scale with noise, I design hybrid algorithms that are aware of constraints and resilient to noise. I proposed an adaptive architecture for quantum approximate optimization based on Hamming weight operators, which fundamentally solves optimization under strict linear constraints [<a href="https://doi.org/10.1007/s11433-025-2895-4" target="_blank">SCPMA 2026</a>]. I also developed a hybrid framework based on Quantum Monte Carlo methods to efficiently simulate systems that are not Hermitian [<a href="https://arxiv.org/abs/2507.11675" target="_blank">arXiv 2025</a>]. Crucially, I have made substantial contributions to Quantum Error Mitigation. I designed a purification technique based on Semidefinite Programming to extract molecular ground states with high accuracy on noisy hardware [<a href="https://doi.org/10.1103/lx3w-w6jx" target="_blank">Phys. Rev. Appl. 2026</a>]. Furthermore, I supported the first experimental demonstration of universal logical operations and variational quantum eigensolvers on a silicon quantum processor [<a href="https://www.nature.com/articles/s41565-026-02140-1" target="_blank">Nat. Nanotechnol. 2026</a>].
-            </li>
-            <li style="margin-bottom: 12px;">
-                <strong>Interdisciplinary Applications:</strong> I actively push frontier algorithms into practical scenarios like drug discovery and computational chemistry. For static structure solving, I extended hybrid quantum computing to the geometry optimization of molecules on a large scale by integrating Density Matrix Embedding Theory [<a href="https://doi.org/10.1021/acs.jctc.5c01435" target="_blank">JCTC 2026</a>]. For dynamic simulations, I facilitated quantum simulations of molecular dynamics that are not adiabatic with high precision electronic structures [<a href="https://doi.org/10.1039/D5DD00433K" target="_blank">Digital Discovery 2026</a>]. To tackle the immense complexity of molecular docking in drug research and development, I proposed a solution utilizing digitized counterdiabatic methods [<a href="https://doi.org/10.1103/PhysRevApplied.21.034036" target="_blank">Phys. Rev. Appl. 2024</a>]. I also contributed to developing a probabilistic computer hardware prototype based on resistive random access memory, offering breakthroughs across multiple dimensions for classical computing bottlenecks [<a href="https://doi.org/10.1038/s41467-025-67309-z" target="_blank">Nat. Commun. 2026</a>].
-            </li>
-        </ul>
-    </div>
-    
-    <div class="lang-zh">
-        <p style="font-size: 15px; color: #555; margin-bottom: 20px;">
-            我的研究致力于将基础量子信息理论与实用的量子算法相结合，旨在解决化学和生物学领域复杂的现实问题。从物理资源的量化到适配硬件的高效算法设计，再到跨学科应用，我的工作沿着以下三条主线持续推进：
-        </p>
-        <ul style="font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 50px;">
-            <li style="margin-bottom: 12px;">
-                <strong>量子资源理论：</strong>量子相干性等非经典资源是量子优势的物理基础。我早期的工作确立了理论边界，证明了禁止相干性纯化与放大的定理 [<a href="https://doi.org/10.1088/1751-8121/ac4ecd" target="_blank">J. Phys. A 2022</a>]。随着量子系统规模的扩大，传统的量子态层析变得不再可行。我的研究自然过渡到在数据稀缺和噪声环境下高效提取资源信息。我提出了一系列协议，从光谱估计 [<a href="https://doi.org/10.1103/PhysRevResearch.3.023228" target="_blank">Phys. Rev. Res. 2021</a>, <a href="https://doi.org/10.3390/e23111519" target="_blank">Entropy 2021</a>] 到基于优化的松弛方法 [<a href="https://doi.org/10.1103/g8sh-hts2" target="_blank">Phys. Rev. A 2026</a>]。这些方法成功实现了多体相干性、量子导引 [<a href="https://doi.org/10.1103/wgqg-hfw8" target="_blank">Phys. Rev. Lett. 2026</a>] 以及量子费舍尔信息的实验估算[<a href="10.1126/sciadv.aef4342" target="_blank">Sci. Adv. 2026</a>] 。
-            </li>
-            <li style="margin-bottom: 12px;">
-                <strong>量子算法与错误缓解：</strong>为了在含噪声的中等规模量子设备上实现具有实用价值的计算，我设计了感知约束且对噪声具有鲁棒性的混合算法。我提出了一种基于汉明权重算子的自适应量子近似优化架构，从根本上解决了严格线性约束下的优化问题 [<a href="https://doi.org/10.1007/s11433-025-2895-4" target="_blank">SCPMA 2026</a>]。我也开发了一个基于量子蒙特卡洛方法的混合框架用于高效模拟非厄米系统 [<a href="https://arxiv.org/abs/2507.11675" target="_blank">arXiv 2025</a>]。至关重要的是，我在量子错误缓解方面做出了实质性贡献。我设计了一种基于半正定规划的纯化技术，能够在含噪声硬件上高精度地提取分子基态 [<a href="https://doi.org/10.1103/lx3w-w6jx" target="_blank">Phys. Rev. Appl. 2026</a>]。此外我支持了在硅基量子处理器上实现通用逻辑门操作和变分量子本征求解器的首次实验演示 [<a href="https://www.nature.com/articles/s41565-026-02140-1" target="_blank">Nat. Nanotechnol. 2026</a>]。
-            </li>
-            <li style="margin-bottom: 12px;">
-                <strong>跨学科应用：</strong>我积极将前沿算法推向药物发现和计算化学等实际场景。在静态结构求解方面，我通过整合密度矩阵嵌入理论将混合量子计算扩展到大规模分子的几何优化中 [<a href="https://doi.org/10.1021/acs.jctc.5c01435" target="_blank">JCTC 2026</a>]。在动态模拟方面，我以高精度的电子结构促进了非绝热分子动力学的量子模拟 [<a href="https://doi.org/10.1039/D5DD00433K" target="_blank">Digital Discovery 2026</a>]。为了应对药物研发中分子对接的巨大复杂性，我提出了一种利用数字化反绝热方法的解决方案 [<a href="https://doi.org/10.1103/PhysRevApplied.21.034036" target="_blank">Phys. Rev. Appl. 2024</a>]。我也参与开发了一种基于阻变存储器的概率计算机硬件原型，为突破经典计算瓶颈提供了多维度的创新方案 [<a href="https://doi.org/10.1038/s41467-025-67309-z" target="_blank">Nat. Commun. 2026</a>]。
-            </li>
-        </ul>
-    </div>
-
-    <h2>Preprints & Submissions</h2>
-
-    <div class="paper">
-        <div style="font-weight: bold; color: #555; margin-right: 15px; font-size: 18px; min-width: 35px;">[P6]</div>
-        <div class="paper-info">
-            <div class="paper-title">Experimental Quantum Resource Invariance under Quantum Reference-Frame Transformations</div>
-            <div class="paper-authors"> Qinwei Zhang,..., <strong>Qi-Ming Ding <sup>†</sup> </strong> and Lianzhen Cao<sup>†</sup> </div>
-            <div class="paper-venue"><em></em> <span class="year-badge">2026</span></div>
-            <div class="paper-desc">Quantum reference frame transformations can change the subsystem decomposition of a composite system, rendering quantum properties such as coherence and entanglement perspective dependent. Here we experimentally realize a $\mathbb{Z}_2$ quantum-reference-frame transformation in a single-photon polarization--path platform and directly observe the predicted redistribution between subsystem coherence and bipartite entanglement. Quantum-state tomography verifies the recently predicted resource invariance in the pure-state regime. We then extend the experiment to mixed states under controlled decoherence,...... </div>
-        </div>
-    </div>
-    
-    <div class="paper">
-        <div style="font-weight: bold; color: #555; margin-right: 15px; font-size: 18px; min-width: 35px;">[P5]</div>
-        <div class="paper-info">
-            <div class="paper-title">Distributed Resource Theory of Entanglement and Magic</div>
-            <div class="paper-authors"> Xiao Yuan<sup>†</sup> , Wenhao Zhang <sup>†</sup>, <strong>Qi-Ming Ding <sup>†</sup> </strong> and You Zhou <sup>†</sup> </div>
-            <div class="paper-venue"><em></em> <span class="year-badge">2026</span></div>
-            <div class="paper-desc">In distributed fault-tolerant quantum computing, entanglement and magic are essential resources for quantum communication and universal fault-tolerant computation, respectively. Although they are usually treated as distinct resource currencies, whether they admit a unified resource-theoretic description remains an open question. Here, we introduce the distributed resource theory of entanglement and magic (DREAM). In this framework, the free states are convex mixtures of product local stabilizer states,...... </div>
-        </div>
-    </div>
-    
-    <div class="paper">
-        <div style="font-weight: bold; color: #555; margin-right: 15px; font-size: 18px; min-width: 35px;">[P4]</div>
-        <div class="paper-info">
-            <div class="paper-title">Measurement-Device-Independent Quantum Steering Remains Fragile</div>
-            <div class="paper-authors">Wenhao Zhang, <strong>Qi-Ming Ding <sup>†</sup> </strong> and Xiao Yuan<sup>†</sup> </div>
-            <div class="paper-venue"><em></em> <span class="year-badge">2026</span></div>
-            <div class="paper-desc">Measurement-device-independent protocols were originally developed to eliminate false positive results caused by inaccurate measurements in quantum entanglement and steering detection. However, this framework remains structurally vulnerable as it assumes the ideal preparation of certain input states.  Here, we show that small errors in the input states can still significantly compromise the reliability of the detection result. We reveal that a tiny state preparation infidelity..... </div>
-        </div>
-    </div>
-    
-    <div class="paper">
-        <div style="font-weight: bold; color: #555; margin-right: 15px; font-size: 18px; min-width: 35px;">[P3]</div>
-        <div class="paper-info">
-            <div class="paper-title">Unveiling non-Markovianity in unital quantum dynamical maps via Majorization</div>
-            <div class="paper-authors">Fan Wu, Wei-Ran Ma, C. L. Liu<sup>†</sup> , <strong>Qi-Ming Ding <sup>†</sup> </strong> </div>
-            <div class="paper-venue"><em></em> <span class="year-badge">2026</span></div>
-            <div class="paper-desc">In open quantum systems, non-Markovian dynamics is characterized by the backflow of information from the environment. While various entropic and correlation witnesses exist, they typically compress the complex quantum state into a single scalar. This compression induces a Markovian masking effect that obscures subtle dynamics and yields inconsistent boundaries for memory effects. Here, we introduce a unified witness based on majorization theory and the Ky Fan norm.... </div>
-        </div>
-    </div>
-
-    <div class="paper">
-        <div style="font-weight: bold; color: #555; margin-right: 15px; font-size: 18px; min-width: 35px;">[P2]</div>
-        <div class="paper-info">
-            <div class="paper-title">Accelerating Drug Discovery with Gaussian Boson Sampling</div>
-            <div class="paper-authors">Yuanye Zhu, Yuan Yao, <strong>Qi-Ming Ding <sup>†</sup> </strong> </div>
-            <div class="paper-venue"><em></em> <span class="year-badge">2026</span></div>
-            <div class="paper-desc">The realization of quantum computational advantage marks a fundamental paradigm shift in processing information, unlocking unprecedented capabilities for solving classically intractable combinatorial optimization problems. Gaussian Boson Sampling (GBS) stands as one of the preeminent physical platforms currently demonstrating this advantage, making the translation of its raw quantum supremacy into practical utility for real-world problems particularly crucial.... </div>
-        </div>
-    </div>
-    
-    <div class="paper">
-        <div style="font-weight: bold; color: #555; margin-right: 15px; font-size: 18px; min-width: 35px;">[P1]</div>
-        <div class="paper-info">
-            <div class="paper-title">Boolean Convex-Roof Measure: An Operationally Meaningful Quantifier of Quantum Resources</div>
-            <div class="paper-authors">Chaohui Zhou*, <strong>Qi-Ming Ding*</strong>, Xiaodan Cui, Baoqing Sun, and C. L. Liu<sup>†</sup> </div>
-            <div class="paper-venue"><em></em> <span class="year-badge">2026</span></div>
-            <div class="paper-desc">Quantifying quantum resources is fundamental to characterizing nonclassical advantages in quantum information processing. Although convex-roof constructions provide a mathematically natural way to define resource measures, they are often computationally demanding and typically lack a direct operational interpretation. In this work, we introduce a Boolean convex-roof measure for general convex quantum resource theories...</div>
-        </div>
-    </div>
-    
-    <h2>Publications</h2>
-
-    <h3 style="color: #1772d0; margin-top: 30px;">First & Corresponding Author Papers</h3>
-    
-    <div id="publications-list">
-        
-        <div class="paper">
-            <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
-                [F11]
-            </div>
-            <div class="paper-info">
-                <div class="paper-title">Dynamics Simulation of Arbitrary Non-Hermitian Systems Based on Quantum Monte Carlo</div>
-                <div class="paper-authors">Xiaogang Li, Kecheng Liu, <strong>Qi-Ming Ding<sup>†</sup></strong></div>
-                <div class="paper-venue"><em>Physical Review A</em> 114, 032602 <span class="year-badge">2026</span></div>
-                <div class="paper-desc">Simulating the dynamics of non-Hermitian quantum systems is essential for probing the frontiers of modern physics. However, existing quantum algorithms are fundamentally constrained by the probability loss inherent to probabilistic post-selection...</div>
-                <div class="paper-links"><a href="https://arxiv.org/abs/2507.11675" target="_blank">arXiv</a>
-                    <a href="https://doi.org/10.1103/yd74-5t5x" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
-                [F10]
-            </div>
-            <div class="paper-info">
-                <div class="paper-title">Gap-closing Experimental Estimation of Quantum Fisher Information</div>
-                <div class="paper-authors">Qian-Xi Zhang*, <strong>Qi-Ming Ding*</strong>, Hu Chen, Shan Ling, Ya-Li Mao, Da-Jian Zhang<sup>†</sup>, Xiao Yuan<sup>†</sup>, Zheng-Da Li<sup>†</sup></div>
-                <div class="paper-venue"><em>Science Advances</em> 12,eaef4342 <span class="year-badge">2026</span></div>
-                <div class="paper-desc">Estimating the quantum Fisher information (QFI) is a central task in quantum science and technology, underpinning the benchmarking of measurement devices and the certification of metrological advantages. However, due to the nonlinearity of QFI, standard estimation methods struggle to close the gap to the true value, causing inefficient convergence...</div>
-                <div class="paper-links">
-                    <a href="10.1126/sciadv.aef4342" target="_blank">Science Advances</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
-                [F9]
-            </div>
-            <div class="paper-info">
-                <div class="paper-title">Obtaining Accurate Ground-State Properties on Near-term Quantum Devices</div>
-                <div class="paper-authors"><strong>Qi-Ming Ding</strong>, J Peng, J Huang, Y Zhang, H Wang, X Xu, J Ren, Y Ma<sup>†</sup>, X Yuan<sup>†</sup></div>
-                <div class="paper-venue"><em>Physical Review Applied</em> 25, 054057 <span class="year-badge">2026-05-21</span></div>
-                <div class="paper-desc">Accurate ground-state calculations on noisy quantum computers are significantly constrained by restricted ansatznexpressivity and unavoidable hardware errors...</div>
-                <div class="paper-links">
-                    <a href="https://arxiv.org/abs/2510.21255" target="_blank">arXiv</a>
-                    <a href="https://doi.org/10.1103/lx3w-w6jx" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="paper">
-            <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
-                [F8]
-            </div>
-            <div class="paper-info">
-                <div class="paper-title">Constraint-aware quantum optimization via Hamming weight operators</div>
-                <div class="paper-authors">Y Hao, <strong>Qi-Ming Ding<sup>†</sup></strong>, X Yuan<sup>†</sup>, X Wang<sup>†</sup></div>
-                <div class="paper-venue"><em>Sci. China-Phys. Mech. Astron.</em> 69 (5), 250314 <span class="year-badge">2026-04-02</span></div>
-                <div class="paper-desc">Constrained combinatorial optimization with strict linear constraints underpins applications in drug discovery, power grids, logistics, and finance...</div>
-                <div class="paper-links">
-                    <a href="https://arxiv.org/abs/2601.01516" target="_blank">arXiv</a>
-                    <a href="https://doi.org/10.1007/s11433-025-2895-4" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="paper">
-            <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
-                [F7]
-            </div>
-            <div class="paper-info">
-                <div class="paper-title">Scalable protocol for coherence estimation from scarce data: Theory and experiment</div>
-                <div class="paper-authors"><strong>Qi-Ming Ding*</strong>, Ting Zhang*, Hui Li, Da-Jian Zhang<sup>†</sup></div>
-                <div class="paper-venue"><em>Physical Review A</em> 113 (3), 032444 <span class="year-badge">2026-03-26</span></div>
-                <div class="paper-desc">Key quantum features like coherence are the fundamental resources enabling quantum advantages and ascertaining their presence in quantum systems is crucial for developing quantum technologies...</div>
-                <div class="paper-links">
-                    <a href="https://arxiv.org/abs/2510.21138" target="_blank">arXiv</a>
-                    <a href="https://doi.org/10.1103/g8sh-hts2" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="paper">
-            <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
-                [F6]
-            </div>
-            <div class="paper-info">
-                <div class="paper-title">Reliable Quantum Steering Detection under Imperfect Measurement</div>
-                <div class="paper-authors">T Zhang*, W Zhang*, JT Qiu, L Huang, X Yuan<sup>†</sup>, <strong>Qi-Ming Ding<sup>†</sup></strong></div>
-                <div class="paper-venue"><em>Physical Review Letters</em> 136 (9), 090201 <span class="year-badge">2026-03-02</span></div>
-                <div class="paper-desc">Quantum steering, a fundamental manifestation of nonlocal quantum correlations, plays a vital role in quantum key distribution, quantum randomness generation, and quantum metrology...</div>
-                <div class="paper-links">
-                    <a href="https://doi.org/10.1103/wgqg-hfw8" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
-                [F5]
-            </div>
-            <div class="paper-info">
-                <div class="paper-title">Large-Scale Efficient Molecule Geometry Optimization with Hybrid Quantum–Classical Computing</div>
-                <div class="paper-authors">Y Hao, <strong>Qi-Ming Ding<sup>†</sup></strong>, X Wang<sup>†</sup>, X Yuan<sup>†</sup></div>
-                <div class="paper-venue"><em>Journal of Chemical Theory and Computation</em> 22 (2), 859-868 <span class="year-badge">2026-01-13</span></div>
-                <div class="paper-desc">Accurately and efficiently predicting the equilibrium geometries of large molecules remains a central challenge in quantum computational chemistry, even with hybrid quantum–classical algorithms...</div>
-                <div class="paper-links">
-                    <a href="https://arxiv.org/abs/2509.07460" target="_blank">arXiv</a>
-                    <a href="https://doi.org/10.1021/acs.jctc.5c01435" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">
-                [F4]
-            </div>
-            <div class="paper-info">
-                <div class="paper-title">Molecular docking via quantum approximate optimization algorithm</div>
-                <div class="paper-authors"><strong>Qi-Ming Ding*<sup>†</sup></strong>, Yi-Ming Huang*<sup>†</sup>, Xiao Yuan<sup>†</sup></div>
-                <div class="paper-venue"><em>Physical Review Applied</em> 21 (3), 034036 <span class="year-badge">2024-03-19</span></div>
-                <div class="paper-desc">Molecular docking plays a pivotal role in drug discovery and precision medicine, furnishing insights into protein functionalities and fostering the development of therapeutics...</div>
-                <div class="paper-links">
-                    <a href="https://arxiv.org/abs/2308.04098" target="_blank">arXiv</a>
-                    <a href="https://doi.org/10.1103/PhysRevApplied.21.034036" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">[F3]</div>
-            <div class="paper-info">
-                <div class="paper-title">No-go theorems for deterministic purification and probabilistic enhancement of coherence</div>
-                <div class="paper-authors"><strong>Qi-Ming Ding*<sup>†</sup></strong>, Quancheng Liu*<sup>†</sup></div>
-                <div class="paper-venue"><em>Journal of Physics A: Mathematical and Theoretical</em> 55 (10), 105301 <span class="year-badge">2022</span></div>
-                <div class="paper-desc">The manipulation of quantum coherence is one of the principal issues in the resource theory of coherence, with two critical topics being the purification and enhancement of coherence...</div>
-                <div class="paper-links">
-                    <a href="https://arxiv.org/abs/2203.15238" target="_blank">arXiv</a>
-                    <a href="https://doi.org/10.1088/1751-8121/ac4ecd" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">[F2]</div>
-            <div class="paper-info">
-                <div class="paper-title">The tightness of multipartite coherence from spectrum estimation</div>
-                <div class="paper-authors"><strong>Qi-Ming Ding</strong>, Xiao-Xu Fang, He Lu<sup>†</sup></div>
-                <div class="paper-venue"><em>Entropy</em> 23 (11), 1519 <span class="year-badge">2021</span></div>
-                <div class="paper-desc">Detecting multipartite quantum coherence usually requires quantum state reconstruction, which is quite inefficient for large-scale quantum systems...</div>
-                <div class="paper-links">
-                    <a href="https://arxiv.org/abs/2104.12094" target="_blank">arXiv</a>
-                    <a href="https://doi.org/10.3390/e23111519" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div style="font-weight: bold; color: #1772d0; margin-right: 15px; font-size: 18px; min-width: 35px;">[F1]</div>
-            <div class="paper-info">
-                <div class="paper-title">Efficient estimation of multipartite quantum coherence</div>
-                <div class="paper-authors"><strong>Qi-Ming Ding*</strong>, Xiao-Xu Fang*, Xiao Yuan, Ting Zhang, and He Lu<sup>†</sup></div>
-                <div class="paper-venue"><em>Physical Review Research</em> 3 (2), 023228 <span class="year-badge">2021</span></div>
-                <div class="paper-desc">Quantification of coherence lies at the heart of quantum information processing and fundamental physics. Exact evaluation of coherence measures generally needs a full reconstruction of the density matrix...</div>
-                <div class="paper-links">
-                    <a href="https://arxiv.org/abs/2010.02612" target="_blank">arXiv</a>
-                    <a href="https://doi.org/10.1103/PhysRevResearch.3.023228" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-    
-    <div class="pagination" id="pagination-controls"></div>
-
-    <h3 style="color: #666; margin-top: 50px;">Co-authored Papers</h3>
-    <div id="co-authored-list">
-
-        <!-- Paper C8 -->
-        <div class="paper">
-            <div style="font-weight: bold; color: #888; margin-right: 15px; font-size: 18px; min-width: 35px;">[C8]</div>
-            <div class="paper-info">
-                <div class="paper-title">A Review of Variational Quantum Algorithms: Insights into Fault-Tolerant Quantum Computing</div>
-                <div class="paper-authors">Zhirao Wang<sup>*</sup>, Junxiang Huang<sup>*</sup>, Runyu Ye<sup>*</sup>, Qingyu Li, <strong>Qi-Ming Ding</strong>, Yiming Huang, Ting Zhang, Yumeng Zeng, Jianshuo Gao, Xiao Yuan<sup>†</sup>, and Yuan Yao<sup>‡</sup></div>
-                <div class="paper-venue"><em>Preprint</em> <span class="year-badge">2026</span></div>
-                <div class="paper-desc">Variational quantum algorithms (VQAs) have established themselves as a central computational paradigm in the Noisy Intermediate-Scale Quantum (NISQ) era. By coupling parameterized quantum circuits with classical optimization, they operate effectively under strict hardware limitations...</div>
-                <div class="paper-links">
-                    <a href="https://arxiv.org/abs/2604.07909" target="_blank">arXiv</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Paper C7 -->
-        <div class="paper">
-            <div style="font-weight: bold; color: #888; margin-right: 15px; font-size: 18px; min-width: 35px;">[C7]</div>
-            <div class="paper-info">
-                <div class="paper-title">Symmetry speeds up quantum measurements</div>
-                <div class="paper-authors">Hu Chen<sup>*</sup>, Bujiao Wu<sup>*</sup>, Qian-Xi Zhang, <strong>Qi-Ming Ding</strong>, Haozhao Wu, Mei-Shi Su, Ya-Li Mao, Xiao Yuan<sup>†</sup>, and Zheng-Da Li<sup>‡</sup></div>
-                <div class="paper-venue"><em>Phys. Rev. Lett. </em> <span class="year-badge">2026</span></div>
-                <div class="paper-desc">Estimating the properties of quantum states is a fundamental task in both theoretical and experimental quantum physics. While numerous Pauli-based measurement strategies have been proposed, none explicitly exploit prior knowledge of structural features such as symmetry...</div>
-                <div class="paper-links">
-                    <a href="https://journals.aps.org/prl/abstract/10.1103/q9lf-cp11" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="paper">
-            <div style="font-weight: bold; color: #888; margin-right: 15px; font-size: 18px; min-width: 35px;">[C6]</div>
-            <div class="paper-info">
-                <div class="paper-title">Universal logical operations in a silicon quantum processor</div>
-                <div class="paper-authors">
-                    Chunhui Zhang*, Feng Xu*, ..., <strong>Qi-Ming Ding</strong>, ..., Dapeng Yu<sup>†</sup>
-                </div>
-                <div class="paper-venue"><em>Nature Nanotechnology</em>, 1-7 <span class="year-badge">2026</span></div>
-                <div class="paper-desc">Quantum errors induced by environmental noise are unavoidable and preclude the direct implementation of practical quantum computation. Fault-tolerant quantum computation offers one of the viable paths...</div>
-                <div class="paper-links">
-                    <a href="https://www.nature.com/articles/s41565-026-02140-1" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div style="font-weight: bold; color: #888; margin-right: 15px; font-size: 18px; min-width: 35px;">[C5]</div>
-            <div class="paper-info">
-                <div class="paper-title">Efficient quantum simulation of non-adiabatic molecular dynamics with precise electronic structure</div>
-                <div class="paper-authors">Tianyi Li, Yumeng Zeng, <strong>Qi-Ming Ding</strong>, Z Huo, X Xu, J Ren, D Tang<sup>†</sup>, X Cai<sup>†</sup>, X Yuan<sup>†</sup></div>
-                <div class="paper-venue"><em>Digital Discovery</em> 5, 548-570 <span class="year-badge">2026</span></div>
-                <div class="paper-desc">In the study of non-adiabatic chemical processes such as photocatalysis and photosynthesis, non-adiabatic molecular dynamics (NAMD) is an indispensable theoretical tool...</div>
-                <div class="paper-links">
-                    <a href="https://arxiv.org/abs/2512.02376" target="_blank">arXiv</a>
-                    <a href="10.1039/D5DD00433K" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div style="font-weight: bold; color: #888; margin-right: 15px; font-size: 18px; min-width: 35px;">[C4]</div>
-            <div class="paper-info">
-                <div class="paper-title">A hardware demonstration of a universal programmable RRAM-based probabilistic computer for molecular docking</div>
-                <div class="paper-authors">Yihan He*, Ming-Chun Hong*, <strong>Qiming Ding</strong>, Chih-Sheng Lin, Chih-Ming Lai, Chao Fang, Xiao Gong, Tuo-Hung Hou<sup>†</sup>, Gengchiau Liang<sup>†</sup></div>
-                <div class="paper-venue"><em>Nature Communications</em> 17, 702  <span class="year-badge">2026</span></div>
-                <div class="paper-desc">Molecular docking is a critical computational strategy in drug discovery, but the diversity of biomolecular structures and flexible binding conformations create an enormous search space that challenges conventional computing...</div>
-                <div class="paper-links">
-                    <a href="https://arxiv.org/abs/2503.20254" target="_blank">arXiv</a>
-                    <a href="https://doi.org/10.1038/s41467-025-67309-z" target="_blank">Link</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div style="font-weight: bold; color: #888; margin-right: 15px; font-size: 18px; min-width: 35px;">[C3]</div>
-            <div class="paper-info">
-                <div class="paper-title">Superadditivity of convex roof coherence measures</div>
-                <div class="paper-authors">CL Liu, <strong>Qi-Ming Ding</strong>, DM Tong<sup>†</sup></div>
-                <div class="paper-venue"><em>Journal of Physics A: Mathematical and Theoretical</em> 51 (41), 414012 <span class="year-badge">2018</span></div>
-                <div class="paper-desc">In this paper, we examine the superadditivity of convex roof coherence measures. We put forward a theorem on the superadditivity of convex roof coherence measures...</div>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div style="font-weight: bold; color: #888; margin-right: 15px; font-size: 18px; min-width: 35px;">[C2]</div>
-            <div class="paper-info">
-                <div class="paper-title">A new coherence measure based on fidelity</div>
-                <div class="paper-authors">CL Liu, Da-Jian Zhang, Xiao-Dong Yu, <strong>Qi-Ming Ding</strong>, Longjiang Liu<sup>†</sup></div>
-                <div class="paper-venue"><em>Quantum Information Processing</em> 16 (8), 198 <span class="year-badge">2017</span></div>
-                <div class="paper-desc">Quantifying coherence is an essential endeavor for both quantum foundations and quantum technologies. In this paper, we put forward a quantitative measure of coherence by following the axiomatic definition...</div>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div style="font-weight: bold; color: #888; margin-right: 15px; font-size: 18px; min-width: 35px;">[C1]</div>
-            <div class="paper-info">
-                <div class="paper-title">Single-shot realization of nonadiabatic holonomic quantum gates in decoherence-free subspaces</div>
-                <div class="paper-authors">PZ Zhao, GF Xu, <strong>QM Ding</strong>, Erik Sjöqvist, DM Tong<sup>†</sup></div>
-                <div class="paper-venue"><em>Physical Review A</em> 95 (6), 062310 <span class="year-badge">2017</span></div>
-                <div class="paper-desc">Nonadiabatic holonomic quantum computation in decoherence-free subspaces has attracted increasing attention recently, as it allows for high-speed implementation and combines both the robustness of holonomic gates...</div>
-            </div>
-        </div>
-
-   </div>
-
-   <!-- 共同作者的分页控件 -->
-   <div class="pagination" id="co-authored-pagination"></div>
-
-</div> 
-
-<script>
-let currentLang = 'en';
-function toggleLanguage() {
-    const enElements = document.querySelectorAll('.lang-en');
-    const zhElements = document.querySelectorAll('.lang-zh');
-    
-    if (currentLang === 'en') {
-        enElements.forEach(el => el.style.display = 'none');
-        zhElements.forEach(el => el.style.display = 'block');
-        currentLang = 'zh';
-    } else {
-        enElements.forEach(el => el.style.display = 'block');
-        zhElements.forEach(el => el.style.display = 'none');
-        currentLang = 'en';
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // 封装通用分页函数
-    function setupPaginationForList(listId, paginationId, itemsPerPage) {
-        const listContainer = document.getElementById(listId);
-        const paginationControls = document.getElementById(paginationId);
-        
-        if (!listContainer || !paginationControls) return; 
-        
-        const papers = listContainer.querySelectorAll('.paper');
-        let currentPage = 1;
-
-        function displayPage(page) {
-            const startIndex = (page - 1) * itemsPerPage;
-            const endIndex = startIndex + itemsPerPage;
-
-            papers.forEach((paper, index) => {
-                if (index >= startIndex && index < endIndex) {
-                    paper.style.display = 'flex'; 
-                } else {
-                    paper.style.display = 'none';
-                }
-            });
-        }
-
-        function setupPagination() {
-            const pageCount = Math.ceil(papers.length / itemsPerPage);
-            paginationControls.innerHTML = '';
-
-            if (pageCount <= 1) return; 
-
-            for (let i = 1; i <= pageCount; i++) {
-                const btn = document.createElement('button');
-                btn.innerText = i;
-                if (i === currentPage) {
-                    btn.classList.add('active');
-                }
-
-                btn.addEventListener('click', function() {
-                    currentPage = i;
-                    displayPage(currentPage);
-
-                    const currentActive = paginationControls.querySelector('.active');
-                    if (currentActive) {
-                        currentActive.classList.remove('active');
-                    }
-                    this.classList.add('active');
-
-                    listContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                });
-
-                paginationControls.appendChild(btn);
-            }
-        }
-
-        if (papers.length > 0) {
-            displayPage(1);
-            setupPagination();
-        }
-    }
-
-    // 初始化分页
-    setupPaginationForList('publications-list', 'pagination-controls', 5);
-    setupPaginationForList('co-authored-list', 'co-authored-pagination', 5);
-    
-});
-</script>
-    
-</body>
-</html>
+<section class="section" id="journey"><div class="section-heading"><div><span class="section-no">04 / BACKGROUND & COMMUNITY</span><h2 data-en="Beyond the paper list" data-zh="研究经历与学术服务" >Beyond the paper list</h2></div></div><div class="journey-grid"><div class="timeline"><div class="timeline-item"><span class="timeline-date">2025.12 — present</span><h3 data-en="Peking University" data-zh="北京大学" >Peking University</h3><p data-en="Associate Researcher · School of Computer Science" data-zh="副研究员 · 计算机学院" >Associate Researcher · School of Computer Science</p></div><div class="timeline-item"><span class="timeline-date">2025.05 — 2025.11</span><h3 data-en="ZQuantum, Beijing" data-zh="正则量子（北京）" >ZQuantum, Beijing</h3><p data-en="Algorithm Engineer · quantum algorithms and applications" data-zh="算法工程师 · 量子算法及应用" >Algorithm Engineer · quantum algorithms and applications</p></div><div class="timeline-item"><span class="timeline-date">2022.04 — 2025.04</span><h3 data-en="Peking University" data-zh="北京大学" >Peking University</h3><p data-en="Postdoctoral research at CFCS, with Xiao Yuan" data-zh="前沿计算研究中心博士后，合作导师袁骁" >Postdoctoral research at CFCS, with Xiao Yuan</p></div><div class="timeline-item"><span class="timeline-date">2015.09 — 2021.12</span><h3 data-en="Shandong University" data-zh="山东大学" >Shandong University</h3><p data-en="PhD in Physics, supervised by Dian Min Tong" data-zh="物理学博士，导师仝殿民" >PhD in Physics, supervised by Dian Min Tong</p></div></div><div><div class="service-block"><div class="service-label">FUNDING</div><h3 data-en="Beijing Natural Science Foundation" data-zh="北京市自然科学基金" >Beijing Natural Science Foundation</h3><p data-en="Principal investigator · Youth project · 2025–2026" data-zh="青年项目负责人 · 执行期2025—2026年" >Principal investigator · Youth project · 2025–2026</p></div><div class="service-block"><div class="service-label">MENTORING</div><h3 data-en="Joint doctoral training" data-zh="博士研究生联合培养" >Joint doctoral training</h3><p data-en="Yajie Hao · quantum chemistry and constraint-aware quantum optimization" data-zh="郝亚杰 · 量子化学计算与约束量子优化" >Yajie Hao · quantum chemistry and constraint-aware quantum optimization</p></div><div class="service-block"><div class="service-label">PEER REVIEW</div><h3 data-en="Academic service" data-zh="学术服务" >Academic service</h3><p data-en="Reviewer for journals in Nature Portfolio, IOP Publishing, and the American Physical Society." data-zh="担任Nature系列、英国物理学会（IOP）及美国物理学会（APS）旗下期刊审稿人。" >Reviewer for journals in Nature Portfolio, IOP Publishing, and the American Physical Society.</p></div><div class="service-block"><div class="service-label">RESEARCH INTERESTS</div><h3 data-en="Quantum algorithms × scientific computing" data-zh="量子算法与科学计算" >Quantum algorithms × scientific computing</h3><p data-en="Interested in collaborations on quantum resource estimation, error mitigation, hybrid algorithms, and computational chemistry." data-zh="欢迎围绕量子资源估计、错误缓解、混合算法与计算化学开展合作。" >Interested in collaborations on quantum resource estimation, error mitigation, hybrid algorithms, and computational chemistry.</p></div></div></div></section>
+<section class="contact"><div><h2 data-en="Let’s talk about quantum computing." data-zh="一起探讨量子计算。" >Let’s talk about quantum computing.</h2><p data-en="For research collaborations, academic exchange, or questions about the papers, the best way to reach me is by email." data-zh="欢迎就科研合作、学术交流或论文内容与我联系。" >For research collaborations, academic exchange, or questions about the papers, the best way to reach me is by email.</p></div><a href="mailto:dqiming94@pku.edu.cn">dqiming94@pku.edu.cn ↗</a></section>
+</main><footer class="wrap site-footer"><div>© 2026 Qi-Ming Ding · 丁齐鸣</div><div><span data-en="Updated October 2026" data-zh="更新于2026年10月" >Updated October 2026</span> · <a href="https://scholar.google.com/citations?user=Pl5r_UgAAAAJ" target="_blank" rel="noopener noreferrer" >Google Scholar</a> · <a href="#"><span data-en="Back to top ↑" data-zh="回到顶部 ↑" >Back to top ↑</span></a></div></footer><div id="toast" class="toast" role="status" hidden></div>
+</body></html>
