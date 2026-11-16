@@ -59,23 +59,27 @@
     const langButton = document.getElementById('language-toggle');
     langButton.textContent = isZh() ? 'EN' : '中文';
     langButton.setAttribute('aria-label', isZh() ? 'Switch to English' : '切换到中文');
-    controls.search.placeholder = isZh() ? '搜索论文、作者或关键词…' : 'Search title, author, topic…';
-    controls.search.setAttribute('aria-label', isZh() ? '按题名、作者或研究主题搜索论文' : 'Search papers by title, author, or topic');
-    controls.year.setAttribute('aria-label', isZh() ? '按年份筛选' : 'Filter by year');
     try { localStorage.setItem('qmd-language', language); } catch (_) {}
-    filterPapers();
+    if (controls.search) {
+      controls.search.placeholder = isZh() ? '搜索论文、作者或关键词…' : 'Search title, author, topic…';
+      controls.search.setAttribute('aria-label', isZh() ? '按题名、作者或研究主题搜索论文' : 'Search papers by title, author, or topic');
+      controls.year.setAttribute('aria-label', isZh() ? '按年份筛选' : 'Filter by year');
+      filterPapers();
+    }
   }
 
   document.getElementById('language-toggle').addEventListener('click', () => setLanguage(isZh() ? 'en' : 'zh'));
-  document.querySelectorAll('.filter-tab').forEach(b => b.addEventListener('click', () => { mode = b.dataset.filter; currentPage = 1; filterPapers(); }));
-  controls.search.addEventListener('input', () => { currentPage = 1; filterPapers(); });
-  controls.year.addEventListener('change', () => { currentPage = 1; filterPapers(); });
-  controls.previous.addEventListener('click', () => { if (currentPage > 1) { currentPage--; filterPapers(); scrollToPapers(); } });
-  controls.next.addEventListener('click', () => { currentPage++; filterPapers(); scrollToPapers(); });
-  controls.topic.addEventListener('click', () => { topic = null; currentPage = 1; filterPapers(); });
-  document.querySelectorAll('.research-filter').forEach(b => b.addEventListener('click', () => {
-    topic = b.dataset.topic; mode = 'all'; currentPage = 1; controls.search.value = ''; controls.year.value = 'all'; filterPapers(); scrollToPapers();
-  }));
+  if (controls.search) {
+    document.querySelectorAll('.filter-tab').forEach(b => b.addEventListener('click', () => { mode = b.dataset.filter; currentPage = 1; filterPapers(); }));
+    controls.search.addEventListener('input', () => { currentPage = 1; filterPapers(); });
+    controls.year.addEventListener('change', () => { currentPage = 1; filterPapers(); });
+    controls.previous.addEventListener('click', () => { if (currentPage > 1) { currentPage--; filterPapers(); scrollToPapers(); } });
+    controls.next.addEventListener('click', () => { currentPage++; filterPapers(); scrollToPapers(); });
+    controls.topic.addEventListener('click', () => { topic = null; currentPage = 1; filterPapers(); });
+    document.querySelectorAll('.research-filter').forEach(b => b.addEventListener('click', () => {
+      topic = b.dataset.topic; mode = 'all'; currentPage = 1; controls.search.value = ''; controls.year.value = 'all'; filterPapers(); scrollToPapers();
+    }));
+  }
 
   let toastTimer;
   function toast(message) {
