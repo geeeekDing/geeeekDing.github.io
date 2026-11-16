@@ -32,7 +32,8 @@
     const year = controls.year.value;
     const matches = papers.filter(p => {
       const status = p.dataset.status;
-      const modeMatch = mode === 'preprint' ? status === 'preprint' : status === 'published' && (mode !== 'lead' || p.dataset.lead === 'true');
+      const selectedStatus = mode === 'all' || mode === 'lead' ? 'published' : mode;
+      const modeMatch = status === selectedStatus && (mode !== 'lead' || p.dataset.lead === 'true');
       return modeMatch && (!topic || p.dataset.topic === topic) && (year === 'all' || p.dataset.year === year) && words.every(w => p.dataset.search.includes(w));
     });
     const maxPage = Math.max(1, Math.ceil(matches.length / pageSize));
